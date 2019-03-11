@@ -4,15 +4,35 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    // Start is called before the first frame update
+
+    private Transform pos;
+
     void Start()
     {
-        
+        pos = GetComponent<Transform>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void turn()
     {
-        
+        move(roll());
     }
+
+    private void move(int roll)
+    {
+        for (int i = 0; i < roll; i++)
+        {
+            setPos(BoardLayout.boardTrack[i]);
+        }
+    }
+
+    private void setPos(GameTile space)
+    {
+        pos.SetPositionAndRotation(space.getPos(), pos.rotation);
+    }
+
+    private int roll()
+    {
+        return Random.Range(1, 6);
+    }
+
 }

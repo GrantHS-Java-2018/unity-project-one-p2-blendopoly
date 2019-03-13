@@ -1,15 +1,23 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Player : MonoBehaviour
 {
 
     private Transform pos;
+    private int index = 0;
 
     void Start()
     {
         pos = GetComponent<Transform>();
+        for (int i = 0; i < 1000; i++)
+        {
+            turn();
+        }
     }
 
     public void turn()
@@ -21,13 +29,18 @@ public class Player : MonoBehaviour
     {
         for (var i = 0; i < roll; i++)
         {
-            setPos(BoardLayout.boardTrack[i]);
+            index++;
+            if (index == BoardLayout.boardTrack.Length)
+            {
+                index = 0;
+            }
+            setPos(BoardLayout.boardTrack[index]);
         }
     }
 
     private void setPos(GameTile space)
     {
-        pos.SetPositionAndRotation(space.getPos(), pos.rotation);
+        pos.SetPositionAndRotation(pos.position, pos.rotation);
     }
 
     private int roll()

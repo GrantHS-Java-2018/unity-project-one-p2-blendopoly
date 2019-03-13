@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
 
     private void move(int roll)
     {
-        for (int i = 0; i < roll; i++)
+        for (var i = 0; i < roll; i++)
         {
             setPos(BoardLayout.boardTrack[i]);
         }

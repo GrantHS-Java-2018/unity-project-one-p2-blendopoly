@@ -5,19 +5,16 @@ using UnityEngine;
 
 public class Property : GameTile
 {
-    private int[] rents;
-    private int housePrice;
-    private int morgagePrice;
-    private bool morgaged = false;
-    private int price;
+    //[SerializeField] private int[] rents;
+    //[SerializeField] private int housePrice;
+    //[SerializeField] private int morgagePrice;
+    //[SerializeField] private bool morgaged = false;
+    //[SerializeField] private int price;
+    //[SerializeField] private int numOfHouses = 0;
 
-    public Property(Vector3 pos, int[] rents, int housePrice, int morgagePrice, int price)
+    void Start()
     {
-        this.pos = pos;
-        this.rents = rents;
-        this.housePrice = housePrice;
-        this.morgagePrice = morgagePrice;
-        this.price = price;
+        pos = GetComponent<Transform>().position;
     }
     
     public override void onLand(Player player)

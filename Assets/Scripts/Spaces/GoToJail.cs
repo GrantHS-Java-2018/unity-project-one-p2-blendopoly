@@ -5,6 +5,8 @@ using UnityEngine;
 public class GoToJail : GameTile
 {
 
+    private const int JAIL_INDEX = 10;
+    
     void Start()
     {
         pos = GetComponent<Transform>().position;
@@ -12,6 +14,7 @@ public class GoToJail : GameTile
     
     public override void onLand(Player player)
     {
-        //notImplementedYet
+        player.index = JAIL_INDEX;
+        player.inJail = true;
     }
 }

@@ -5,12 +5,12 @@ using UnityEngine;
 
 public class Property : GameTile
 {
-    //[SerializeField] private int[] rents;
-    //[SerializeField] private int housePrice;
-    //[SerializeField] private int morgagePrice;
-    //[SerializeField] private bool morgaged = false;
-    //[SerializeField] private int price;
-    //[SerializeField] private int numOfHouses = 0;
+    public int[] rents;
+    public int housePrice;
+    public int morgagePrice;
+    public bool morgaged = false;
+    public int price;
+    public int numOfHouses = 0;
 
     void Start()
     {

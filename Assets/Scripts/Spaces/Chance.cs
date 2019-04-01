@@ -5,9 +5,9 @@ using UnityEngine;
 public class Chance : GameTile
 {
 
-    Chance(Vector3 pos)
+    void Start()
     {
-        this.pos = pos;
+        pos = GetComponent<Transform>().position;
     }
     
     public override void onLand(Player player)

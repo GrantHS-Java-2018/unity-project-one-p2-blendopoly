@@ -2,17 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GoToJail : MonoBehaviour
+public class GoToJail : GameTile
 {
-    // Start is called before the first frame update
+
     void Start()
     {
-        
+        pos = GetComponent<Transform>().position;
     }
-
-    // Update is called once per frame
-    void Update()
+    
+    public override void onLand(Player player)
     {
-        
+        //notImplementedYet
     }
 }

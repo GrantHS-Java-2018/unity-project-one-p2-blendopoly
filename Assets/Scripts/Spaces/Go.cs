@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Go : GameTile
 {
-    
+
     void Start()
     {
         pos = GetComponent<Transform>().position;
@@ -12,7 +12,6 @@ public class Go : GameTile
     
     public override void onLand(Player player)
     {
-        throw new System.NotImplementedException();
+        //notImplementedYet
     }
-    
 }

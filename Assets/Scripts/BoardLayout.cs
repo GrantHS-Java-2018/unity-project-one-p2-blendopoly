@@ -7,4 +7,6 @@ using UnityEngine.Diagnostics;
 public class BoardLayout : MonoBehaviour
 {
     public GameTile[] boardTrack;
+
+    public Jail jail;
 }

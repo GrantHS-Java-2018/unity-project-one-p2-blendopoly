@@ -72,12 +72,12 @@ public class Player : MonoBehaviour
         layout.boardTrack[index].onLand(this);
     }
 
-    private void setPos(GameTile space)
+    public void setPos(GameTile space)
     {
         pos.position = space.pos;
     }
 
-    private void setPos()
+    public void setPos()
     {
         pos.position = board.GetComponent<BoardLayout>().boardTrack[index].pos;
     }

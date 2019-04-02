@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Numerics;
 using UnityEngine;
+using UnityEngine.UI;
 using Quaternion = UnityEngine.Quaternion;
 using Vector3 = UnityEngine.Vector3;
 
@@ -13,6 +14,9 @@ public class CameraHandler : MonoBehaviour
     private bool xIncreasing = true;
     private bool zIncreasing = true;
     private int counter = 0;
+    private bool isOnPlayer = false;
+    public Player player;
+    public Text buttonText;
     
     // Start is called before the first frame update
     void Start()
@@ -23,6 +27,18 @@ public class CameraHandler : MonoBehaviour
 
     // Update is called once per frame
     void Update()
+    {
+        if (isOnPlayer)
+        {
+            focusOnPlayer(player);
+        }
+        else
+        {
+            rotateAroundBoard();
+        }
+    }
+
+    private void rotateAroundBoard()
     {
         if (counter % 2 == 0)
         {
@@ -46,7 +62,7 @@ public class CameraHandler : MonoBehaviour
                 pos.SetPositionAndRotation(new Vector3(pos.position.x + 1, pos.position.y, pos.position.z + 1),
                     Quaternion.Euler(40, -0.9f * pos.position.x, 0));
             }
-
+    
             if (pos.position.x == 100)
             {
                 xIncreasing = false;
@@ -55,7 +71,7 @@ public class CameraHandler : MonoBehaviour
             {
                 xIncreasing = true;
             }
-
+    
             if (pos.position.z == 100)
             {
                 zIncreasing = false;
@@ -65,6 +81,46 @@ public class CameraHandler : MonoBehaviour
                 zIncreasing = true;
             }
         }
-        ++counter;
+        ++counter;   
     }
+
+    private void focusOnPlayer(Player player)
+    {
+        Vector3 offset;
+        if (player.index < 10)
+        {
+            offset = new Vector3(0,20,-20);
+        }else if (player.index < 20)
+        {
+            offset = new Vector3(-20,20,0);
+        }else if (player.index < 30)
+        {
+            offset = new Vector3(0, 20, 20);
+        }
+        else
+        {
+            offset = new Vector3(20,20,0);
+        }
+
+        transform.position = player.transform.position + offset;
+        Vector3 relativePos = player.transform.position - transform.position;
+        transform.rotation = Quaternion.LookRotation(relativePos);
+    }
+
+    public void buttonClick()
+    {
+        isOnPlayer = !isOnPlayer;
+        if (isOnPlayer)
+        {
+            buttonText.text = "Show board";
+        }
+        else
+        {
+            buttonText.text = "Show player";
+            pos.SetPositionAndRotation(new Vector3(0,40,-100), Quaternion.Euler(40,0,0));
+            xIncreasing = true;
+            zIncreasing = true;
+        }
+    }
+    
 }

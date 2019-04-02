@@ -5,6 +5,8 @@ using UnityEngine;
 public class GoToJail : GameTile
 {
 
+    public BoardLayout layout;
+    
     private const int JAIL_INDEX = 10;
     
     void Start()
@@ -16,5 +18,6 @@ public class GoToJail : GameTile
     {
         player.index = JAIL_INDEX;
         player.inJail = true;
+        player.setPos(layout.jail);
     }
 }

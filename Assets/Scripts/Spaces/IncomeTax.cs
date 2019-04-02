@@ -12,6 +12,6 @@ public class IncomeTax : GameTile
     
     public override void onLand(Player player)
     {
-        //notImplementedYet
+        player.money -= 200;
     }
 }

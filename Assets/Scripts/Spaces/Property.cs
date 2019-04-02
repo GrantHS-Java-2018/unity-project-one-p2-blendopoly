@@ -19,7 +19,7 @@ public class Property : GameTile
     
     public override void onLand(Player player)
     {
-        //notImplemented yet
+        player.money -= price;
     }
     
 }

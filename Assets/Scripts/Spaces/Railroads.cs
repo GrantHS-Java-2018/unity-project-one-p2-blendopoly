@@ -4,8 +4,14 @@ using UnityEngine;
 
 public class Railroads : GameTile
 {
+
+    void Start()
+    {
+        pos = GetComponent<Transform>().position;
+    }
+    
     public override void onLand(Player player)
     {
-        throw new System.NotImplementedException();
+        player.money -= 200;
     }
 }

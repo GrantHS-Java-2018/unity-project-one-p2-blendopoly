@@ -12,16 +12,20 @@ public class Player : MonoBehaviour
     private Transform pos;
     public int index { get; set; } = 0;
     public GameObject board;
+    private BoardLayout layout;
     public Boolean inJail { get; set; } = false;
+    public int money = 0;
 
     void Start()
     {
         pos = GetComponent<Transform>();
-        for (int i = 0; i < 1000; i++)
-        {
-            turn(0);
-            Thread.Sleep(1000);
-        }
+        layout = board.GetComponent<BoardLayout>();
+        setPos();
+    }
+
+    private void Update()
+    {
+        //turn(0);
     }
 
     public void turn(int doubles)
@@ -58,18 +62,24 @@ public class Player : MonoBehaviour
         for (var i = 0; i < roll; i++)
         {
             index++;
-            if (index == board.GetComponent<BoardLayout>().boardTrack.Length)
+            if (index == layout.boardTrack.Length)
             {
                 index = 0;
+                money += 200; //passing go
             }
-            setPos(board.GetComponent<BoardLayout>().boardTrack[index]);
+            setPos(layout.boardTrack[index]);
         }
-        board.GetComponent<BoardLayout>().boardTrack[index].onLand(this);
+        layout.boardTrack[index].onLand(this);
     }
 
     private void setPos(GameTile space)
     {
-        pos.SetPositionAndRotation(space.pos, pos.rotation);
+        pos.position = space.pos;
+    }
+
+    private void setPos()
+    {
+        pos.position = board.GetComponent<BoardLayout>().boardTrack[index].pos;
     }
 
     private int roll()

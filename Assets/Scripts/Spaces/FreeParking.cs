@@ -12,6 +12,6 @@ public class FreeParking : GameTile
     
     public override void onLand(Player player)
     {
-        //notImplementedYet
+        //do nothing
     }
 }

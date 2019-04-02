@@ -12,6 +12,6 @@ public class Go : GameTile
     
     public override void onLand(Player player)
     {
-        //notImplementedYet
+        //do nothing
     }
 }

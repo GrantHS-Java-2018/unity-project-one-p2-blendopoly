@@ -15,23 +15,23 @@ public class Player : MonoBehaviour
     void Start()
     {
         pos = GetComponent<Transform>();
-        for (int i = 0; i < 1000; i++)
+        for (int i = 0; i < 1000; ++i)
         {
             turn();
             Thread.Sleep(1000);
         }
     }
 
-    public void turn()
+    private void turn()
     {
         move(roll());
     }
 
     private void move(int roll)
     {
-        for (var i = 0; i < roll; i++)
+        for (var i = 0; i < roll; ++i)
         {
-            index++;
+            ++index;
             if (index == board.GetComponent<BoardLayout>().boardTrack.Length)
             {
                 index = 0;

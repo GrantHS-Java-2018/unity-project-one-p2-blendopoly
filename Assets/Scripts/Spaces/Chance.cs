@@ -5,6 +5,20 @@ using UnityEngine;
 public class Chance : GameTile
 {
 
+    private ArrayList cardsDrawn = new ArrayList(16);
+    
+    public ArrayList getCardsDrawn()
+    {
+        return cardsDrawn;
+    }
+    
+    private ArrayList cardsNotDrawn = new ArrayList(16);
+
+    public ArrayList getCardsNotDrawn()
+    {
+        return cardsNotDrawn;
+    }
+
     void Start()
     {
         pos = GetComponent<Transform>().position;

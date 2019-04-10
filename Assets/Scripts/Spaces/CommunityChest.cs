@@ -4,6 +4,20 @@ using UnityEngine;
 
 public class CommunityChest : GameTile
 {
+    
+    private int[] cardsDrawn = new int[16];
+    
+    public int[] getCardsDrawn()
+    {
+        return cardsDrawn;
+    }
+    
+    private int[] cardsNotDrawn = new int[16];
+
+    public int[] getCardsNotDrawn()
+    {
+        return cardsDrawn;
+    }
 
     void Start()
     {

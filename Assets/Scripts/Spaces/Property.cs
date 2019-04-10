@@ -11,6 +11,8 @@ public class Property : GameTile
     public bool morgaged = false;
     public int price;
     public int numOfHouses = 0;
+    public Player owner;
+    public PropertyHandler handler;
 
     void Start()
     {
@@ -19,7 +21,7 @@ public class Property : GameTile
     
     public override void onLand(Player player)
     {
-        player.money -= price;
+        handler.buyProperty(this,player);
     }
     
 }

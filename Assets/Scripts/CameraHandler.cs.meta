@@ -1,6 +1,12 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Scripts/CameraHandler.cs.meta
 guid: 478f3a563f1ac174a86aa7989fab623a
 MonoImporter:
+=======
+guid: f98abd6eee5d962498c2c80d77ccff58
+folderAsset: yes
+DefaultImporter:
+>>>>>>> PNGSpritesFromLink:Assets/Sprites/Cards/Chance.meta
   externalObjects: {}
   serializedVersion: 2
   defaultReferences: []

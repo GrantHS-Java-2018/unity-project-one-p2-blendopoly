@@ -9,4 +9,6 @@ public class BoardLayout : MonoBehaviour
     public GameTile[] boardTrack;
 
     public Jail jail;
+    
+    public const int JAIL_INDEX = 10;
 }

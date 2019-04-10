@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Threading;
 using UnityEngine;
+using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 public class Player : MonoBehaviour
@@ -15,6 +16,7 @@ public class Player : MonoBehaviour
     private BoardLayout layout;
     public Boolean inJail { get; set; } = false;
     public int money = 0;
+    public Text text;
 
     void Start()
     {
@@ -25,7 +27,7 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        //turn(0);
+        text.text = "Money: $" + money;
     }
 
     public void turn(int doubles)

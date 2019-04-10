@@ -7,8 +7,6 @@ public class GoToJail : GameTile
 
     public BoardLayout layout;
     
-    private const int JAIL_INDEX = 10;
-    
     void Start()
     {
         pos = GetComponent<Transform>().position;
@@ -16,7 +14,7 @@ public class GoToJail : GameTile
     
     public override void onLand(Player player)
     {
-        player.index = JAIL_INDEX;
+        player.index = BoardLayout.JAIL_INDEX;
         player.inJail = true;
         player.setPos(layout.jail);
     }

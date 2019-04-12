@@ -20,7 +20,7 @@ namespace Spaces.Purchasable.Purchasable
             }
             else if (owner == player)
             {
-                player.readyForTurn();
+                player.readyForAction();
             }
             else
             {

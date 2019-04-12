@@ -11,15 +11,15 @@ public class Player : MonoBehaviour
 {
 
     private Transform pos;
-    public int index { get; set; } = 0;
+    public int index = 0;
     public GameObject board;
     private BoardLayout layout;
-    public Boolean inJail { get; set; } = false;
+    public bool inJail { get; set; } = false;
     public int money = 500;
-    public Text text;
     public ButtonHandler buttonHandler;
     public int utilities = 0;
     public int railroads = 0;
+    private int doubles = 0;
 
     void Start()
     {
@@ -28,9 +28,29 @@ public class Player : MonoBehaviour
         setPos();
     }
 
-    private void Update()
+    void Update()
     {
-        text.text = "Money: $" + money;
+        if (index < 10)
+        {
+            pos.rotation = Quaternion.Euler(0, 180, 0);
+        }
+        else if (index < 20)
+        {
+            pos.rotation = Quaternion.Euler(0,-90,0);
+        }
+        else if (index < 30)
+        {
+            pos.rotation = Quaternion.Euler(0,0,0);
+        }
+        else
+        {
+            pos.rotation = Quaternion.Euler(0,90,0);
+        }
+    }
+
+    public void readyForAction()
+    {
+        buttonHandler.turnOnEndTurn();
     }
 
     public void readyForTurn()
@@ -38,7 +58,7 @@ public class Player : MonoBehaviour
         buttonHandler.turnOnButtons();
     }
 
-    public void turn(int doubles)
+    public void turn()
     {
         buttonHandler.turnOffButtons();
         if (!inJail)
@@ -48,12 +68,16 @@ public class Player : MonoBehaviour
             move(die1 + die2);
             if (die1 == die2 && doubles != 2)
             {
-                turn(++doubles);
+                ++doubles;
             }
             else if (die1 == die2)
             {
                 index = 10;
                 inJail = true;
+            }
+            else
+            {
+                doubles = 0;
             }
         }
         else
@@ -91,7 +115,7 @@ public class Player : MonoBehaviour
 
     public void setPos()
     {
-        pos.position = board.GetComponent<BoardLayout>().boardTrack[index].pos;
+        pos.position = layout.boardTrack[index].pos;
     }
 
     private int roll()

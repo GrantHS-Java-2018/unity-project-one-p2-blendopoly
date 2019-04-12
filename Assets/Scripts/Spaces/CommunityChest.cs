@@ -27,6 +27,6 @@ public class CommunityChest : GameTile
     public override void onLand(Player player)
     {
         //throw new System.NotImplementedException();
-        player.readyForTurn();
+        player.readyForAction();
     }
 }

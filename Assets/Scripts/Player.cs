@@ -15,8 +15,11 @@ public class Player : MonoBehaviour
     public GameObject board;
     private BoardLayout layout;
     public Boolean inJail { get; set; } = false;
-    public int money = 0;
+    public int money = 500;
     public Text text;
+    public ButtonHandler buttonHandler;
+    public int utilities = 0;
+    public int railroads = 0;
 
     void Start()
     {
@@ -30,8 +33,14 @@ public class Player : MonoBehaviour
         text.text = "Money: $" + money;
     }
 
+    public void readyForTurn()
+    {
+        buttonHandler.turnOnButtons();
+    }
+
     public void turn(int doubles)
     {
+        buttonHandler.turnOffButtons();
         if (!inJail)
         {
             int die1 = roll();
@@ -56,6 +65,7 @@ public class Player : MonoBehaviour
                 move(die1 + die2);
                 inJail = false;
             }
+            buttonHandler.turnOnButtons();
         }
     }
 

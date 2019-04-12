@@ -13,5 +13,6 @@ public class LuxuryTax : GameTile
     public override void onLand(Player player)
     {
         player.money -= 200;
+        player.readyForTurn();
     }
 }

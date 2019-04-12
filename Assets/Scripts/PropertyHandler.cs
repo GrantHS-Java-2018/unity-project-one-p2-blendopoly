@@ -1,24 +1,32 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Spaces.Purchasable.Purchasable;
 using UnityEngine;
-using UnityEngine.Experimental.UIElements;
+using UnityEngine.UI;
+using Button = UnityEngine.UI.Button;
 
 public class PropertyHandler : MonoBehaviour
 {
 
-    public Button buy;
-    public Button notBuy;
+    public GameObject buy;
+    public GameObject notBuy;
 
-    private Property currentProperty;
+    private Purchasable currentProperty;
     private Player currentPlayer;
 
-    public void buyProperty(Property property, Player player)
+    void Start()
+    {
+        buy.SetActive(false);
+        notBuy.SetActive(false);
+    }
+
+    public void buyProperty(Purchasable property, Player player)
     {
         if (player.money >= property.price)
         {
-            buy.SetEnabled(true);
+            buy.SetActive(true);
         }
-        notBuy.SetEnabled(true);
+        notBuy.SetActive(true);
         currentProperty = property;
         currentPlayer = player;
     }
@@ -27,14 +35,24 @@ public class PropertyHandler : MonoBehaviour
     {
         currentProperty.owner = currentPlayer;
         currentPlayer.money -= currentProperty.price;
+        if (currentPlayer.index == 5 || currentPlayer.index == 15 || currentPlayer.index == 25 ||
+            currentPlayer.index == 35)
+        {
+            ++currentPlayer.railroads;
+        }
+        else if (currentPlayer.index == 12 || currentPlayer.index == 28)
+        {
+            ++currentPlayer.utilities;
+        }
         continueGame();
         
     }
 
     public void continueGame()
     {
-        buy.SetEnabled(false);
-        notBuy.SetEnabled(false);
+        buy.SetActive(false);
+        notBuy.SetActive(false);
+        currentPlayer.readyForTurn();
     }
     
 }

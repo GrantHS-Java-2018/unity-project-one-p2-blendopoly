@@ -13,5 +13,6 @@ public class Go : GameTile
     public override void onLand(Player player)
     {
         //do nothing
+        player.readyForTurn();
     }
 }

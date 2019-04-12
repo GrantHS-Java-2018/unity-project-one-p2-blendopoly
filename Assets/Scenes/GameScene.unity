@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.4964127, b: 0.57481724, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -198,14 +198,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a44024f0e36b1a4b828a868c2a97b54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rents: 23000000af000000f40100004c04000014050000dc050000
-  housePrice: 200
   morgagePrice: 175
   morgaged: 0
   price: 350
-  numOfHouses: 0
   owner: {fileID: 0}
-  handler: {fileID: 0}
+  handler: {fileID: 1837499240}
+  rents: 23000000af000000f40100004c04000014050000dc050000
+  housePrice: 200
+  numOfHouses: 0
 --- !u!1 &56945020
 GameObject:
   m_ObjectHideFlags: 0
@@ -249,14 +249,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a44024f0e36b1a4b828a868c2a97b54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rents: 1800000078000000680100005203000001040000b0040000
-  housePrice: 150
   morgagePrice: 140
   morgaged: 0
   price: 280
-  numOfHouses: 0
   owner: {fileID: 0}
-  handler: {fileID: 0}
+  handler: {fileID: 1837499240}
+  rents: 1800000078000000680100005203000001040000b0040000
+  housePrice: 150
+  numOfHouses: 0
 --- !u!1 &66470546
 GameObject:
   m_ObjectHideFlags: 0
@@ -554,14 +554,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a44024f0e36b1a4b828a868c2a97b54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rents: 0a0000003200000096000000c201000071020000ee020000
-  housePrice: 100
   morgagePrice: 70
   morgaged: 0
   price: 140
-  numOfHouses: 0
   owner: {fileID: 0}
-  handler: {fileID: 0}
+  handler: {fileID: 1837499240}
+  rents: 0a0000003200000096000000c201000071020000ee020000
+  housePrice: 100
+  numOfHouses: 0
 --- !u!1 &170076733
 GameObject:
   m_ObjectHideFlags: 0
@@ -674,14 +674,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a44024f0e36b1a4b828a868c2a97b54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rents: 1a0000008200000086010000840300004c040000fb040000
-  housePrice: 200
   morgagePrice: 150
   morgaged: 0
   price: 300
-  numOfHouses: 0
   owner: {fileID: 0}
-  handler: {fileID: 0}
+  handler: {fileID: 1837499240}
+  rents: 1a0000008200000086010000840300004c040000fb040000
+  housePrice: 200
+  numOfHouses: 0
 --- !u!1 &253607341
 GameObject:
   m_ObjectHideFlags: 0
@@ -725,14 +725,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a44024f0e36b1a4b828a868c2a97b54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rents: 120000005a000000fa000000bc0200006b0300001a040000
-  housePrice: 150
   morgagePrice: 110
   morgaged: 0
   price: 220
-  numOfHouses: 0
   owner: {fileID: 0}
-  handler: {fileID: 0}
+  handler: {fileID: 1837499240}
+  rents: 120000005a000000fa000000bc0200006b0300001a040000
+  housePrice: 150
+  numOfHouses: 0
 --- !u!1 &305121875
 GameObject:
   m_ObjectHideFlags: 0
@@ -831,6 +831,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 910753c3ee50c1742b58d47474d7471e, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 910753c3ee50c1742b58d47474d7471e, type: 3}
 --- !u!1 &417583334
@@ -911,7 +915,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 417583337}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1837499240}
+        m_MethodName: buyProperty
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &417583337
@@ -1264,14 +1279,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a44024f0e36b1a4b828a868c2a97b54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rents: 1000000050000000dc0000005802000020030000e8030000
-  housePrice: 100
   morgagePrice: 100
   morgaged: 0
   price: 200
-  numOfHouses: 0
   owner: {fileID: 0}
-  handler: {fileID: 0}
+  handler: {fileID: 1837499240}
+  rents: 1000000050000000dc0000005802000020030000e8030000
+  housePrice: 100
+  numOfHouses: 0
 --- !u!1 &659685304
 GameObject:
   m_ObjectHideFlags: 0
@@ -1315,6 +1330,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09c1c16f1abf5404e8eeb29d099d7e87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  morgagePrice: 75
+  morgaged: 0
+  price: 150
+  owner: {fileID: 0}
+  handler: {fileID: 1837499240}
 --- !u!1 &684866508
 GameObject:
   m_ObjectHideFlags: 0
@@ -1358,14 +1378,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a44024f0e36b1a4b828a868c2a97b54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rents: 1a0000008200000086010000840300004c040000fb040000
-  housePrice: 200
   morgagePrice: 150
   morgaged: 0
   price: 300
-  numOfHouses: 0
   owner: {fileID: 0}
-  handler: {fileID: 0}
+  handler: {fileID: 1837499240}
+  rents: 1a0000008200000086010000840300004c040000fb040000
+  housePrice: 200
+  numOfHouses: 0
 --- !u!1 &699662016
 GameObject:
   m_ObjectHideFlags: 0
@@ -1512,14 +1532,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a44024f0e36b1a4b828a868c2a97b54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rents: 04000000140000003c000000b400000040010000c2010000
-  housePrice: 50
   morgagePrice: 30
   morgaged: 0
   price: 60
-  numOfHouses: 0
   owner: {fileID: 0}
-  handler: {fileID: 0}
+  handler: {fileID: 1837499240}
+  rents: 04000000140000003c000000b400000040010000c2010000
+  housePrice: 50
+  numOfHouses: 0
 --- !u!1 &744646569
 GameObject:
   m_ObjectHideFlags: 0
@@ -1728,6 +1748,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0101bbfb4ff933443af5060639946939, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  morgagePrice: 100
+  morgaged: 0
+  price: 200
+  owner: {fileID: 0}
+  handler: {fileID: 1837499240}
+  layout: {fileID: 0}
 --- !u!1 &886243199
 GameObject:
   m_ObjectHideFlags: 0
@@ -1771,14 +1797,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a44024f0e36b1a4b828a868c2a97b54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rents: 0c0000003c000000b4000000f4010000bc02000084030000
-  housePrice: 100
   morgagePrice: 80
   morgaged: 0
   price: 160
-  numOfHouses: 0
   owner: {fileID: 0}
-  handler: {fileID: 0}
+  handler: {fileID: 1837499240}
+  rents: 0c0000003c000000b4000000f4010000bc02000084030000
+  housePrice: 100
+  numOfHouses: 0
 --- !u!1 &888234664
 GameObject:
   m_ObjectHideFlags: 0
@@ -1822,14 +1848,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a44024f0e36b1a4b828a868c2a97b54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rents: 160000006e0000004a01000020030000cf0300007e040000
-  housePrice: 150
   morgagePrice: 130
   morgaged: 0
   price: 260
-  numOfHouses: 0
   owner: {fileID: 0}
-  handler: {fileID: 0}
+  handler: {fileID: 1837499240}
+  rents: 160000006e0000004a01000020030000cf0300007e040000
+  housePrice: 150
+  numOfHouses: 0
 --- !u!1 &892604857
 GameObject:
   m_ObjectHideFlags: 0
@@ -1952,14 +1978,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a44024f0e36b1a4b828a868c2a97b54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rents: 14000000640000002c010000ee0200009d0300004c040000
-  housePrice: 150
   morgagePrice: 120
   morgaged: 0
   price: 240
-  numOfHouses: 0
   owner: {fileID: 0}
-  handler: {fileID: 0}
+  handler: {fileID: 1837499240}
+  rents: 14000000640000002c010000ee0200009d0300004c040000
+  housePrice: 150
+  numOfHouses: 0
 --- !u!1 &1130753656
 GameObject:
   m_ObjectHideFlags: 0
@@ -2081,7 +2107,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1161155491}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1837499240}
+        m_MethodName: continueGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1161155491
@@ -2164,14 +2201,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a44024f0e36b1a4b828a868c2a97b54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rents: 060000001e0000005a0000000e0100009001000026020000
-  housePrice: 50
   morgagePrice: 50
   morgaged: 0
   price: 100
-  numOfHouses: 0
   owner: {fileID: 0}
-  handler: {fileID: 0}
+  handler: {fileID: 1837499240}
+  rents: 060000001e0000005a0000000e0100009001000026020000
+  housePrice: 50
+  numOfHouses: 0
 --- !u!1 &1275067540 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 910753c3ee50c1742b58d47474d7471e,
@@ -2191,8 +2228,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   board: {fileID: 66470546}
-  money: 0
+  money: 500
   text: {fileID: 892604859}
+  buttonHandler: {fileID: 1469389622}
+  utilities: 0
+  railroads: 0
 --- !u!1 &1319166912
 GameObject:
   m_ObjectHideFlags: 0
@@ -2236,14 +2276,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a44024f0e36b1a4b828a868c2a97b54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rents: 160000006e0000004a01000020030000cf0300007e040000
-  housePrice: 150
   morgagePrice: 130
   morgaged: 0
   price: 260
-  numOfHouses: 0
   owner: {fileID: 0}
-  handler: {fileID: 0}
+  handler: {fileID: 1837499240}
+  rents: 160000006e0000004a01000020030000cf0300007e040000
+  housePrice: 150
+  numOfHouses: 0
 --- !u!1 &1399242811
 GameObject:
   m_ObjectHideFlags: 0
@@ -2323,6 +2363,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1399242811}
   m_CullTransparentMesh: 0
+--- !u!1 &1469389621
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1469389623}
+  - component: {fileID: 1469389622}
+  m_Layer: 0
+  m_Name: ButtonHandler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1469389622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1469389621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8260103e17c45d4bac26f33256af748, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roll: {fileID: 1479358546}
+  changeCamera: {fileID: 1945403310}
+--- !u!4 &1469389623
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1469389621}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -27.710155, y: 128.60806, z: -64.26627}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1478079460
 GameObject:
   m_ObjectHideFlags: 0
@@ -2581,6 +2666,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0101bbfb4ff933443af5060639946939, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  morgagePrice: 100
+  morgaged: 0
+  price: 200
+  owner: {fileID: 0}
+  handler: {fileID: 1837499240}
+  layout: {fileID: 0}
 --- !u!1 &1528726295
 GameObject:
   m_ObjectHideFlags: 0
@@ -2610,14 +2701,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a44024f0e36b1a4b828a868c2a97b54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rents: 020000000a0000001e0000005a000000a0000000fa000000
-  housePrice: 50
   morgagePrice: 30
   morgaged: 0
   price: 60
-  numOfHouses: 0
   owner: {fileID: 0}
-  handler: {fileID: 0}
+  handler: {fileID: 1837499240}
+  rents: 020000000a0000001e0000005a000000a0000000fa000000
+  housePrice: 50
+  numOfHouses: 0
 --- !u!4 &1528726297
 Transform:
   m_ObjectHideFlags: 0
@@ -2675,14 +2766,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a44024f0e36b1a4b828a868c2a97b54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rents: 0800000028000000640000002c010000c201000058020000
-  housePrice: 50
   morgagePrice: 60
   morgaged: 0
   price: 120
-  numOfHouses: 0
   owner: {fileID: 0}
-  handler: {fileID: 0}
+  handler: {fileID: 1837499240}
+  rents: 0800000028000000640000002c010000c201000058020000
+  housePrice: 50
+  numOfHouses: 0
 --- !u!1 &1585776049
 GameObject:
   m_ObjectHideFlags: 0
@@ -2726,14 +2817,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a44024f0e36b1a4b828a868c2a97b54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rents: 120000005a000000fa000000bc0200006b0300001a040000
-  housePrice: 150
   morgagePrice: 110
   morgaged: 0
   price: 220
-  numOfHouses: 0
   owner: {fileID: 0}
-  handler: {fileID: 0}
+  handler: {fileID: 1837499240}
+  rents: 120000005a000000fa000000bc0200006b0300001a040000
+  housePrice: 150
+  numOfHouses: 0
 --- !u!1 &1609473447
 GameObject:
   m_ObjectHideFlags: 0
@@ -2777,14 +2868,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a44024f0e36b1a4b828a868c2a97b54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rents: 0e00000046000000c800000026020000ee020000b6030000
-  housePrice: 100
   morgagePrice: 90
   morgaged: 0
   price: 180
-  numOfHouses: 0
   owner: {fileID: 0}
-  handler: {fileID: 0}
+  handler: {fileID: 1837499240}
+  rents: 0e00000046000000c800000026020000ee020000b6030000
+  housePrice: 100
+  numOfHouses: 0
 --- !u!1 &1649067412
 GameObject:
   m_ObjectHideFlags: 0
@@ -2828,6 +2919,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0101bbfb4ff933443af5060639946939, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  morgagePrice: 100
+  morgaged: 0
+  price: 200
+  owner: {fileID: 0}
+  handler: {fileID: 1837499240}
+  layout: {fileID: 0}
 --- !u!1 &1665127131
 GameObject:
   m_ObjectHideFlags: 0
@@ -2871,14 +2968,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a44024f0e36b1a4b828a868c2a97b54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rents: 32000000c80000005802000078050000a4060000d0070000
-  housePrice: 200
   morgagePrice: 200
   morgaged: 0
   price: 400
-  numOfHouses: 0
   owner: {fileID: 0}
-  handler: {fileID: 0}
+  handler: {fileID: 1837499240}
+  rents: 32000000c80000005802000078050000a4060000d0070000
+  housePrice: 200
+  numOfHouses: 0
 --- !u!1 &1714200597
 GameObject:
   m_ObjectHideFlags: 0
@@ -2966,14 +3063,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a44024f0e36b1a4b828a868c2a97b54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rents: 0e00000046000000c800000026020000ee020000b6030000
-  housePrice: 100
   morgagePrice: 90
   morgaged: 0
   price: 180
-  numOfHouses: 0
   owner: {fileID: 0}
-  handler: {fileID: 0}
+  handler: {fileID: 1837499240}
+  rents: 0e00000046000000c800000026020000ee020000b6030000
+  housePrice: 100
+  numOfHouses: 0
 --- !u!1 &1825949267
 GameObject:
   m_ObjectHideFlags: 0
@@ -3017,14 +3114,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a44024f0e36b1a4b828a868c2a97b54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rents: 0a0000003200000096000000c201000071020000ee020000
-  housePrice: 100
   morgagePrice: 70
   morgaged: 0
   price: 140
-  numOfHouses: 0
   owner: {fileID: 0}
-  handler: {fileID: 0}
+  handler: {fileID: 1837499240}
+  rents: 0a0000003200000096000000c201000071020000ee020000
+  housePrice: 100
+  numOfHouses: 0
 --- !u!1 &1837499239
 GameObject:
   m_ObjectHideFlags: 0
@@ -3054,6 +3151,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5827c842ef8d196489b6947053f77c94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buy: {fileID: 417583334}
+  notBuy: {fileID: 1161155488}
 --- !u!4 &1837499241
 Transform:
   m_ObjectHideFlags: 0
@@ -3111,14 +3210,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a44024f0e36b1a4b828a868c2a97b54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rents: 060000001e0000005a0000000e0100009001000026020000
-  housePrice: 50
   morgagePrice: 50
   morgaged: 0
   price: 100
-  numOfHouses: 0
   owner: {fileID: 0}
-  handler: {fileID: 0}
+  handler: {fileID: 1837499240}
+  rents: 060000001e0000005a0000000e0100009001000026020000
+  housePrice: 50
+  numOfHouses: 0
 --- !u!1 &1864745817
 GameObject:
   m_ObjectHideFlags: 0
@@ -3162,6 +3261,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09c1c16f1abf5404e8eeb29d099d7e87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  morgagePrice: 75
+  morgaged: 0
+  price: 150
+  owner: {fileID: 0}
+  handler: {fileID: 1837499240}
 --- !u!1 &1865440057
 GameObject:
   m_ObjectHideFlags: 0
@@ -3205,14 +3309,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a44024f0e36b1a4b828a868c2a97b54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rents: 1c00000096000000c2010000e8030000b004000078050000
-  housePrice: 200
   morgagePrice: 160
   morgaged: 0
   price: 320
-  numOfHouses: 0
   owner: {fileID: 0}
-  handler: {fileID: 0}
+  handler: {fileID: 1837499240}
+  rents: 1c00000096000000c2010000e8030000b004000078050000
+  housePrice: 200
+  numOfHouses: 0
 --- !u!1 &1882603073
 GameObject:
   m_ObjectHideFlags: 0
@@ -3494,6 +3598,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0101bbfb4ff933443af5060639946939, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  morgagePrice: 100
+  morgaged: 0
+  price: 200
+  owner: {fileID: 0}
+  handler: {fileID: 1837499240}
+  layout: {fileID: 0}
 --- !u!1 &2080876802
 GameObject:
   m_ObjectHideFlags: 0

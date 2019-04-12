@@ -13,5 +13,6 @@ public class Jail : GameTile
     public override void onLand(Player player)
     {
         //do nothing
+        player.readyForTurn();
     }
 }

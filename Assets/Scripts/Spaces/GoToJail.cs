@@ -17,6 +17,6 @@ public class GoToJail : GameTile
         player.index = BoardLayout.JAIL_INDEX;
         player.inJail = true;
         player.setPos(layout.jail);
-        player.readyForTurn();
+        player.readyForAction();
     }
 }

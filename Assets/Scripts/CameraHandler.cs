@@ -15,7 +15,7 @@ public class CameraHandler : MonoBehaviour
     private bool zIncreasing = true;
     private int counter = 0;
     private bool isOnPlayer = false;
-    public Player player;
+    public PlayerHandler handler;
     public Text buttonText;
     
     // Start is called before the first frame update
@@ -30,7 +30,7 @@ public class CameraHandler : MonoBehaviour
     {
         if (isOnPlayer)
         {
-            focusOnPlayer(player);
+            focusOnPlayer(handler.players[handler.index]);
         }
         else
         {

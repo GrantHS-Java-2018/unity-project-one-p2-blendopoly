@@ -13,6 +13,6 @@ public class IncomeTax : GameTile
     public override void onLand(Player player)
     {
         player.money -= 200;
-        player.readyForTurn();
+        player.readyForAction();
     }
 }

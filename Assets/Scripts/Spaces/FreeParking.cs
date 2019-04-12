@@ -13,6 +13,6 @@ public class FreeParking : GameTile
     public override void onLand(Player player)
     {
         //do nothing
-        player.readyForTurn();
+        player.readyForAction();
     }
 }

@@ -52,7 +52,7 @@ public class PropertyHandler : MonoBehaviour
     {
         buy.SetActive(false);
         notBuy.SetActive(false);
-        currentPlayer.readyForTurn();
+        currentPlayer.readyForAction();
     }
     
 }

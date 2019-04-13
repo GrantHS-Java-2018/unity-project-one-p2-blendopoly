@@ -27,6 +27,7 @@ namespace Spaces.Purchasable.Purchasable
             {
                 player.money -= rents[numOfHouses];
                 owner.money += rents[numOfHouses];
+                player.readyForAction();
             }
         }
     

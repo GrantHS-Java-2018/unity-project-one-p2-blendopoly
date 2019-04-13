@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
 {
 
     private Transform pos;
+    public Vector3 offset;
     public int index = 0;
     public GameObject board;
     private BoardLayout layout;
@@ -110,12 +111,12 @@ public class Player : MonoBehaviour
 
     public void setPos(GameTile space)
     {
-        pos.position = space.pos;
+        pos.position = space.pos + offset;
     }
 
     public void setPos()
     {
-        pos.position = layout.boardTrack[index].pos;
+        pos.position = layout.boardTrack[index].pos + offset;
     }
 
     private int roll()

@@ -7,6 +7,8 @@ public class ButtonHandler : MonoBehaviour
     public GameObject roll;
     public GameObject changeCamera;
     public GameObject endTurn;
+    public GameObject houses;
+    public GameObject morgage;
 
     private void Start()
     {
@@ -27,11 +29,27 @@ public class ButtonHandler : MonoBehaviour
 
     public void turnOnEndTurn()
     {
+        houses.SetActive(true);
+        morgage.SetActive(true);
         endTurn.SetActive(true);
     }
     
     public void turnOffEndTurn()
     {
+        houses.SetActive(false);
+        morgage.SetActive(false);
         endTurn.SetActive(false);
+    }
+
+    public void turnOnActions()
+    {
+        houses.SetActive(true);
+        morgage.SetActive(true);
+    }
+
+    public void turnOffActions()
+    {
+        houses.SetActive(false);
+        morgage.SetActive(false);
     }
 }

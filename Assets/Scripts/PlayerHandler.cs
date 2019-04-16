@@ -29,6 +29,7 @@ public class PlayerHandler : MonoBehaviour
             index = 0;
         }
         handler.turnOffEndTurn();
+        handler.turnOffActions();
         players[index].readyForTurn();
     }
 }

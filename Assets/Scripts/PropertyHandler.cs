@@ -10,6 +10,7 @@ public class PropertyHandler : MonoBehaviour
 
     public GameObject buy;
     public GameObject notBuy;
+    public ButtonHandler handler;
 
     private Purchasable currentProperty;
     private Player currentPlayer;
@@ -52,6 +53,7 @@ public class PropertyHandler : MonoBehaviour
     {
         buy.SetActive(false);
         notBuy.SetActive(false);
+        handler.turnOnActions();
         currentPlayer.readyForAction();
     }
     

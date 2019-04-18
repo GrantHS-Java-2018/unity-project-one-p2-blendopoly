@@ -21,6 +21,7 @@ public class Player : MonoBehaviour
     public int utilities = 0;
     public int railroads = 0;
     private int doubles = 0;
+    private int turnsInJail;
 
     void Start()
     {
@@ -57,6 +58,10 @@ public class Player : MonoBehaviour
     public void readyForTurn()
     {
         buttonHandler.turnOnButtons();
+        if (inJail)
+        {
+            buttonHandler.turnOnJail();
+        }
     }
 
     public void turn()
@@ -64,6 +69,7 @@ public class Player : MonoBehaviour
         buttonHandler.turnOffButtons();
         if (!inJail)
         {
+            turnsInJail = 0;
             int die1 = roll();
             int die2 = roll();
             move(die1 + die2);
@@ -90,6 +96,14 @@ public class Player : MonoBehaviour
                 move(die1 + die2);
                 inJail = false;
             }
+            else if (turnsInJail == 2)
+            {
+                move(die1 + die2);
+                inJail = false;
+                money -= 50;
+
+            }
+            ++turnsInJail;
             buttonHandler.turnOnButtons();
         }
     }

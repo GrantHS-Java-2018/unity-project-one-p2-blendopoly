@@ -15,6 +15,7 @@ public class ButtonHandler : MonoBehaviour
     private void Start()
     {
         turnOffEndTurn();
+        turnOffJail();
     }
 
     public void turnOffButtons()

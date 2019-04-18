@@ -7,6 +7,7 @@ public class ButtonHandler : MonoBehaviour
     public GameObject roll;
     public GameObject changeCamera;
     public GameObject endTurn;
+    public GameObject getOutOfJail;
 
     private void Start()
     {
@@ -16,6 +17,7 @@ public class ButtonHandler : MonoBehaviour
     public void turnOffButtons()
     {
         roll.SetActive(false);
+        turnOffJail();
         //changeCamera.SetActive(false);
     }
 
@@ -34,4 +36,15 @@ public class ButtonHandler : MonoBehaviour
     {
         endTurn.SetActive(false);
     }
+
+    public void turnOnJail()
+    {
+        getOutOfJail.SetActive(true);
+    }
+
+    public void turnOffJail()
+    {
+        getOutOfJail.SetActive(false);
+    }
+    
 }

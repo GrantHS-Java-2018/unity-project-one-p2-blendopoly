@@ -9,6 +9,7 @@ public class ButtonHandler : MonoBehaviour
     public GameObject endTurn;
     public GameObject houses;
     public GameObject morgage;
+    public GameObject unMorgage;
 
     private void Start()
     {
@@ -31,6 +32,7 @@ public class ButtonHandler : MonoBehaviour
     {
         houses.SetActive(true);
         morgage.SetActive(true);
+        unMorgage.SetActive(true);
         endTurn.SetActive(true);
     }
     
@@ -38,6 +40,7 @@ public class ButtonHandler : MonoBehaviour
     {
         houses.SetActive(false);
         morgage.SetActive(false);
+        unMorgage.SetActive(false);
         endTurn.SetActive(false);
     }
 
@@ -45,11 +48,13 @@ public class ButtonHandler : MonoBehaviour
     {
         houses.SetActive(true);
         morgage.SetActive(true);
+        unMorgage.SetActive(true);
     }
 
     public void turnOffActions()
     {
         houses.SetActive(false);
         morgage.SetActive(false);
+        unMorgage.SetActive(false);
     }
 }

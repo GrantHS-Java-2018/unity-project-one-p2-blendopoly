@@ -1,32 +1,45 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class CommunityChest : GameTile
 {
+    public SpriteRenderer sr;
     
-    private int[] cardsDrawn = new int[16];
-    
-    public int[] getCardsDrawn()
-    {
-        return cardsDrawn;
-    }
-    
-    private int[] cardsNotDrawn = new int[16];
+    private ArrayList cardsDrawn { get; set; }
 
-    public int[] getCardsNotDrawn()
-    {
-        return cardsDrawn;
-    }
+    private ArrayList cardsNotDrawn { get; set; }
 
     void Start()
     {
+        sr = GetComponent<SpriteRenderer>();
+        cardsDrawn = new ArrayList();
+        cardsNotDrawn = new ArrayList(16);
+        cardinitialization();
         pos = GetComponent<Transform>().position;
     }
     
     public override void onLand(Player player)
     {
-        //throw new System.NotImplementedException();
+        
+        if (cardsDrawn.Count >= 9)
+        {
+            cardinitialization();
+        }
+        
+        
+
         player.readyForAction();
     }
+
+    private void cardinitialization()
+    {
+        for (int x1 = 0; x1 < 10; ++x1)
+        {
+            cardsDrawn.Clear();
+            cardsNotDrawn[x1] = x1;
+        }
+    }
+
 }

@@ -32,4 +32,11 @@ public class PlayerHandler : MonoBehaviour
         handler.turnOffActions();
         players[index].readyForTurn();
     }
+
+    public void getOutOfJail()
+    {
+        players[index].money -= 50;
+        players[index].inJail = false;
+        handler.turnOffJail();
+    }
 }

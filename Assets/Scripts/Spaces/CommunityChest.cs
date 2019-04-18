@@ -1,45 +1,59 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
+using Random = System.Random;
 
 public class CommunityChest : GameTile
 {
     public SpriteRenderer sr;
-    
-    private ArrayList cardsDrawn { get; set; }
 
-    private ArrayList cardsNotDrawn { get; set; }
+    public Sprite[] spriteList = new Sprite[16];
+    
+    private readonly ArrayList alreadyChosen = new ArrayList();
+    
+    private readonly Random chooser = new Random();
 
     void Start()
     {
-        sr = GetComponent<SpriteRenderer>();
-        cardsDrawn = new ArrayList();
-        cardsNotDrawn = new ArrayList(16);
-        cardinitialization();
-        pos = GetComponent<Transform>().position;
+        sr.sprite = null;
     }
     
     public override void onLand(Player player)
     {
-        
-        if (cardsDrawn.Count >= 9)
-        {
-            cardinitialization();
-        }
-        
-        
+        int randomInt;
 
+        if (alreadyChosen.Count >= 16)
+        {
+            alreadyChosen.Clear();
+        }
+
+        do
+        {
+            randomInt = chooser.Next() * 15;
+        } while (inside(randomInt));
+
+        alreadyChosen.Add(randomInt);
+
+        sr.sprite = spriteList[randomInt];
+        
+        Thread.Sleep(1000);
+        
         player.readyForAction();
+        sr.sprite = null;
     }
 
-    private void cardinitialization()
+    private bool inside(int searchFor)
     {
-        for (int x1 = 0; x1 < 10; ++x1)
-        {
-            cardsDrawn.Clear();
-            cardsNotDrawn[x1] = x1;
+        foreach(int x1 in alreadyChosen){
+            if (x1 == searchFor)
+            {
+                return true;
+            }
         }
+
+        return false;
     }
 
 }

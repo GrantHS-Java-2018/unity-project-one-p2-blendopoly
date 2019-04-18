@@ -1,32 +1,59 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
+using Random = System.Random;
 
 public class Chance : GameTile
 {
 
-    private ArrayList cardsDrawn = new ArrayList(16);
-    
-    public ArrayList getCardsDrawn()
-    {
-        return cardsDrawn;
-    }
-    
-    private ArrayList cardsNotDrawn = new ArrayList(16);
+    public SpriteRenderer sr;
 
-    public ArrayList getCardsNotDrawn()
-    {
-        return cardsNotDrawn;
-    }
+    public Sprite[] spriteList = new Sprite[16];
+    
+    private ArrayList alreadyChosen = new ArrayList();
+    
+    private Random chooser = new Random();
 
     void Start()
     {
-        pos = GetComponent<Transform>().position;
+        sr.sprite = null;
     }
     
     public override void onLand(Player player)
     {
-        //throw new System.NotImplementedException();
+        int randomInt;
+
+        if (alreadyChosen.Count >= 16)
+        {
+            alreadyChosen.Clear();
+        }
+
+        do
+        {
+            randomInt = chooser.Next() * 15;
+        } while (inside(randomInt));
+
+        alreadyChosen.Add(randomInt);
+
+        sr.sprite = spriteList[randomInt];
+        
+        Thread.Sleep(1000);
+        
         player.readyForAction();
+        sr.sprite = null;
+    }
+
+    private bool inside(int searchFor)
+    {
+        foreach(int x1 in alreadyChosen){
+            if (x1 == searchFor)
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 }

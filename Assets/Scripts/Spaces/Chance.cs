@@ -11,6 +11,8 @@ public class Chance : GameTile
     public SpriteRenderer sr;
 
     public Sprite[] spriteList = new Sprite[16];
+
+    public Sprite empty;
     
     private ArrayList alreadyChosen = new ArrayList();
     
@@ -18,7 +20,7 @@ public class Chance : GameTile
 
     void Start()
     {
-        sr.sprite = null;
+        sr.sprite = empty;
     }
     
     public override void onLand(Player player)
@@ -32,7 +34,7 @@ public class Chance : GameTile
 
         do
         {
-            randomInt = chooser.Next() * 15;
+            randomInt = chooser.Next(0, 16);
         } while (inside(randomInt));
 
         alreadyChosen.Add(randomInt);
@@ -47,6 +49,11 @@ public class Chance : GameTile
 
     private bool inside(int searchFor)
     {
+        if (alreadyChosen.Count <= 0)
+        {
+            return false;
+        }
+        
         foreach(int x1 in alreadyChosen){
             if (x1 == searchFor)
             {

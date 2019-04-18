@@ -10,6 +10,8 @@ public class CommunityChest : GameTile
     public SpriteRenderer sr;
 
     public Sprite[] spriteList = new Sprite[16];
+
+    public Sprite empty;
     
     private readonly ArrayList alreadyChosen = new ArrayList();
     
@@ -17,7 +19,7 @@ public class CommunityChest : GameTile
 
     void Start()
     {
-        sr.sprite = null;
+        //sr.sprite = ;
     }
     
     public override void onLand(Player player)
@@ -31,7 +33,7 @@ public class CommunityChest : GameTile
 
         do
         {
-            randomInt = chooser.Next() * 15;
+            randomInt = chooser.Next(0, 16);
         } while (inside(randomInt));
 
         alreadyChosen.Add(randomInt);
@@ -46,6 +48,11 @@ public class CommunityChest : GameTile
 
     private bool inside(int searchFor)
     {
+        if (alreadyChosen.Count <= 0)
+        {
+            return false;
+        }
+
         foreach(int x1 in alreadyChosen){
             if (x1 == searchFor)
             {

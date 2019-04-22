@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class CCCard : MonoBehaviour
@@ -11,18 +12,21 @@ public class CCCard : MonoBehaviour
     
     void Start()
     {
-        sr = new SpriteRenderer();
-        sr.sprite = spriteList[1];
-        sr.enabled = false;
+        sr = GetComponent<SpriteRenderer>();
+        sr.sprite = spriteList[0];
     }
 
-    void renderOn()
+    public void renderOn(Vector3 position)
     {
-        sr.enabled = true;
+        
+        //transform.SetPositionAndRotation(position, transform.rotation);
+        sr.sprite = spriteList[4];
+        // set the position
+        transform.localPosition = position;
     }
 
-    void renderOff()
+    private void renderOff()
     {
-        sr.enabled = false;
+        sr.sprite = null;
     }
 }

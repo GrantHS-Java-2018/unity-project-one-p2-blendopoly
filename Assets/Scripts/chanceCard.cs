@@ -1,28 +1,30 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class chanceCard : MonoBehaviour
 {
-
+    
     public Sprite[] spriteList = new Sprite[16];
 
     public SpriteRenderer sr;
     
     void Start()
     {
-        sr = new SpriteRenderer();
-        sr.sprite = spriteList[1];
-        sr.enabled = false;
+        sr = GetComponent<SpriteRenderer>();
+        sr.sprite = spriteList[0];
     }
 
-    void renderOn()
+    public void renderOn(Vector3 position)
     {
-        sr.enabled = true;
+        //transform.SetPositionAndRotation(position, transform.rotation);
+        sr.sprite = spriteList[4];
+        transform.localPosition = position;
     }
-
-    void renderOff()
+    
+    private void renderOff()
     {
-        sr.enabled = false;
+        sr.sprite = null;
     }
 }

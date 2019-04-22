@@ -1,24 +1,12 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
+using Random = System.Random;
 
 public class Chance : GameTile
 {
-
-    private ArrayList cardsDrawn = new ArrayList(16);
-    
-    public ArrayList getCardsDrawn()
-    {
-        return cardsDrawn;
-    }
-    
-    private ArrayList cardsNotDrawn = new ArrayList(16);
-
-    public ArrayList getCardsNotDrawn()
-    {
-        return cardsNotDrawn;
-    }
-
     void Start()
     {
         pos = GetComponent<Transform>().position;
@@ -26,7 +14,7 @@ public class Chance : GameTile
     
     public override void onLand(Player player)
     {
-        //throw new System.NotImplementedException();
         player.readyForAction();
     }
+
 }

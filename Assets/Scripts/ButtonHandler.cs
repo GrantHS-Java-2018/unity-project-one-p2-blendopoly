@@ -11,11 +11,14 @@ public class ButtonHandler : MonoBehaviour
     public GameObject houses;
     public GameObject morgage;
     public GameObject unMorgage;
+    public GameObject cancel;
+    public ArrayList buttons = new ArrayList();
 
     private void Start()
     {
         turnOffEndTurn();
         turnOffJail();
+        turnOffCancel();
     }
 
     public void turnOffButtons()
@@ -70,5 +73,28 @@ public class ButtonHandler : MonoBehaviour
         houses.SetActive(false);
         morgage.SetActive(false);
         unMorgage.SetActive(false);
+    }
+
+    public void turnOnCancel()
+    {
+        cancel.SetActive(true);
+    }
+
+    public void turnOffCancel()
+    {
+        cancel.SetActive(false);
+    }
+    
+    public void addButton(GameObject property)
+    {
+        buttons.Add(property);
+    }
+
+    public void clearProperties()
+    {
+        foreach (GameObject property in buttons)
+        {
+            Destroy(property);
+        }
     }
 }

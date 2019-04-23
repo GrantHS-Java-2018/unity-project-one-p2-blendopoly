@@ -9,8 +9,12 @@ public class Chance : GameTile
 {
     public chanceCard card;
     
+    public GameObject chanceTile;
+    
     void Start()
     {
+        chanceTile = GameObject.Find("ChanceCard");
+        card = chanceTile.GetComponent<chanceCard>();
         pos = GetComponent<Transform>().position;
     }
     

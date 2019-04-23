@@ -8,8 +8,13 @@ using Random = System.Random;
 public class CommunityChest : GameTile
 {
     public CCCard card;
+    
+    public GameObject CommunityCCard;
+
     void Start()
     {
+        CommunityCCard = GameObject.Find("CommunityChestCard");
+        card = CommunityCCard.GetComponent<CCCard>();
         pos = GetComponent<Transform>().position;
     }
     

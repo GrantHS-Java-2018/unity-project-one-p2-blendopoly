@@ -13,7 +13,7 @@ public class CCCard : MonoBehaviour
     void Start()
     {
         sr = GetComponent<SpriteRenderer>();
-        sr.sprite = spriteList[0];
+        sr.sprite = null;
     }
 
     public void renderOn(Vector3 position)

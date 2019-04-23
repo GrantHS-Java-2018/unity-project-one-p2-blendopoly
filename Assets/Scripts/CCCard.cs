@@ -18,11 +18,10 @@ public class CCCard : MonoBehaviour
 
     public void renderOn(Vector3 position)
     {
-        
+        Transform this1 = GetComponent<Transform>();
         //transform.SetPositionAndRotation(position, transform.rotation);
         sr.sprite = spriteList[4];
-        // set the position
-        transform.localPosition = position;
+        this1.transform.localPosition = position;
     }
 
     private void renderOff()

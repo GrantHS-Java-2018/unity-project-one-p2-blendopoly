@@ -3,13 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
+using UnityEngine.UI;
 using Random = System.Random;
 
 public class Chance : GameTile
 {
     private chanceCard card;
     
-    public GameObject chanceTile;
+    public Image chanceTile;
     
     void Start()
     {
@@ -19,11 +20,7 @@ public class Chance : GameTile
     
     public override void onLand(Player player)
     {
-        Vector3 position;
-        position.x = 0;
-        position.y = 0;
-        position.z = 1;
-        card.renderOn(position);
+        card.renderOn();
 
         //Thread.Sleep(1000);
         

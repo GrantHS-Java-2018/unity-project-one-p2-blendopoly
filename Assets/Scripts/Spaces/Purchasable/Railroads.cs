@@ -18,7 +18,7 @@ namespace Spaces.Purchasable.Purchasable
             {
                 handler.buyProperty(this, player);
             }
-            else if (owner == player)
+            else if (owner == player || morgaged)
             {
                 player.readyForAction();
             }

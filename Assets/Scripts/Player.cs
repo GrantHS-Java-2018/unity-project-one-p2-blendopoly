@@ -112,7 +112,7 @@ public class Player : MonoBehaviour
     {
         for (var i = 0; i < roll; ++i)
         {
-            index++;
+            ++index;
             if (index == layout.boardTrack.Length)
             {
                 index = 0;

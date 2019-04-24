@@ -7,13 +7,12 @@ using Random = System.Random;
 
 public class CommunityChest : GameTile
 {
-    public CCCard card;
+    private CCCard card;
     
     public GameObject CommunityCCard;
 
     void Start()
     {
-        CommunityCCard = GameObject.Find("CommunityChestCard");
         card = CommunityCCard.GetComponent<CCCard>();
         pos = GetComponent<Transform>().position;
     }
@@ -26,6 +25,10 @@ public class CommunityChest : GameTile
         position.z = 1;
         card.renderOn(position);
 
+        //Thread.Sleep(1000);
+        
+        //card.renderOff();
+        
         player.readyForAction();
     }
 

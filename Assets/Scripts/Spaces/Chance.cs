@@ -7,13 +7,12 @@ using Random = System.Random;
 
 public class Chance : GameTile
 {
-    public chanceCard card;
+    private chanceCard card;
     
     public GameObject chanceTile;
     
     void Start()
     {
-        chanceTile = GameObject.Find("ChanceCard");
         card = chanceTile.GetComponent<chanceCard>();
         pos = GetComponent<Transform>().position;
     }
@@ -26,6 +25,10 @@ public class Chance : GameTile
         position.z = 1;
         card.renderOn(position);
 
+        //Thread.Sleep(1000);
+        
+        //card.renderOff();
+        
         player.readyForAction();
     }
 

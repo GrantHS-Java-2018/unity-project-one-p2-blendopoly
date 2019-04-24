@@ -155,8 +155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8eb3221ea6413a4183a1559db0fb9b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  card: {fileID: 1992029039}
-  chanceTile: {fileID: 0}
+  chanceTile: {fileID: 1992029036}
 --- !u!1 &39374203
 GameObject:
   m_ObjectHideFlags: 0
@@ -985,8 +984,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 737f68e2ac9243f43bd2916500a36b16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  card: {fileID: 378297300}
-  CommunityCCard: {fileID: 0}
+  CommunityCCard: {fileID: 378297297}
 --- !u!1 &331545565
 GameObject:
   m_ObjectHideFlags: 0
@@ -1419,8 +1417,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 737f68e2ac9243f43bd2916500a36b16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  card: {fileID: 378297300}
-  CommunityCCard: {fileID: 0}
+  CommunityCCard: {fileID: 378297297}
 --- !u!4 &518748609
 Transform:
   m_ObjectHideFlags: 0
@@ -2102,8 +2099,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 737f68e2ac9243f43bd2916500a36b16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  card: {fileID: 378297300}
-  CommunityCCard: {fileID: 0}
+  CommunityCCard: {fileID: 378297297}
 --- !u!1 &765348002
 GameObject:
   m_ObjectHideFlags: 0
@@ -2147,8 +2143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8eb3221ea6413a4183a1559db0fb9b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  card: {fileID: 1992029039}
-  chanceTile: {fileID: 0}
+  chanceTile: {fileID: 1992029036}
 --- !u!1 &851814796
 GameObject:
   m_ObjectHideFlags: 0
@@ -3778,8 +3773,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8eb3221ea6413a4183a1559db0fb9b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  card: {fileID: 1992029039}
-  chanceTile: {fileID: 0}
+  chanceTile: {fileID: 1992029036}
 --- !u!1 &1525242210
 GameObject:
   m_ObjectHideFlags: 0
@@ -4937,22 +4931,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteList:
-  - {fileID: 21300000, guid: 0c6d5c4432a013f4e98e133b5a81ea0d, type: 3}
-  - {fileID: 21300000, guid: a5bef45f436e87e42a7a415c29375326, type: 3}
-  - {fileID: 21300000, guid: b97685ad20dc65b4daf1eab8a34af9bf, type: 3}
-  - {fileID: 21300000, guid: acca9f74565f9fd43a403c00463f5481, type: 3}
-  - {fileID: 21300000, guid: 3dda2b2a00e95d047afe14fef7b02d79, type: 3}
-  - {fileID: 21300000, guid: 76db2c6df1a218647a5b08e367886a2a, type: 3}
-  - {fileID: 21300000, guid: 0e33daa2fac3d864e988819f61240ad5, type: 3}
-  - {fileID: 21300000, guid: d05e97cf13ac234489a4199e987963dc, type: 3}
-  - {fileID: 21300000, guid: 08ef33c60e21c2a49ba45f67e9d2bc0b, type: 3}
-  - {fileID: 21300000, guid: 9a050cb8e76456a499a9f3154c0704c0, type: 3}
-  - {fileID: 21300000, guid: 0b59392df338adb409c535b971c58887, type: 3}
-  - {fileID: 21300000, guid: dc783905810e98a4fb18b76ef500407e, type: 3}
-  - {fileID: 21300000, guid: a9189e65dab38fc4fb98b70c10bfb56d, type: 3}
-  - {fileID: 21300000, guid: 2e4d41eba28487846a94649e3ac0c3a5, type: 3}
-  - {fileID: 21300000, guid: ed1e4b4b9318b6047ac08e6695b4f394, type: 3}
-  - {fileID: 21300000, guid: 104efc7e42a03184091020010108e25a, type: 3}
+  - {fileID: 21300000, guid: 5882bc70d9a2bf643aa856845785ac4a, type: 3}
+  - {fileID: 21300000, guid: 2812a815f94d23643aba60947cab17c5, type: 3}
+  - {fileID: 21300000, guid: e714fa14ba4dd584b87bc2178be1ddb4, type: 3}
+  - {fileID: 21300000, guid: 05864151eef5751439c2155a3b224dcc, type: 3}
+  - {fileID: 21300000, guid: 69cf8cee41902304a904acb435a21287, type: 3}
+  - {fileID: 21300000, guid: 2572231ec6f9d0341a6f537a04aa3898, type: 3}
+  - {fileID: 21300000, guid: 5e03e629d6c94d5478d96173680c96bb, type: 3}
+  - {fileID: 21300000, guid: c13e38ab467c85046a6fc44acd446d38, type: 3}
+  - {fileID: 21300000, guid: 000c8a9fcb703ae47a51e3f7913f1d0f, type: 3}
+  - {fileID: 21300000, guid: e489ee886f744094e8b533e3f96bef1e, type: 3}
+  - {fileID: 21300000, guid: fe13ed9d5479e9a4e81e29758e44e704, type: 3}
+  - {fileID: 21300000, guid: cedb61a24d01a9c4787a5b446c6032ed, type: 3}
+  - {fileID: 21300000, guid: 6b541916f3471f14bbacefce93bc75f4, type: 3}
+  - {fileID: 21300000, guid: ec5dab0ed9f0c60449e565351dbd50b7, type: 3}
+  - {fileID: 21300000, guid: 337c3e123fda54a4f9b6d352566558b6, type: 3}
+  - {fileID: 21300000, guid: 7c2f807c26c59df40bd13963b1d1d2a7, type: 3}
   sr: {fileID: 1992029037}
 --- !u!1 &2022086131
 GameObject:

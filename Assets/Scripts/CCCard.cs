@@ -24,7 +24,7 @@ public class CCCard : MonoBehaviour
         this1.transform.localPosition = position;
     }
 
-    private void renderOff()
+    public void renderOff()
     {
         sr.sprite = null;
     }

@@ -23,10 +23,13 @@ public class PlayerHandler : MonoBehaviour
 
     public void endTurn()
     {
-        ++index;
-        if (index >= players.Length)
+        if (!players[index].repeat)
         {
-            index = 0;
+            ++index;
+            if (index >= players.Length)
+            {
+                index = 0;
+            }
         }
         handler.turnOffEndTurn();
         handler.turnOffActions();

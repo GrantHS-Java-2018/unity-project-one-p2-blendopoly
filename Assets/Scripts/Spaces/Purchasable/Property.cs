@@ -7,6 +7,7 @@ namespace Spaces.Purchasable.Purchasable
         public int[] rents;
         public int housePrice;
         public int numOfHouses = 0;
+        public Property[] group;
 
         void Start()
         {
@@ -29,6 +30,32 @@ namespace Spaces.Purchasable.Purchasable
                 owner.money += rents[numOfHouses];
                 player.readyForAction();
             }
+        }
+
+        public bool groupOwned()
+        {
+            foreach (Property property in group)
+            {
+                if (owner != property.owner)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        public void buildHouse(Player player)
+        {
+            ++numOfHouses;
+            player.money -= housePrice;
+            handler.checkIfValid(this);
+        }
+
+        public void sellHouse(Player player)
+        {
+            --numOfHouses;
+            player.money += housePrice;
+            handler.checkIfValid(this);
         }
     
     }

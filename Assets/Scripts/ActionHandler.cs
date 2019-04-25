@@ -18,7 +18,7 @@ public class ActionHandler : MonoBehaviour
     public void displayProperties(Player player, int purpose)
     {
         int x = 0;
-        int y = 1;
+        int y = 5;
         foreach (Purchasable property in properties)
         {
             GameObject button = new GameObject();
@@ -28,9 +28,9 @@ public class ActionHandler : MonoBehaviour
             RectTransform buttonTransform = button.AddComponent<RectTransform>();
             buttonTransform.SetParent(canvas.transform);
             text.transform.SetParent(buttonTransform);
-            buttonTransform.anchorMin = new Vector2(0, 1);
-            buttonTransform.anchorMax = new Vector2(0, 1);
-            buttonTransform.position = new Vector3(200 * x + 150, y * -100 + 615, 0);
+            buttonTransform.anchorMin = new Vector2(0, 0);
+            buttonTransform.anchorMax = new Vector2(0, 0);
+            buttonTransform.position = new Vector3((Screen.width - 184) / 4 * x + 92, (Screen.height - 52) / 5 * y + 26, 0);
             buttonTransform.sizeDelta = new Vector2(160, 30);
             button.AddComponent<Image>().type = Image.Type.Sliced;
             button.GetComponent<Image>().sprite = _buttonSprite;
@@ -41,6 +41,14 @@ public class ActionHandler : MonoBehaviour
                     break;
                 case 1:
                     button.AddComponent<Button>().onClick.AddListener(delegate { unMorgageSelection(property.name); });
+                    break;
+                case 2:
+                    Property p = property as Property;
+                    button.AddComponent<Button>().onClick.AddListener(delegate { p.buildHouse(player); });
+                    break;
+                case 3:
+                    Property propertyVersion = property as Property;
+                    button.AddComponent<Button>().onClick.AddListener(delegate { propertyVersion.sellHouse(player); });
                     break;
                 default:
                     //build a house
@@ -54,28 +62,39 @@ public class ActionHandler : MonoBehaviour
             textComponent.color = Color.black;
             textComponent.font = arial;
             buttonHandler.addButton(button);
-            if (y == 5)
+            if (y == 0 || (x == 2 && y == 2))
             {
-                y = 1;
+                y = 5;
                 ++x;
             }
             else
             {
-                ++y;
+                --y;
             }
         }
     }
 
-    private void getPlayersProperties(Player player, int houses)
+    private void getPlayersProperties(bool sell, Player player)
     {
-        bool sell = houses != 0;
         properties.Clear();
+        int min;
+        int max;
+        if (sell)
+        {
+            min = 1;
+            max = 5;
+        }
+        else
+        {
+            min = 0;
+            max = 4;
+        }
         foreach (var property in layout.boardTrack)
         {
-            var p = property as Purchasable;
+            var p = property as Property;
             if (p != null)
             {
-                if (p.owner == player)
+                if (p.owner == player && p.numOfHouses <= max && p.numOfHouses >= min && p.groupOwned())
                 {
                     properties.Add(property);
                 }
@@ -119,7 +138,7 @@ public class ActionHandler : MonoBehaviour
     {
         buttonHandler.turnOffEndTurn();
         buttonHandler.turnOnCancel();
-        getPlayersProperties(handler.players[handler.index]);
+        getPlayersProperties(false, handler.players[handler.index]);
         displayProperties(handler.players[handler.index], 2);
     }
 
@@ -127,7 +146,7 @@ public class ActionHandler : MonoBehaviour
     {
         buttonHandler.turnOffEndTurn();
         buttonHandler.turnOnCancel();
-        getPlayersProperties(handler.players[handler.index]);
+        getPlayersProperties(true, handler.players[handler.index]);
         displayProperties(handler.players[handler.index], 3);
     }
 

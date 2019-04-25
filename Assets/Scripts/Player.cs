@@ -22,6 +22,7 @@ public class Player : MonoBehaviour
     public int railroads = 0;
     private int doubles = 0;
     private int turnsInJail;
+    public bool repeat = false;
 
     void Start()
     {
@@ -76,15 +77,19 @@ public class Player : MonoBehaviour
             if (die1 == die2 && doubles != 2)
             {
                 ++doubles;
+                repeat = true;
             }
             else if (die1 == die2)
             {
                 index = 10;
+                doubles = 0;
                 inJail = true;
+                repeat = false;
             }
             else
             {
                 doubles = 0;
+                repeat = false;
             }
         }
         else
@@ -103,8 +108,11 @@ public class Player : MonoBehaviour
                 money -= 50;
 
             }
-            ++turnsInJail;
-            buttonHandler.turnOnButtons();
+            else
+            {
+                ++turnsInJail;
+                readyForAction();
+            }
         }
     }
 

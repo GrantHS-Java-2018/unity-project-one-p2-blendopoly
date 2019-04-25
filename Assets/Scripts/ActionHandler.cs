@@ -94,7 +94,7 @@ public class ActionHandler : MonoBehaviour
             var p = property as Property;
             if (p != null)
             {
-                if (p.owner == player && p.numOfHouses <= max && p.numOfHouses >= min && p.groupOwned())
+                if (p.owner == player && p.numOfHouses <= max && p.numOfHouses >= min && p.groupOwned() && !p.morgaged)
                 {
                     properties.Add(property);
                 }

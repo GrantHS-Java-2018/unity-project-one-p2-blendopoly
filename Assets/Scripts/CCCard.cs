@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class CCCard : MonoBehaviour
 {
     
-    public GameObject[] cardList = new GameObject[16];
+    public Card[] cardList;
     
     void Start()
     {
@@ -17,7 +17,7 @@ public class CCCard : MonoBehaviour
 
     public void renderOn()
     {
-        //gameObject.GetComponent<Image>().sprite = spriteList[4];
+        gameObject.GetComponent<Image>().sprite = cardList[1].renderedSprite;
         gameObject.SetActive(true);
     }
 

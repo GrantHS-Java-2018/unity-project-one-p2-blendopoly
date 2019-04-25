@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class chanceCard : MonoBehaviour
 {
     
-    public GameObject[] cardList = new GameObject[16];
+    public Card[] cardList = new Card[16];
     
     void Start()
     {
@@ -17,7 +17,7 @@ public class chanceCard : MonoBehaviour
 
     public void renderOn()
     {
-        //gameObject.GetComponent<Image>().sprite = spriteList[4].renderedSprite;
+        gameObject.GetComponent<Image>().sprite = cardList[1].renderedSprite;
         gameObject.SetActive(true);
     }
     

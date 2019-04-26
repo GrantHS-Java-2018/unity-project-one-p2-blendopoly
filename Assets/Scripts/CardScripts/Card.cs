@@ -6,5 +6,5 @@ public abstract class Card : MonoBehaviour
 {
     public Sprite renderedSprite;
     
-    public abstract void action();
+    public abstract void action(Player player);
 }

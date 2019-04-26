@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CCScript5 : Card
 {
-    public override void action()
+    public override void action(Player player)
     {
         
     }

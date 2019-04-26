@@ -11,6 +11,19 @@ public class Chance : GameTile
     private chanceCard card;
     
     public Image chanceTile;
+
+    private Player player;
+
+    private bool cardShowing = false;
+    
+    void Update()
+    {
+        if ((!card.getStatus()) && cardShowing)
+        {
+            player.readyForAction();
+            cardShowing = false;
+        }
+    }
     
     void Start()
     {
@@ -21,12 +34,8 @@ public class Chance : GameTile
     public override void onLand(Player player)
     {
         card.renderOn();
-
-        //Thread.Sleep(1000);
-        
-        //card.renderOff();
-        
-        player.readyForAction();
+        this.player = player;
+        cardShowing = true;
     }
 
 }

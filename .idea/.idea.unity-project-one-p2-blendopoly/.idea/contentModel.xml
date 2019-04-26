@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\Sand Family\.Rider2018.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Sand Family\.Rider2018.3\system\resharper-host\local\Transient\ReSharperHost\v183\SolutionCaches\_unity-project-one-p2-blendopoly.1586212397.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Sand Family\Desktop\unity-project-one-p2-blendopoly" t="IncludeRecursive">
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="Scripts" t="Include">
+          <e p="ActionHandler.cs" t="Include" />
+          <e p="BoardLayout.cs" t="Include" />
+          <e p="ButtonHandler.cs" t="Include" />
+          <e p="CameraHandler.cs" t="Include" />
+          <e p="CardScripts" t="Include">
+            <e p="Card.cs" t="Include" />
+            <e p="ChanceActions" t="Include">
+              <e p="ChanceScript0.cs" t="Include" />
+              <e p="ChanceScript1.cs" t="Include" />
+              <e p="ChanceScript10.cs" t="Include" />
+              <e p="ChanceScript11.cs" t="Include" />
+              <e p="ChanceScript12.cs" t="Include" />
+              <e p="ChanceScript13.cs" t="Include" />
+              <e p="ChanceScript14.cs" t="Include" />
+              <e p="ChanceScript15.cs" t="Include" />
+              <e p="ChanceScript2.cs" t="Include" />
+              <e p="ChanceScript3.cs" t="Include" />
+              <e p="ChanceScript4.cs" t="Include" />
+              <e p="ChanceScript5.cs" t="Include" />
+              <e p="ChanceScript6.cs" t="Include" />
+              <e p="ChanceScript7.cs" t="Include" />
+              <e p="ChanceScript8.cs" t="Include" />
+              <e p="ChanceScript9.cs" t="Include" />
+            </e>
+            <e p="CommunityChestActions" t="Include">
+              <e p="CCScript0.cs" t="Include" />
+              <e p="CCScript1.cs" t="Include" />
+              <e p="CCScript10.cs" t="Include" />
+              <e p="CCScript11.cs" t="Include" />
+              <e p="CCScript12.cs" t="Include" />
+              <e p="CCScript13.cs" t="Include" />
+              <e p="CCScript14.cs" t="Include" />
+              <e p="CCScript15.cs" t="Include" />
+              <e p="CCScript2.cs" t="Include" />
+              <e p="CCScript3.cs" t="Include" />
+              <e p="CCScript4.cs" t="Include" />
+              <e p="CCScript5.cs" t="Include" />
+              <e p="CCScript6.cs" t="Include" />
+              <e p="CCScript7.cs" t="Include" />
+              <e p="CCScript8.cs" t="Include" />
+              <e p="CCScript9.cs" t="Include" />
+            </e>
+          </e>
+          <e p="CCCard.cs" t="Include" />
+          <e p="chanceCard.cs" t="Include" />
+          <e p="Player.cs" t="Include" />
+          <e p="PlayerHandler.cs" t="Include" />
+          <e p="PropertyHandler.cs" t="Include" />
+          <e p="Spaces" t="Include">
+            <e p="Chance.cs" t="Include" />
+            <e p="CommunityChest.cs" t="Include" />
+            <e p="FreeParking.cs" t="Include" />
+            <e p="GameTile.cs" t="Include" />
+            <e p="Go.cs" t="Include" />
+            <e p="GoToJail.cs" t="Include" />
+            <e p="IncomeTax.cs" t="Include" />
+            <e p="Jail.cs" t="Include" />
+            <e p="LuxuryTax.cs" t="Include" />
+            <e p="Purchasable" t="Include">
+              <e p="Property.cs" t="Include" />
+              <e p="Purchasable.cs" t="Include" />
+              <e p="Railroads.cs" t="Include" />
+              <e p="Utilities.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="Library" t="ExcludeRecursive" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="Temp" t="ExcludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+      </e>
+      <e p="unity-project-one-p2-blendopoly.sln" t="IncludeFlat" />
+    </e>
+  </component>
+</project>

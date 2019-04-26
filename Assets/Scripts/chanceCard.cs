@@ -10,14 +10,21 @@ public class chanceCard : MonoBehaviour
     public Card[] cardList = new Card[16];
     
     private List<int> notChosen = new List<int>();
+
+    private bool rendered = false;
+    
+    public bool getStatus()
+    {
+        return rendered;
+    }
     
     void Start()
     {
         gameObject.GetComponent<Image>().sprite = null;
         gameObject.SetActive(false);
         Vector3 scale;
-        scale.x = 2;
-        scale.y = 2;
+        scale.x = 1;
+        scale.y = 1;
         scale.z = 1;
         gameObject.GetComponent<RectTransform>().localScale = scale;
     }
@@ -28,15 +35,25 @@ public class chanceCard : MonoBehaviour
         {
             reset();
         }
-
         int index = Random.Range(0, notChosen.Count);
-        gameObject.GetComponent<Image>().sprite = cardList[index].renderedSprite;
+        int value = notChosen[index];
+        notChosen.RemoveAt(index);
+        gameObject.GetComponent<Image>().sprite = cardList[value].renderedSprite;
         gameObject.SetActive(true);
-        //Thread.Sleep(1000);
-        //renderOff();
+        rendered = true;
     }
-    
-    public void renderOff()
+
+    private void Update()
+    {
+        if (rendered)
+        {
+            Thread.Sleep(10000);
+            renderOff();
+            rendered = false;
+        }
+    }
+
+    private void renderOff()
     {
         gameObject.GetComponent<Image>().sprite = null;
         gameObject.SetActive(false);

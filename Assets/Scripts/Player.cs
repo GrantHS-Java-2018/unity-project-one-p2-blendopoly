@@ -81,10 +81,11 @@ public class Player : MonoBehaviour
             }
             else if (die1 == die2)
             {
-                index = 10;
+                index = BoardLayout.JAIL_INDEX;
                 doubles = 0;
                 inJail = true;
                 repeat = false;
+                setPos();
             }
             else
             {

@@ -22,6 +22,7 @@ public class Player : MonoBehaviour
     public int railroads = 0;
     private int doubles = 0;
     private int turnsInJail;
+    public int hasGetOutOfJailFree = 0;
     public bool repeat = false;
 
     void Start()
@@ -121,7 +122,7 @@ public class Player : MonoBehaviour
     {
         for (var i = 0; i < roll; ++i)
         {
-            index++;
+            ++index;
             if (index == layout.boardTrack.Length)
             {
                 index = 0;

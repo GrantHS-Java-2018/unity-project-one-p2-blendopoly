@@ -1,28 +1,76 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class chanceCard : MonoBehaviour
 {
+    
+    public Card[] cardList = new Card[16];
+    
+    private List<int> notChosen = new List<int>();
 
-    public Sprite[] spriteList = new Sprite[16];
+    private bool rendered = false;
 
-    public SpriteRenderer sr;
+    private int value;
+
+    public PlayerHandler handler;
+    
+    public bool landedOnSpace = false;
+    
+    public bool getStatus()
+    {
+        return rendered;
+    }
     
     void Start()
     {
-        sr = new SpriteRenderer();
-        sr.sprite = spriteList[1];
-        sr.enabled = false;
+        gameObject.GetComponent<Image>().sprite = null;
+        gameObject.SetActive(false);
+        Vector3 scale;
+        scale.x = 2;
+        scale.y = 2;
+        scale.z = 1;
+        gameObject.GetComponent<RectTransform>().localScale = scale;
     }
 
-    void renderOn()
+    public void renderOn()
     {
-        sr.enabled = true;
+        if (notChosen.Count <= 0)
+        {
+            reset();
+        }
+        int index = Random.Range(0, notChosen.Count);
+        value = notChosen[index];
+        notChosen.RemoveAt(index);
+        gameObject.GetComponent<Image>().sprite = cardList[value].renderedSprite;
+        gameObject.SetActive(true);
+        rendered = true;
     }
 
-    void renderOff()
+    private void Update()
     {
-        sr.enabled = false;
+        if (rendered)
+        {
+            Thread.Sleep(5000);
+            renderOff();
+            rendered = false;
+            cardList[value].action(handler.players[handler.index]);
+        }
+    }
+
+    private void renderOff()
+    {
+        gameObject.GetComponent<Image>().sprite = null;
+        gameObject.SetActive(false);
+    }
+    
+    private void reset()
+    {
+        for (int x1 = 0; x1 < 16; ++x1)
+        {
+            notChosen.Add(x1);
+        }
     }
 }

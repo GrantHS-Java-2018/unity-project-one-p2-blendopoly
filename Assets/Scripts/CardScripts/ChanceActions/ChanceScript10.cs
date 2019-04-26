@@ -6,6 +6,6 @@ public class ChanceScript10 : Card
 {
     public override void action(Player player)
     {
-        
+        //implement after code merge
     }
 }

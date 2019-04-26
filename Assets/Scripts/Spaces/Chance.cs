@@ -18,9 +18,13 @@ public class Chance : GameTile
     
     void Update()
     {
-        if ((!card.getStatus()) && cardShowing)
+        if ((!card.getStatus()) && cardShowing && !card.landedOnSpace)
         {
             player.readyForAction();
+            cardShowing = false;
+        }else if ((!card.getStatus()) && cardShowing && card.landedOnSpace)
+        {
+            card.landedOnSpace = false;
             cardShowing = false;
         }
     }

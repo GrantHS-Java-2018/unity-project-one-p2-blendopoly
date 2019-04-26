@@ -6,6 +6,6 @@ public class ChanceScript13 : Card
 {
     public override void action(Player player)
     {
-        
+        player.money -= 15;
     }
 }

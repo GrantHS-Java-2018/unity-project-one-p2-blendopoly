@@ -22,6 +22,7 @@ public class Player : MonoBehaviour
     public int railroads = 0;
     private int doubles = 0;
     private int turnsInJail;
+    public int hasGetOutOfJailFree = 0;
 
     void Start()
     {

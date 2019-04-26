@@ -6,6 +6,6 @@ public class CCScript6 : Card
 {
     public override void action(Player player)
     {
-        
+        //implement after code merge
     }
 }

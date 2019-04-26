@@ -346,6 +346,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   renderedSprite: {fileID: 21300000, guid: 337c3e123fda54a4f9b6d352566558b6, type: 3}
+  layout: {fileID: 66470549}
 --- !u!1 &66470546
 GameObject:
   m_ObjectHideFlags: 0
@@ -1275,6 +1276,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   renderedSprite: {fileID: 21300000, guid: c13e38ab467c85046a6fc44acd446d38, type: 3}
+  layout: {fileID: 66470549}
 --- !u!33 &334571485
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1327,6 +1329,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   renderedSprite: {fileID: 21300000, guid: 2812a815f94d23643aba60947cab17c5, type: 3}
+  layout: {fileID: 66470549}
 --- !u!1 &399757839
 GameObject:
   m_ObjectHideFlags: 0
@@ -1371,6 +1374,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   renderedSprite: {fileID: 21300000, guid: 000c8a9fcb703ae47a51e3f7913f1d0f, type: 3}
+  handler: {fileID: 730793836}
 --- !u!1 &417583334
 GameObject:
   m_ObjectHideFlags: 0
@@ -1588,6 +1592,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   renderedSprite: {fileID: 21300000, guid: 7c2f807c26c59df40bd13963b1d1d2a7, type: 3}
+  layout: {fileID: 66470549}
 --- !u!1 &511511054
 GameObject:
   m_ObjectHideFlags: 0
@@ -2694,6 +2699,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   renderedSprite: {fileID: 21300000, guid: 5882bc70d9a2bf643aa856845785ac4a, type: 3}
+  layout: {fileID: 66470549}
 --- !u!1 &843240003
 GameObject:
   m_ObjectHideFlags: 0
@@ -3066,6 +3072,7 @@ MonoBehaviour:
   buttonHandler: {fileID: 1469389622}
   utilities: 0
   railroads: 0
+  hasGetOutOfJailFree: 0
 --- !u!1 &947578223
 GameObject:
   m_ObjectHideFlags: 0
@@ -3242,6 +3249,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   renderedSprite: {fileID: 21300000, guid: a5bef45f436e87e42a7a415c29375326, type: 3}
+  layout: {fileID: 66470549}
 --- !u!1 &1040267422
 GameObject:
   m_ObjectHideFlags: 0
@@ -3325,6 +3333,7 @@ MonoBehaviour:
   - {fileID: 94068899}
   - {fileID: 59110090}
   - {fileID: 437238894}
+  handler: {fileID: 730793836}
 --- !u!114 &1040267425
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3949,6 +3958,7 @@ MonoBehaviour:
   buttonHandler: {fileID: 1469389622}
   utilities: 0
   railroads: 0
+  hasGetOutOfJailFree: 0
 --- !u!1 &1319166912
 GameObject:
   m_ObjectHideFlags: 0
@@ -5864,6 +5874,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   renderedSprite: {fileID: 21300000, guid: 08ef33c60e21c2a49ba45f67e9d2bc0b, type: 3}
+  handler: {fileID: 730793836}
 --- !u!1 &1882603073
 GameObject:
   m_ObjectHideFlags: 0
@@ -6589,6 +6600,7 @@ MonoBehaviour:
   - {fileID: 971057081}
   - {fileID: 624472275}
   - {fileID: 1120389919}
+  handler: {fileID: 730793836}
 --- !u!114 &2120374671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6670,3 +6682,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   renderedSprite: {fileID: 21300000, guid: e489ee886f744094e8b533e3f96bef1e, type: 3}
+  layout: {fileID: 66470549}

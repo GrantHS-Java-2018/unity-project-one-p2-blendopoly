@@ -6,6 +6,6 @@ public class CCScript5 : Card
 {
     public override void action(Player player)
     {
-        
+        player.hasGetOutOfJailFree += 1;
     }
 }

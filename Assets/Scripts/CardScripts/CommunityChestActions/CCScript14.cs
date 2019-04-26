@@ -6,6 +6,6 @@ public class CCScript14 : Card
 {
     public override void action(Player player)
     {
-        
+        player.money += 45;
     }
 }

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Threading;
+using Spaces;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
@@ -22,6 +23,8 @@ public class Player : MonoBehaviour
     public int railroads = 0;
     private int doubles = 0;
     private int turnsInJail;
+    public Die die1;
+    public Die die2;
 
     void Start()
     {
@@ -70,14 +73,14 @@ public class Player : MonoBehaviour
         if (!inJail)
         {
             turnsInJail = 0;
-            int die1 = roll();
-            int die2 = roll();
-            move(die1 + die2);
-            if (die1 == die2 && doubles != 2)
+            die1.roll(roll());
+            die2.roll(roll());
+            move(die1.faceShowing + die2.faceShowing);
+            if (die1.faceShowing == die2.faceShowing && doubles != 2)
             {
                 ++doubles;
             }
-            else if (die1 == die2)
+            else if (die1.faceShowing == die2.faceShowing)
             {
                 index = 10;
                 inJail = true;
@@ -89,16 +92,16 @@ public class Player : MonoBehaviour
         }
         else
         {
-            int die1 = roll();
-            int die2 = roll();
+            die1.roll(roll());
+            die2.roll(roll());
             if (die1 == die2)
             {
-                move(die1 + die2);
+                move(die1.faceShowing + die2.faceShowing);
                 inJail = false;
             }
             else if (turnsInJail == 2)
             {
-                move(die1 + die2);
+                move(die1.faceShowing + die2.faceShowing);
                 inJail = false;
                 money -= 50;
 

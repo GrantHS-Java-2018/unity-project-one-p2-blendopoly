@@ -10,12 +10,13 @@ namespace Spaces {
 
         public void roll(int value)
         {
-            
+            faceShowing = value;
+            setRotation();
         }
 
         private void setRotation()
         {
-            
+            transform.SetPositionAndRotation(transform.position, Quaternion.Euler(angles[faceShowing]));
         }
         
     }

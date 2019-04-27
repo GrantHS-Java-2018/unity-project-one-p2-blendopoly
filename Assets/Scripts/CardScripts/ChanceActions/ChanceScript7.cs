@@ -9,7 +9,7 @@ public class ChanceScript7 : Card
     {
         player.index -= 3;
         player.setPos();
-        gameObject.GetComponent<chanceCard>().landedOnSpace = true;
+        gameObject.GetComponentInParent<chanceCard>().landedOnSpace = true;
         layout.boardTrack[player.index].onLand(player);
     }
 }

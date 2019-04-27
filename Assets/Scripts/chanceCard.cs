@@ -28,11 +28,13 @@ public class chanceCard : MonoBehaviour
     {
         gameObject.GetComponent<Image>().sprite = null;
         gameObject.SetActive(false);
-        Vector3 scale;
+        /*Vector3 scale;
         scale.x = 2;
         scale.y = 2;
         scale.z = 1;
         gameObject.GetComponent<RectTransform>().localScale = scale;
+        */
+        gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(Screen.width * 0.9f, Screen.height * 0.9f);
     }
 
     public void renderOn()

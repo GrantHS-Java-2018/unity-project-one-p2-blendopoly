@@ -16,7 +16,7 @@ public class ChanceScript14 : Card
 
         player.index = 11;
         player.setPos();
-        gameObject.GetComponent<chanceCard>().landedOnSpace = true;
+        gameObject.GetComponentInParent<chanceCard>().landedOnSpace = true;
         layout.boardTrack[player.index].onLand(player);
     }
 }

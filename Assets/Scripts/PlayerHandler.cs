@@ -23,10 +23,13 @@ public class PlayerHandler : MonoBehaviour
 
     public void endTurn()
     {
-        ++index;
-        if (index >= players.Length)
+        if (!players[index].repeat)
         {
-            index = 0;
+            ++index;
+            if (index >= players.Length)
+            {
+                index = 0;
+            }
         }
         handler.turnOffEndTurn();
         handler.turnOffActions();
@@ -35,7 +38,17 @@ public class PlayerHandler : MonoBehaviour
 
     public void getOutOfJail()
     {
-        players[index].money -= 50;
+        int price;
+        if (players[index].hasGetOutOfJailFree > 0)
+        {
+            price = 0;
+            players[index].hasGetOutOfJailFree -= 1;
+        }
+        else
+        {
+            price = 50;
+        }
+        players[index].money -= price;
         players[index].inJail = false;
         handler.turnOffJail();
     }

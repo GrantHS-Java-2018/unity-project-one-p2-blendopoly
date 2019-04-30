@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ButtonHandler : MonoBehaviour
 {
@@ -8,14 +10,18 @@ public class ButtonHandler : MonoBehaviour
     public GameObject changeCamera;
     public GameObject endTurn;
     public GameObject getOutOfJail;
-    public GameObject houses;
+    public GameObject buy;
+    public GameObject sell;
     public GameObject morgage;
     public GameObject unMorgage;
+    public GameObject cancel;
+    public ArrayList buttons = new ArrayList();
 
     private void Start()
     {
         turnOffEndTurn();
         turnOffJail();
+        turnOffCancel();
     }
 
     public void turnOffButtons()
@@ -33,7 +39,8 @@ public class ButtonHandler : MonoBehaviour
 
     public void turnOnEndTurn()
     {
-        houses.SetActive(true);
+        buy.SetActive(true);
+        sell.SetActive(true);
         morgage.SetActive(true);
         unMorgage.SetActive(true);
         endTurn.SetActive(true);
@@ -41,7 +48,8 @@ public class ButtonHandler : MonoBehaviour
     
     public void turnOffEndTurn()
     {
-        houses.SetActive(false);
+        buy.SetActive(false);
+        sell.SetActive(false);
         morgage.SetActive(false);
         unMorgage.SetActive(false);
         endTurn.SetActive(false);
@@ -60,15 +68,54 @@ public class ButtonHandler : MonoBehaviour
 
     public void turnOnActions()
     {
-        houses.SetActive(true);
+        buy.SetActive(true);
+        sell.SetActive(true);
         morgage.SetActive(true);
         unMorgage.SetActive(true);
     }
 
     public void turnOffActions()
     {
-        houses.SetActive(false);
+        buy.SetActive(false);
+        sell.SetActive(false);
         morgage.SetActive(false);
         unMorgage.SetActive(false);
+    }
+
+    public void turnOnCancel()
+    {
+        cancel.SetActive(true);
+    }
+
+    public void turnOffCancel()
+    {
+        cancel.SetActive(false);
+    }
+    
+    public void addButton(GameObject property)
+    {
+        buttons.Add(property);
+    }
+
+    public void clearProperties()
+    {
+        foreach (GameObject property in buttons)
+        {
+            Destroy(property);
+        }
+    }
+
+    public void disableButtonWithName(String name)
+    {
+        foreach (GameObject button in buttons)
+        {
+            if (button != null)
+            {
+                if (button.GetComponentInChildren<Text>().text == name)
+                {
+                    Destroy(button);
+                }
+            }
+        }
     }
 }

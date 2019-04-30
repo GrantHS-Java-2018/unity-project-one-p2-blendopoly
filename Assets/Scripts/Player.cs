@@ -23,6 +23,8 @@ public class Player : MonoBehaviour
     public int railroads = 0;
     private int doubles = 0;
     private int turnsInJail;
+    public int hasGetOutOfJailFree = 0;
+    public bool repeat = false;
     public Die die1;
     public Die die2;
 
@@ -79,16 +81,22 @@ public class Player : MonoBehaviour
             if (die1.faceShowing == die2.faceShowing && doubles != 2)
             {
                 ++doubles;
+                repeat = true;
             }
             else if (die1.faceShowing == die2.faceShowing)
             {
-                index = 10;
+                index = BoardLayout.JAIL_INDEX;
+                doubles = 0;
                 inJail = true;
+                repeat = false;
+                setPos(layout.jail);
             }
             else
             {
                 doubles = 0;
+                repeat = false;
             }
+            move(die1 + die2);
         }
         else
         {
@@ -106,8 +114,11 @@ public class Player : MonoBehaviour
                 money -= 50;
 
             }
-            ++turnsInJail;
-            buttonHandler.turnOnButtons();
+            else
+            {
+                ++turnsInJail;
+                readyForAction();
+            }
         }
     }
 
@@ -115,7 +126,7 @@ public class Player : MonoBehaviour
     {
         for (var i = 0; i < roll; ++i)
         {
-            index++;
+            ++index;
             if (index == layout.boardTrack.Length)
             {
                 index = 0;

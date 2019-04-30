@@ -56,5 +56,13 @@ public class PropertyHandler : MonoBehaviour
         handler.turnOnActions();
         currentPlayer.readyForAction();
     }
+
+    public void checkIfValid(Property property)
+    {
+        if (property.numOfHouses <= 0 || property.numOfHouses >= 5)
+        {
+            handler.disableButtonWithName(property.name);
+        }
+    }
     
 }

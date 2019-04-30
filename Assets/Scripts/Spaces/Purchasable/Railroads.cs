@@ -18,7 +18,7 @@ namespace Spaces.Purchasable.Purchasable
             {
                 handler.buyProperty(this, player);
             }
-            else if (owner == player)
+            else if (owner == player || morgaged)
             {
                 player.readyForAction();
             }
@@ -27,6 +27,7 @@ namespace Spaces.Purchasable.Purchasable
                 int rent = calculateRent(player);
                 player.money -= rent;
                 owner.money += rent;
+                player.readyForAction();
             }
         }
 

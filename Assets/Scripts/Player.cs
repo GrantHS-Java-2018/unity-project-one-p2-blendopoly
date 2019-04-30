@@ -74,7 +74,6 @@ public class Player : MonoBehaviour
             turnsInJail = 0;
             int die1 = roll();
             int die2 = roll();
-            move(die1 + die2);
             if (die1 == die2 && doubles != 2)
             {
                 ++doubles;
@@ -86,13 +85,14 @@ public class Player : MonoBehaviour
                 doubles = 0;
                 inJail = true;
                 repeat = false;
-                setPos();
+                setPos(layout.jail);
             }
             else
             {
                 doubles = 0;
                 repeat = false;
             }
+            move(die1 + die2);
         }
         else
         {

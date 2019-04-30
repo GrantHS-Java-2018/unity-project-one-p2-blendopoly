@@ -6,12 +6,14 @@ public class ChanceScript0 : Card
 {
     public BoardLayout layout;
 
+    public chanceCard card;
+
     public override void  action(Player player)
     {
         //illinois ave = 24
         player.index = 24;
         player.setPos();
-        gameObject.GetComponentInParent<chanceCard>().landedOnSpace = true;
+        card.landedOnSpace = true;
         layout.boardTrack[player.index].onLand(player);
     }
 }

@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class ChanceScript14 : Card
 {
-
+    
     public BoardLayout layout;
+
+    public chanceCard card;
     public override void action(Player player)
     {
         //saint charles = 11
@@ -16,7 +18,7 @@ public class ChanceScript14 : Card
 
         player.index = 11;
         player.setPos();
-        gameObject.GetComponentInParent<chanceCard>().landedOnSpace = true;
+        card.landedOnSpace = true;
         layout.boardTrack[player.index].onLand(player);
     }
 }

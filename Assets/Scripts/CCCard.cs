@@ -49,6 +49,7 @@ public class CCCard : MonoBehaviour
         gameObject.GetComponent<Image>().sprite = cardList[value].renderedSprite;
         gameObject.SetActive(true);
         rendered = true;
+        Debug.Log("CC Size: " + notChosen.Count);
     }
 
     private void Update()
@@ -70,6 +71,7 @@ public class CCCard : MonoBehaviour
     
     private void reset()
     {
+        Debug.Log("CC reset");
         for (int x1 = 0; x1 < 16; ++x1)
         {
             notChosen.Add(x1);

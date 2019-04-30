@@ -5,6 +5,7 @@ using UnityEngine;
 public class ChanceScript9 : Card
 {
     public BoardLayout layout;
+    public chanceCard card;
     public override void action(Player player)
     {
         //reading railroad = 5
@@ -15,7 +16,7 @@ public class ChanceScript9 : Card
 
         player.index = 5;
         player.setPos();
-        gameObject.GetComponentInParent<chanceCard>().landedOnSpace = true;
+        card.landedOnSpace = true;
         layout.boardTrack[player.index].onLand(player);
     }
 }

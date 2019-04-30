@@ -49,6 +49,7 @@ public class chanceCard : MonoBehaviour
         gameObject.GetComponent<Image>().sprite = cardList[value].renderedSprite;
         gameObject.SetActive(true);
         rendered = true;
+        Debug.Log("Chance Size: " + notChosen.Count);
     }
 
     private void Update()
@@ -70,6 +71,7 @@ public class chanceCard : MonoBehaviour
     
     private void reset()
     {
+        Debug.Log("Chance reset");
         for (int x1 = 0; x1 < 16; ++x1)
         {
             notChosen.Add(x1);

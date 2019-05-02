@@ -47,6 +47,15 @@ namespace Spaces.Purchasable.Purchasable
         public void buildHouse(Player player)
         {
             ++numOfHouses;
+            if (numOfHouses == 5)
+            {
+                ++player.numOfHotelsBuilt;
+                player.numOfHousesBuilt -= 4;
+            }
+            else
+            {
+                ++player.numOfHousesBuilt;
+            }
             player.money -= housePrice;
             handler.checkIfValid(this);
         }
@@ -54,6 +63,15 @@ namespace Spaces.Purchasable.Purchasable
         public void sellHouse(Player player)
         {
             --numOfHouses;
+            if (numOfHouses == 4)
+            {
+                --player.numOfHotelsBuilt;
+                player.numOfHousesBuilt += 4;
+            }
+            else
+            {
+                --player.numOfHousesBuilt;
+            }
             player.money += housePrice;
             handler.checkIfValid(this);
         }

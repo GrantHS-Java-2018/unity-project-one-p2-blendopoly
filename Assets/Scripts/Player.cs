@@ -24,6 +24,8 @@ public class Player : MonoBehaviour
     private int turnsInJail;
     public int hasGetOutOfJailFree = 0;
     public bool repeat = false;
+    public int numOfHousesBuilt = 0;
+    public int numOfHotelsBuilt = 0;
 
     void Start()
     {

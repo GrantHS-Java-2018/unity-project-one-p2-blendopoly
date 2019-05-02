@@ -3240,6 +3240,8 @@ MonoBehaviour:
   railroads: 0
   hasGetOutOfJailFree: 0
   repeat: 0
+  numOfHousesBuilt: 0
+  numOfHotelsBuilt: 0
 --- !u!1 &947578223
 GameObject:
   m_ObjectHideFlags: 0
@@ -3372,6 +3374,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   renderedSprite: {fileID: 21300000, guid: 5e03e629d6c94d5478d96173680c96bb, type: 3}
+  layout: {fileID: 66470549}
 --- !u!1 &1016672329
 GameObject:
   m_ObjectHideFlags: 0
@@ -4432,6 +4435,8 @@ MonoBehaviour:
   railroads: 0
   hasGetOutOfJailFree: 0
   repeat: 0
+  numOfHousesBuilt: 0
+  numOfHotelsBuilt: 0
 --- !u!1 &1319166912
 GameObject:
   m_ObjectHideFlags: 0
@@ -6815,6 +6820,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   renderedSprite: {fileID: 21300000, guid: 05864151eef5751439c2155a3b224dcc, type: 3}
+  layout: {fileID: 66470549}
 --- !u!1 &2034539377
 GameObject:
   m_ObjectHideFlags: 0
@@ -7031,6 +7037,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   renderedSprite: {fileID: 21300000, guid: 2572231ec6f9d0341a6f537a04aa3898, type: 3}
+  layout: {fileID: 66470549}
 --- !u!1 &2120374668
 GameObject:
   m_ObjectHideFlags: 0

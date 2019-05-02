@@ -24,14 +24,14 @@ namespace Spaces.Purchasable.Purchasable
             }
             else
             {
-                int rent = calculateRent(player);
+                int rent = calculateRent(owner);
                 player.money -= rent;
                 owner.money += rent;
                 player.readyForAction();
             }
         }
 
-        private int calculateRent(Player player)
+        public int calculateRent(Player player)
         {
             switch (player.railroads)
             {
@@ -40,6 +40,7 @@ namespace Spaces.Purchasable.Purchasable
                 case 3: return 100;
                 case 4: return 200;
                 default:
+                    Debug.Log("Broken in Railroads");
                     //should never happen but congrats you don't pay rent!
                     return 0;
             }

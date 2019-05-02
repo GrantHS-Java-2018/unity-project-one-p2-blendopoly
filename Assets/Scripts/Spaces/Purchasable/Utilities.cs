@@ -29,7 +29,7 @@ namespace Spaces.Purchasable.Purchasable
             }
         }
 
-        private int calculateRent(Player player)
+        public int calculateRent(Player player)
         {
             int dieRoll = 6;
             switch (player.utilities)
@@ -37,6 +37,7 @@ namespace Spaces.Purchasable.Purchasable
                 case 1: return 4 * dieRoll;
                 case 2: return 10 * dieRoll;
                 default:
+                    Debug.Log("Broken in Utilities");
                     //should never happen but congrats you don't pay rent
                     return 0;
             }

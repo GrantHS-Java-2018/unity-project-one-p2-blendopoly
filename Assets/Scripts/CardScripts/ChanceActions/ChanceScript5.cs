@@ -24,11 +24,11 @@ public class ChanceScript5 : Card
 
         else if (player.index > 12 && player.index < 20)
         {
-            player.index = 12;
+            utilityIndex = 12;
         }
         else if (player.index >= 20 && player.index < 28)
         {
-            player.index = 28;
+            utilityIndex = 28;
         }
 
         else
@@ -44,11 +44,15 @@ public class ChanceScript5 : Card
         {
             utility.onLand(player);
         }
-        else
+        else if (utility != null)
         {
             int rent = utility.calculateRent(utility.owner) * 2;
             player.money -= rent;
             utility.owner.money += rent;
+        }
+        else
+        {
+            Debug.Log("Chancescript5 null utility error");
         }
     }
 }

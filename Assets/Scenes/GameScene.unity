@@ -523,7 +523,7 @@ MonoBehaviour:
   - {fileID: 305121877}
   - {fileID: 1865440059}
   - {fileID: 1649067414}
-  - {fileID: 305121877}
+  - {fileID: 1514651625}
   - {fileID: 39374205}
   - {fileID: 1478079462}
   - {fileID: 1665127133}
@@ -3242,6 +3242,9 @@ MonoBehaviour:
   repeat: 0
   numOfHousesBuilt: 0
   numOfHotelsBuilt: 0
+  moving: 0
+  inArc: 0
+  currentPos: 0
 --- !u!1 &947578223
 GameObject:
   m_ObjectHideFlags: 0
@@ -4435,6 +4438,9 @@ MonoBehaviour:
   railroads: 0
   hasGetOutOfJailFree: 0
   repeat: 0
+  moving: 0
+  inArc: 0
+  currentPos: 0
   numOfHousesBuilt: 0
   numOfHotelsBuilt: 0
 --- !u!1 &1319166912

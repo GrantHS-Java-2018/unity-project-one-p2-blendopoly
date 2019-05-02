@@ -15,6 +15,7 @@ public class GoToJail : GameTile
     public override void onLand(Player player)
     {
         player.index = BoardLayout.JAIL_INDEX;
+        player.currentPos = BoardLayout.JAIL_INDEX;
         player.inJail = true;
         player.setPos(layout.jail);
         player.readyForAction();

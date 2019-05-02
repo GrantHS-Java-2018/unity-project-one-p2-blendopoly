@@ -87,13 +87,13 @@ public class CameraHandler : MonoBehaviour
     private void focusOnPlayer(Player player)
     {
         Vector3 offset;
-        if (player.index < 10)
+        if (player.currentPos <= 10)
         {
             offset = new Vector3(0,20,-20);
-        }else if (player.index < 20)
+        }else if (player.currentPos <= 20)
         {
             offset = new Vector3(-20,20,0);
-        }else if (player.index < 30)
+        }else if (player.currentPos <= 30)
         {
             offset = new Vector3(0, 20, 20);
         }

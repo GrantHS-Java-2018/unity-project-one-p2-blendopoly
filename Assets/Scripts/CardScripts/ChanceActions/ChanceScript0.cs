@@ -12,7 +12,6 @@ public class ChanceScript0 : Card
     {
         //illinois ave = 24
         player.index = 24;
-        player.setPos();
         card.landedOnSpace = true;
         layout.boardTrack[player.index].onLand(player);
     }

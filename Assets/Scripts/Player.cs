@@ -24,6 +24,12 @@ public class Player : MonoBehaviour
     private int turnsInJail;
     public int hasGetOutOfJailFree = 0;
     public bool repeat = false;
+    public bool moving = false;
+    public bool inArc = false;
+    public int currentPos = 0;
+    private int counter = 0;
+    private Vector3 difference;
+    private bool equal = false;
     public int numOfHousesBuilt = 0;
     public int numOfHotelsBuilt = 0;
 
@@ -36,21 +42,65 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if (index < 10)
+        if (currentPos <= 10)
         {
             pos.rotation = Quaternion.Euler(0, 180, 0);
         }
-        else if (index < 20)
+        else if (currentPos <= 20)
         {
             pos.rotation = Quaternion.Euler(0,-90,0);
         }
-        else if (index < 30)
+        else if (currentPos <= 30)
         {
             pos.rotation = Quaternion.Euler(0,0,0);
         }
         else
         {
             pos.rotation = Quaternion.Euler(0,90,0);
+        }
+        if (currentPos != index || equal)
+        {
+            if (!moving)
+            {
+                counter = 0;
+            }
+            moving = true;
+            if (!inArc)
+            {
+                ++currentPos;
+                if (currentPos >= 40)
+                {
+                    currentPos = 0;
+                }
+                if (currentPos == index)
+                {
+                    equal = true;
+                }
+                else if (equal)
+                {
+                    currentPos = index;
+                    equal = false;
+                }
+                difference = layout.boardTrack[currentPos].pos + offset - pos.position;
+                inArc = true;
+            }
+            else
+            {
+                moveToSpace(counter);
+                if (counter == 25)
+                {
+                    counter = 0;
+                    inArc = false;
+                    pos.position = layout.boardTrack[currentPos].pos + offset;
+                }
+            }
+            ++counter;
+        }
+        else if (moving)
+        {
+            moving = false;
+            inArc = false;
+            layout.boardTrack[index].onLand(this);
         }
     }
 
@@ -84,6 +134,7 @@ public class Player : MonoBehaviour
             else if (die1 == die2)
             {
                 index = BoardLayout.JAIL_INDEX;
+                currentPos = BoardLayout.JAIL_INDEX;
                 doubles = 0;
                 inJail = true;
                 repeat = false;
@@ -122,17 +173,12 @@ public class Player : MonoBehaviour
 
     private void move(int roll)
     {
-        for (var i = 0; i < roll; ++i)
+        index += roll;
+        if (index >= 40)
         {
-            ++index;
-            if (index == layout.boardTrack.Length)
-            {
-                index = 0;
-                money += 200; //passing go
-            }
-            setPos(layout.boardTrack[index]);
+            index = 0;
+            money += 200;
         }
-        layout.boardTrack[index].onLand(this);
     }
 
     public void setPos(GameTile space)
@@ -150,4 +196,8 @@ public class Player : MonoBehaviour
         return Random.Range(1, 6);
     }
 
+    private void moveToSpace(int number)
+    {
+        pos.position = new Vector3(pos.position.x + difference.x/25,5 * (float)Math.Abs(Math.Sin(number * Math.PI/25)),pos.position.z + difference.z/25);
+    }
 }

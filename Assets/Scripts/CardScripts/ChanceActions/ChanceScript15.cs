@@ -8,6 +8,7 @@ public class ChanceScript15 : Card
     public override void action(Player player)
     {
         player.index = BoardLayout.JAIL_INDEX;
+        player.currentPos = BoardLayout.JAIL_INDEX;
         player.inJail = true;
         player.setPos(layout.jail);
     }

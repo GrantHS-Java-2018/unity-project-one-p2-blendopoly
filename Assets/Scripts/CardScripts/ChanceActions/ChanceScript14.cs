@@ -17,7 +17,6 @@ public class ChanceScript14 : Card
         }
 
         player.index = 11;
-        player.setPos();
         card.landedOnSpace = true;
         layout.boardTrack[player.index].onLand(player);
     }

@@ -15,7 +15,6 @@ public class ChanceScript9 : Card
         }
 
         player.index = 5;
-        player.setPos();
         card.landedOnSpace = true;
         layout.boardTrack[player.index].onLand(player);
     }

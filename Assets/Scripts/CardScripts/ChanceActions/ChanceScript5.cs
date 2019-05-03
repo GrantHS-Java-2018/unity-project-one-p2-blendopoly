@@ -38,6 +38,8 @@ public class ChanceScript5 : Card
         }
 
         player.setPos(layout.boardTrack[utilityIndex]);
+        player.index = utilityIndex;
+        player.currentPos = utilityIndex;
         Utilities utility = layout.boardTrack[player.index] as Utilities;
         
         if (utility != null && utility.owner == null)

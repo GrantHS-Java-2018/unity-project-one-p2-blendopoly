@@ -58,6 +58,8 @@ public class ChanceScript3 : Card
         }
 
         player.setPos(layout.boardTrack[railIndex]);
+        player.index = railIndex;
+        player.currentPos = railIndex;
         Railroads railroad = layout.boardTrack[player.index] as Railroads;
         
         if (railroad != null && railroad.owner == null)

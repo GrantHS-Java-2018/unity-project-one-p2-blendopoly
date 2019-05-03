@@ -91,7 +91,7 @@ public class Player : MonoBehaviour
                 {
                     counter = 0;
                     inArc = false;
-                    pos.position = layout.boardTrack[currentPos].pos + offset;
+                    //pos.position = layout.boardTrack[currentPos].pos + offset;
                 }
             }
             ++counter;
@@ -176,7 +176,7 @@ public class Player : MonoBehaviour
         index += roll;
         if (index >= 40)
         {
-            index = 0;
+            index -= 40;
             money += 200;
         }
     }
@@ -199,5 +199,6 @@ public class Player : MonoBehaviour
     private void moveToSpace(int number)
     {
         pos.position = new Vector3(pos.position.x + difference.x/25,5 * (float)Math.Abs(Math.Sin(number * Math.PI/25)),pos.position.z + difference.z/25);
+        pos.position += offset;
     }
 }

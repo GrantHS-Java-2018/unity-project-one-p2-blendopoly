@@ -4,19 +4,35 @@ namespace Spaces {
  
     public class Die : MonoBehaviour
     {
-        public int faceShowing;
-        private Transform pos;
+        public int faceShowing = 1;
         public Vector3[] angles = new Vector3[6];
+        public float percent;
+        public PlayerHandler handler;
 
         public void roll(int value)
         {
+            enabled = true;
+            if (faceShowing == value)
+            {
+                transform.localEulerAngles += new Vector3(360,0,360);
+            }
             faceShowing = value;
+            percent = 0;
+        }
+
+        void Update()
+        {
             setRotation();
         }
 
         private void setRotation()
         {
-            transform.SetPositionAndRotation(transform.position, Quaternion.Euler(angles[faceShowing]));
+            //transform.localEulerAngles = angles[faceShowing];
+            transform.localEulerAngles = Vector3.Lerp(transform.localEulerAngles, angles[faceShowing - 1], percent);
+            if (percent < 1)
+            {
+                percent += 0.05f;
+            }
         }
         
     }

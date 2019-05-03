@@ -77,7 +77,6 @@ public class Player : MonoBehaviour
             turnsInJail = 0;
             die1.roll(roll());
             die2.roll(roll());
-            move(die1.faceShowing + die2.faceShowing);
             if (die1.faceShowing == die2.faceShowing && doubles != 2)
             {
                 ++doubles;

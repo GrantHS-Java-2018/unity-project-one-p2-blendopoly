@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.4964127, b: 0.57481724, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1669,6 +1669,7 @@ MonoBehaviour:
   - {x: -90, y: 45, z: 0}
   percent: 0
   handler: {fileID: 730793836}
+  rolling: 0
 --- !u!23 &440042450
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2303,6 +2304,8 @@ MonoBehaviour:
   price: 150
   owner: {fileID: 0}
   handler: {fileID: 1837499240}
+  die1: {fileID: 1584065860}
+  die2: {fileID: 440042449}
 --- !u!1 &680001177
 GameObject:
   m_ObjectHideFlags: 0
@@ -3330,13 +3333,14 @@ MonoBehaviour:
   railroads: 0
   hasGetOutOfJailFree: 0
   repeat: 0
-  numOfHousesBuilt: 0
-  numOfHotelsBuilt: 0
   moving: 0
   inArc: 0
   currentPos: 0
+  numOfHousesBuilt: 0
+  numOfHotelsBuilt: 0
   die1: {fileID: 1584065860}
   die2: {fileID: 440042449}
+  jailWaiting: 0
 --- !u!1 &947578223
 GameObject:
   m_ObjectHideFlags: 0
@@ -4533,6 +4537,7 @@ MonoBehaviour:
   numOfHotelsBuilt: 0
   die1: {fileID: 1584065860}
   die2: {fileID: 440042449}
+  jailWaiting: 0
 --- !u!1 &1319166912
 GameObject:
   m_ObjectHideFlags: 0
@@ -4910,6 +4915,8 @@ MonoBehaviour:
   morgage: {fileID: 1427741316}
   unMorgage: {fileID: 1245702651}
   cancel: {fileID: 843626543}
+  die1: {fileID: 1584065858}
+  die2: {fileID: 440042446}
 --- !u!4 &1469389623
 Transform:
   m_ObjectHideFlags: 0
@@ -5758,6 +5765,7 @@ MonoBehaviour:
   - {x: -90, y: -45, z: 0}
   percent: 0
   handler: {fileID: 730793836}
+  rolling: 0
 --- !u!23 &1584065861
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6480,6 +6488,8 @@ MonoBehaviour:
   price: 150
   owner: {fileID: 0}
   handler: {fileID: 1837499240}
+  die1: {fileID: 1584065860}
+  die2: {fileID: 440042449}
 --- !u!1 &1865440057
 GameObject:
   m_ObjectHideFlags: 0
@@ -7221,6 +7231,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   renderedSprite: {fileID: 21300000, guid: 2572231ec6f9d0341a6f537a04aa3898, type: 3}
   layout: {fileID: 66470549}
+  die1: {fileID: 0}
+  die2: {fileID: 0}
+  debtToPay: 0
 --- !u!1 &2120374668
 GameObject:
   m_ObjectHideFlags: 0

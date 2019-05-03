@@ -1,11 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Spaces;
 using UnityEngine;
 using Spaces.Purchasable.Purchasable;
 
 public class ChanceScript5 : Card
 {
     public BoardLayout layout;
+    public Die die1;
+    public Die die2;
+    public bool debtToPay = false;
+    private Player debtor;
+    private Player payer;
     public override void action(Player player)
     {
         //electric company = 12
@@ -48,13 +54,26 @@ public class ChanceScript5 : Card
         }
         else if (utility != null)
         {
-            int rent = utility.calculateRent(utility.owner) * 2;
-            player.money -= rent;
-            utility.owner.money += rent;
+            die1.roll(player.roll());
+            die2.roll(player.roll());
+            payer = player;
+            debtor = utility.owner;
+            debtToPay = true;
         }
         else
         {
             Debug.Log("Chancescript5 null utility error");
+        }
+    }
+
+    void Update()
+    {
+        if (debtToPay && !(die1.rolling || die2.rolling))
+        {
+            debtToPay = false;
+            int rent = (die1.faceShowing + die2.faceShowing) * 10;
+            payer.money -= rent;
+            debtor.money += rent;
         }
     }
 }

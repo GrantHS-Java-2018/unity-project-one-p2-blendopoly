@@ -28,6 +28,7 @@ public class PropertyHandler : MonoBehaviour
             buy.SetActive(true);
         }
         notBuy.SetActive(true);
+        handler.turnOffDice();
         currentProperty = property;
         currentPlayer = player;
     }

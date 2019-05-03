@@ -60,7 +60,7 @@ public class ChanceScript6 : Card
         player.setPos(layout.boardTrack[railIndex]);
         Railroads railroad = layout.boardTrack[player.index] as Railroads;
         
-        if (railroad.owner == null)
+        if (railroad != null && railroad.owner == null)
         {
             railroad.onLand(player);
         }

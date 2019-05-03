@@ -4,6 +4,8 @@ namespace Spaces.Purchasable.Purchasable
 {
     public class Utilities : Purchasable
     {
+        public Die die1;
+        public Die die2;
 
         void Start()
         {
@@ -22,7 +24,7 @@ namespace Spaces.Purchasable.Purchasable
             }
             else
             {
-                int rent = calculateRent(player);
+                int rent = calculateRent(owner);
                 player.money -= rent;
                 owner.money += rent;
                 player.readyForAction();
@@ -31,7 +33,7 @@ namespace Spaces.Purchasable.Purchasable
 
         public int calculateRent(Player player)
         {
-            int dieRoll = 6;
+            int dieRoll = die1.faceShowing + die2.faceShowing;
             switch (player.utilities)
             {
                 case 1: return 4 * dieRoll;

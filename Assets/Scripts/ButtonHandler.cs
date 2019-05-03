@@ -15,6 +15,8 @@ public class ButtonHandler : MonoBehaviour
     public GameObject morgage;
     public GameObject unMorgage;
     public GameObject cancel;
+    public GameObject die1;
+    public GameObject die2;
     public ArrayList buttons = new ArrayList();
 
     private void Start()
@@ -34,6 +36,8 @@ public class ButtonHandler : MonoBehaviour
     public void turnOnButtons()
     {
         roll.SetActive(true);
+        die1.SetActive(true);
+        die2.SetActive(true);
         //changeCamera.SetActive(true);
     }
 
@@ -44,6 +48,7 @@ public class ButtonHandler : MonoBehaviour
         morgage.SetActive(true);
         unMorgage.SetActive(true);
         endTurn.SetActive(true);
+        turnOffDice();
     }
     
     public void turnOffEndTurn()
@@ -72,6 +77,7 @@ public class ButtonHandler : MonoBehaviour
         sell.SetActive(true);
         morgage.SetActive(true);
         unMorgage.SetActive(true);
+        turnOffDice();
     }
 
     public void turnOffActions()
@@ -117,5 +123,11 @@ public class ButtonHandler : MonoBehaviour
                 }
             }
         }
+    }
+    
+    public void turnOffDice()
+    {
+        die1.SetActive(false);
+        die2.SetActive(false);
     }
 }

@@ -8,10 +8,11 @@ namespace Spaces {
         public Vector3[] angles = new Vector3[6];
         public float percent;
         public PlayerHandler handler;
+        public bool rolling = false;
 
         public void roll(int value)
         {
-            enabled = true;
+            rolling = true;
             if (faceShowing == value)
             {
                 transform.localEulerAngles += new Vector3(360,0,360);
@@ -22,6 +23,7 @@ namespace Spaces {
 
         void Update()
         {
+            rolling = percent < 1;
             setRotation();
         }
 

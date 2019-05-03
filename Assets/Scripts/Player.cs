@@ -35,6 +35,7 @@ public class Player : MonoBehaviour
     public int numOfHotelsBuilt = 0;
     public Die die1;
     public Die die2;
+    public bool jailWaiting = false;
 
     void Start()
     {
@@ -61,7 +62,7 @@ public class Player : MonoBehaviour
         {
             pos.rotation = Quaternion.Euler(0,90,0);
         }
-        if (currentPos != index || equal)
+        if ((currentPos != index || equal) && (!die1.rolling && !die2.rolling))
         {
             if (!moving)
             {
@@ -104,6 +105,12 @@ public class Player : MonoBehaviour
             moving = false;
             inArc = false;
             layout.boardTrack[index].onLand(this);
+        }
+
+        if (jailWaiting && (!die1.rolling && !die2.rolling))
+        {
+            readyForAction();
+            jailWaiting = false;
         }
     }
 
@@ -169,7 +176,7 @@ public class Player : MonoBehaviour
             else
             {
                 ++turnsInJail;
-                readyForAction();
+                jailWaiting = true;
             }
         }
     }
@@ -194,7 +201,7 @@ public class Player : MonoBehaviour
         pos.position = layout.boardTrack[index].pos + offset;
     }
 
-    private int roll()
+    public int roll()
     {
         return Random.Range(1, 6);
     }

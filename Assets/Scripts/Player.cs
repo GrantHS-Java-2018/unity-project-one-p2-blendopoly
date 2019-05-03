@@ -96,7 +96,7 @@ public class Player : MonoBehaviour
                 doubles = 0;
                 repeat = false;
             }
-            move(die1 + die2);
+            move(die1.faceShowing + die2.faceShowing);
         }
         else
         {

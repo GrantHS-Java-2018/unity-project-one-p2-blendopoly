@@ -251,8 +251,7 @@ MonoBehaviour:
   rents: 23000000af000000f40100004c04000014050000dc050000
   housePrice: 200
   numOfHouses: 0
-  group:
-  - {fileID: 1665127133}
+  group: []
 --- !u!1 &56945020
 GameObject:
   m_ObjectHideFlags: 0
@@ -304,9 +303,7 @@ MonoBehaviour:
   rents: 1800000078000000680100005203000001040000b0040000
   housePrice: 150
   numOfHouses: 0
-  group:
-  - {fileID: 1319166914}
-  - {fileID: 888234666}
+  group: []
 --- !u!1 &59110088
 GameObject:
   m_ObjectHideFlags: 0
@@ -702,9 +699,7 @@ MonoBehaviour:
   rents: 0a0000003200000096000000c201000071020000ee020000
   housePrice: 100
   numOfHouses: 0
-  group:
-  - {fileID: 1825949269}
-  - {fileID: 886243201}
+  group: []
 --- !u!1 &170076733
 GameObject:
   m_ObjectHideFlags: 0
@@ -825,9 +820,7 @@ MonoBehaviour:
   rents: 1a0000008200000086010000840300004c040000fb040000
   housePrice: 200
   numOfHouses: 0
-  group:
-  - {fileID: 684866510}
-  - {fileID: 1865440059}
+  group: []
 --- !u!1 &226297627
 GameObject:
   m_ObjectHideFlags: 0
@@ -1052,9 +1045,7 @@ MonoBehaviour:
   rents: 120000005a000000fa000000bc0200006b0300001a040000
   housePrice: 150
   numOfHouses: 0
-  group:
-  - {fileID: 1585776051}
-  - {fileID: 1057478269}
+  group: []
 --- !u!1 &294375671
 GameObject:
   m_ObjectHideFlags: 0
@@ -1610,6 +1601,111 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   renderedSprite: {fileID: 21300000, guid: 7c2f807c26c59df40bd13963b1d1d2a7, type: 3}
   layout: {fileID: 66470549}
+--- !u!1 &440042446
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 440042447}
+  - component: {fileID: 440042450}
+  - component: {fileID: 440042449}
+  - component: {fileID: 440042448}
+  m_Layer: 5
+  m_Name: Other Die
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &440042447
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 440042446}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 40, y: 40, z: 40}
+  m_Children: []
+  m_Father: {fileID: 699662020}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -92, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!33 &440042448
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 440042446}
+  m_Mesh: {fileID: 4300000, guid: 097b8824cec57e64bb6f106be2f3cf9a, type: 3}
+--- !u!114 &440042449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 440042446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 917352ff545d4518bf20ab369a5d4ed3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  faceShowing: 1
+  angles:
+  - {x: 180, y: 45, z: 0}
+  - {x: 90, y: 45, z: 0}
+  - {x: 0, y: -45, z: 0}
+  - {x: 0, y: 45, z: 0}
+  - {x: 0, y: 135, z: 0}
+  - {x: -90, y: 45, z: 0}
+  percent: 0
+  handler: {fileID: 730793836}
+--- !u!23 &440042450
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 440042446}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 0e1942080de433c45a79a7bd4d715a97, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!1 &511511054
 GameObject:
   m_ObjectHideFlags: 0
@@ -1838,6 +1934,7 @@ MonoBehaviour:
   board: {fileID: 66470548}
   handler: {fileID: 730793836}
   buttonText: {fileID: 2080876804}
+  light: {fileID: 170076734}
 --- !u!1 &573892970
 GameObject:
   m_ObjectHideFlags: 0
@@ -2025,9 +2122,7 @@ MonoBehaviour:
   rents: 1000000050000000dc0000005802000020030000e8030000
   housePrice: 100
   numOfHouses: 0
-  group:
-  - {fileID: 1718993674}
-  - {fileID: 1609473449}
+  group: []
 --- !u!1 &623857229
 GameObject:
   m_ObjectHideFlags: 0
@@ -2338,9 +2433,7 @@ MonoBehaviour:
   rents: 1a0000008200000086010000840300004c040000fb040000
   housePrice: 200
   numOfHouses: 0
-  group:
-  - {fileID: 211631632}
-  - {fileID: 1865440059}
+  group: []
 --- !u!1 &699662016
 GameObject:
   m_ObjectHideFlags: 0
@@ -2408,9 +2501,9 @@ Canvas:
   m_GameObject: {fileID: 699662016}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
+  m_RenderMode: 1
+  m_Camera: {fileID: 534669904}
+  m_PlaneDistance: 1
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -2442,6 +2535,8 @@ RectTransform:
   - {fileID: 1427741317}
   - {fileID: 1245702652}
   - {fileID: 239937958}
+  - {fileID: 1584065862}
+  - {fileID: 440042447}
   - {fileID: 843626547}
   m_Father: {fileID: 0}
   m_RootOrder: 5
@@ -2502,8 +2597,7 @@ MonoBehaviour:
   rents: 04000000140000003c000000b400000040010000c2010000
   housePrice: 50
   numOfHouses: 0
-  group:
-  - {fileID: 1528726296}
+  group: []
 --- !u!1 &730793835
 GameObject:
   m_ObjectHideFlags: 0
@@ -2897,7 +2991,7 @@ RectTransform:
   m_Children:
   - {fileID: 1076786702}
   m_Father: {fileID: 699662020}
-  m_RootOrder: 11
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -3083,9 +3177,7 @@ MonoBehaviour:
   rents: 0c0000003c000000b4000000f4010000bc02000084030000
   housePrice: 100
   numOfHouses: 0
-  group:
-  - {fileID: 1825949269}
-  - {fileID: 141541279}
+  group: []
 --- !u!1 &888234664
 GameObject:
   m_ObjectHideFlags: 0
@@ -3137,9 +3229,7 @@ MonoBehaviour:
   rents: 160000006e0000004a01000020030000cf0300007e040000
   housePrice: 150
   numOfHouses: 0
-  group:
-  - {fileID: 1319166914}
-  - {fileID: 56945022}
+  group: []
 --- !u!1 &892604857
 GameObject:
   m_ObjectHideFlags: 0
@@ -3245,6 +3335,8 @@ MonoBehaviour:
   moving: 0
   inArc: 0
   currentPos: 0
+  die1: {fileID: 1584065860}
+  die2: {fileID: 440042449}
 --- !u!1 &947578223
 GameObject:
   m_ObjectHideFlags: 0
@@ -3725,9 +3817,7 @@ MonoBehaviour:
   rents: 14000000640000002c010000ee0200009d0300004c040000
   housePrice: 150
   numOfHouses: 0
-  group:
-  - {fileID: 253607343}
-  - {fileID: 1585776051}
+  group: []
 --- !u!1 &1060327840
 GameObject:
   m_ObjectHideFlags: 0
@@ -4197,9 +4287,7 @@ MonoBehaviour:
   rents: 060000001e0000005a0000000e0100009001000026020000
   housePrice: 50
   numOfHouses: 0
-  group:
-  - {fileID: 1840977919}
-  - {fileID: 1560827004}
+  group: []
 --- !u!1 &1215602654
 GameObject:
   m_ObjectHideFlags: 0
@@ -4443,6 +4531,8 @@ MonoBehaviour:
   currentPos: 0
   numOfHousesBuilt: 0
   numOfHotelsBuilt: 0
+  die1: {fileID: 1584065860}
+  die2: {fileID: 440042449}
 --- !u!1 &1319166912
 GameObject:
   m_ObjectHideFlags: 0
@@ -4494,9 +4584,7 @@ MonoBehaviour:
   rents: 160000006e0000004a01000020030000cf0300007e040000
   housePrice: 150
   numOfHouses: 0
-  group:
-  - {fileID: 888234666}
-  - {fileID: 56945022}
+  group: []
 --- !u!1 &1320700230
 GameObject:
   m_ObjectHideFlags: 0
@@ -5425,8 +5513,7 @@ MonoBehaviour:
   rents: 020000000a0000001e0000005a000000a0000000fa000000
   housePrice: 50
   numOfHouses: 0
-  group:
-  - {fileID: 716777568}
+  group: []
 --- !u!4 &1528726297
 Transform:
   m_ObjectHideFlags: 0
@@ -5492,9 +5579,7 @@ MonoBehaviour:
   rents: 0800000028000000640000002c010000c201000058020000
   housePrice: 50
   numOfHouses: 0
-  group:
-  - {fileID: 1194070257}
-  - {fileID: 1840977919}
+  group: []
 --- !u!1 &1563601116
 GameObject:
   m_ObjectHideFlags: 0
@@ -5624,6 +5709,111 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1563601116}
   m_CullTransparentMesh: 0
+--- !u!1 &1584065858
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1584065862}
+  - component: {fileID: 1584065861}
+  - component: {fileID: 1584065860}
+  - component: {fileID: 1584065859}
+  m_Layer: 5
+  m_Name: Die
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!33 &1584065859
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1584065858}
+  m_Mesh: {fileID: 4300000, guid: 097b8824cec57e64bb6f106be2f3cf9a, type: 3}
+--- !u!114 &1584065860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1584065858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 917352ff545d4518bf20ab369a5d4ed3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  faceShowing: 1
+  angles:
+  - {x: 180, y: -45, z: 0}
+  - {x: 90, y: -45, z: 0}
+  - {x: 0, y: -135, z: 0}
+  - {x: 0, y: -45, z: 0}
+  - {x: 0, y: 45, z: 0}
+  - {x: -90, y: -45, z: 0}
+  percent: 0
+  handler: {fileID: 730793836}
+--- !u!23 &1584065861
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1584065858}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 0e1942080de433c45a79a7bd4d715a97, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!224 &1584065862
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1584065858}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 40, y: 40, z: 40}
+  m_Children: []
+  m_Father: {fileID: 699662020}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 92, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1585776049
 GameObject:
   m_ObjectHideFlags: 0
@@ -5675,9 +5865,7 @@ MonoBehaviour:
   rents: 120000005a000000fa000000bc0200006b0300001a040000
   housePrice: 150
   numOfHouses: 0
-  group:
-  - {fileID: 253607343}
-  - {fileID: 1057478269}
+  group: []
 --- !u!1 &1609473447
 GameObject:
   m_ObjectHideFlags: 0
@@ -5729,9 +5917,7 @@ MonoBehaviour:
   rents: 0e00000046000000c800000026020000ee020000b6030000
   housePrice: 100
   numOfHouses: 0
-  group:
-  - {fileID: 1718993674}
-  - {fileID: 619859637}
+  group: []
 --- !u!1 &1649067412
 GameObject:
   m_ObjectHideFlags: 0
@@ -5876,8 +6062,7 @@ MonoBehaviour:
   rents: 32000000c80000005802000078050000a4060000d0070000
   housePrice: 200
   numOfHouses: 0
-  group:
-  - {fileID: 39374205}
+  group: []
 --- !u!1 &1714200597
 GameObject:
   m_ObjectHideFlags: 0
@@ -5973,9 +6158,7 @@ MonoBehaviour:
   rents: 0e00000046000000c800000026020000ee020000b6030000
   housePrice: 100
   numOfHouses: 0
-  group:
-  - {fileID: 1609473449}
-  - {fileID: 619859637}
+  group: []
 --- !u!1 &1784083157
 GameObject:
   m_ObjectHideFlags: 0
@@ -6106,9 +6289,7 @@ MonoBehaviour:
   rents: 0a0000003200000096000000c201000071020000ee020000
   housePrice: 100
   numOfHouses: 0
-  group:
-  - {fileID: 141541279}
-  - {fileID: 886243201}
+  group: []
 --- !u!1 &1837499239
 GameObject:
   m_ObjectHideFlags: 0
@@ -6206,9 +6387,7 @@ MonoBehaviour:
   rents: 060000001e0000005a0000000e0100009001000026020000
   housePrice: 50
   numOfHouses: 0
-  group:
-  - {fileID: 1194070257}
-  - {fileID: 1560827004}
+  group: []
 --- !u!1 &1843219024
 GameObject:
   m_ObjectHideFlags: 0
@@ -6352,9 +6531,7 @@ MonoBehaviour:
   rents: 1c00000096000000c2010000e8030000b004000078050000
   housePrice: 200
   numOfHouses: 0
-  group:
-  - {fileID: 684866510}
-  - {fileID: 211631632}
+  group: []
 --- !u!1 &1874940885
 GameObject:
   m_ObjectHideFlags: 0

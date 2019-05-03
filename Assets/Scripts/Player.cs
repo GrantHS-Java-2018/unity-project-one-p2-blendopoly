@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Threading;
+using Spaces;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
@@ -32,6 +33,8 @@ public class Player : MonoBehaviour
     private bool equal = false;
     public int numOfHousesBuilt = 0;
     public int numOfHotelsBuilt = 0;
+    public Die die1;
+    public Die die2;
 
     void Start()
     {
@@ -124,14 +127,14 @@ public class Player : MonoBehaviour
         if (!inJail)
         {
             turnsInJail = 0;
-            int die1 = roll();
-            int die2 = roll();
-            if (die1 == die2 && doubles != 2)
+            die1.roll(roll());
+            die2.roll(roll());
+            if (die1.faceShowing == die2.faceShowing && doubles != 2)
             {
                 ++doubles;
                 repeat = true;
             }
-            else if (die1 == die2)
+            else if (die1.faceShowing == die2.faceShowing)
             {
                 index = BoardLayout.JAIL_INDEX;
                 currentPos = BoardLayout.JAIL_INDEX;
@@ -145,20 +148,20 @@ public class Player : MonoBehaviour
                 doubles = 0;
                 repeat = false;
             }
-            move(die1 + die2);
+            move(die1.faceShowing + die2.faceShowing);
         }
         else
         {
-            int die1 = roll();
-            int die2 = roll();
+            die1.roll(roll());
+            die2.roll(roll());
             if (die1 == die2)
             {
-                move(die1 + die2);
+                move(die1.faceShowing + die2.faceShowing);
                 inJail = false;
             }
             else if (turnsInJail == 2)
             {
-                move(die1 + die2);
+                move(die1.faceShowing + die2.faceShowing);
                 inJail = false;
                 money -= 50;
 

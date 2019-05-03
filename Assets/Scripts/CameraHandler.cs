@@ -17,6 +17,7 @@ public class CameraHandler : MonoBehaviour
     private bool isOnPlayer = false;
     public PlayerHandler handler;
     public Text buttonText;
+    public Light light;
     
     // Start is called before the first frame update
     void Start()
@@ -28,6 +29,7 @@ public class CameraHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        light.transform.SetPositionAndRotation(transform.position, transform.rotation);
         if (isOnPlayer)
         {
             focusOnPlayer(handler.players[handler.index]);

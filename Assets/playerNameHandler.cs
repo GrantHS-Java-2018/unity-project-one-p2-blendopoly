@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class playerNameHandler : MonoBehaviour
+public class PlayerNameHandler : MonoBehaviour
 {
     void Start()
     {

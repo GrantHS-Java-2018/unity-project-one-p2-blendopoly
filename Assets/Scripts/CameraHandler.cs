@@ -89,21 +89,15 @@ public class CameraHandler : MonoBehaviour
     private void focusOnPlayer(Player player)
     {
         Vector3 offset;
-        if (player.currentPos <= 10)
+        if ((player.currentPos == 10 || player.currentPos == 20 || player.currentPos == 30 || player.index == 39) &&
+            player.moving)
         {
-            offset = new Vector3(0,20,-20);
-        }else if (player.currentPos <= 20)
-        {
-            offset = new Vector3(-20,20,0);
-        }else if (player.currentPos <= 30)
-        {
-            offset = new Vector3(0, 20, 20);
+            offset = circleFunction(player);
         }
         else
         {
-            offset = new Vector3(20,20,0);
+            offset = getOffset(player);
         }
-
         transform.position = player.transform.position + offset;
         Vector3 relativePos = player.transform.position - transform.position;
         transform.rotation = Quaternion.LookRotation(relativePos);
@@ -123,6 +117,46 @@ public class CameraHandler : MonoBehaviour
             xIncreasing = true;
             zIncreasing = true;
         }
+    }
+
+    public Vector3 getOffset(Player player)
+    {
+        if (player.currentPos <= 10)
+        {
+            return new Vector3(0,20,-20);
+        }
+        if (player.currentPos <= 20)
+        {
+            return new Vector3(-20,20,0);
+        }
+        if (player.currentPos <= 30)
+        {
+            return new Vector3(0, 20, 20);
+        }
+        return new Vector3(20,20,0);
+    }
+
+    public Vector3 getOffset(int location)
+    {
+        if (location <= 10)
+        {
+            return new Vector3(0,20,-20);
+        }
+        if (location <= 20)
+        {
+            return new Vector3(-20,20,0);
+        }
+        if (location <= 30)
+        {
+            return new Vector3(0, 20, 20);
+        }
+        return new Vector3(20,20,0);
+    }
+
+    public Vector3 circleFunction(Player player)
+    {
+        Vector3 offset = Vector3.Lerp(getOffset(player), getOffset(player.currentPos + 1), player.counter/25f);
+        return offset;
     }
     
 }

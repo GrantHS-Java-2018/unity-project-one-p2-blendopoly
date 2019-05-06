@@ -165,6 +165,7 @@ public class ActionHandler : MonoBehaviour
             {
                 property.morgaged = true;
                 handler.players[handler.index].money += property.morgagePrice;
+                --handler.players[handler.index].unMorgagedProperties;
             }
         }
         cancel();
@@ -178,6 +179,7 @@ public class ActionHandler : MonoBehaviour
             {
                 property.morgaged = false;
                 handler.players[handler.index].money -= property.morgagePrice;
+                ++handler.players[handler.index].unMorgagedProperties;
             }
         }
         cancel();

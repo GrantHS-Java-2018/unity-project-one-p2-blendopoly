@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.4964127, b: 0.57481724, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3267,7 +3267,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -31.800003}
+  m_AnchoredPosition: {x: 0, y: -31.799988}
   m_SizeDelta: {x: 284.5, y: 43.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &892604859
@@ -3325,6 +3325,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offset: {x: 0, y: 1, z: 0}
+  name: 
   index: 0
   board: {fileID: 66470546}
   money: 1500
@@ -3336,11 +3337,15 @@ MonoBehaviour:
   moving: 0
   inArc: 0
   currentPos: 0
+  counter: 0
+  unMorgagedProperties: 0
   numOfHousesBuilt: 0
   numOfHotelsBuilt: 0
   die1: {fileID: 1584065860}
   die2: {fileID: 440042449}
   jailWaiting: 0
+  bankrupt: 0
+  goingBankrupt: 0
 --- !u!1 &947578223
 GameObject:
   m_ObjectHideFlags: 0
@@ -4522,6 +4527,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offset: {x: 0, y: 0, z: 0}
+  name: 
   index: 0
   board: {fileID: 66470546}
   money: 1500
@@ -4533,11 +4539,15 @@ MonoBehaviour:
   moving: 0
   inArc: 0
   currentPos: 0
+  counter: 0
+  unMorgagedProperties: 0
   numOfHousesBuilt: 0
   numOfHotelsBuilt: 0
   die1: {fileID: 1584065860}
   die2: {fileID: 440042449}
   jailWaiting: 0
+  bankrupt: 0
+  goingBankrupt: 0
 --- !u!1 &1319166912
 GameObject:
   m_ObjectHideFlags: 0

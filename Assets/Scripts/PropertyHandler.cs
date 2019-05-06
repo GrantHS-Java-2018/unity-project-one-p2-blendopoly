@@ -37,6 +37,7 @@ public class PropertyHandler : MonoBehaviour
     {
         currentProperty.owner = currentPlayer;
         currentPlayer.money -= currentProperty.price;
+        ++currentPlayer.unMorgagedProperties;
         if (currentPlayer.index == 5 || currentPlayer.index == 15 || currentPlayer.index == 25 ||
             currentPlayer.index == 35)
         {

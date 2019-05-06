@@ -130,4 +130,28 @@ public class ButtonHandler : MonoBehaviour
         die1.SetActive(false);
         die2.SetActive(false);
     }
+
+    public void turnOnPanicButtons()
+    {
+        turnOffDice();
+        turnOffActions();
+        turnOffCancel();
+        turnOffEndTurn();
+        sell.SetActive(true);
+        morgage.SetActive(true);
+    }
+
+    public void turnOffPanicButtons()
+    {
+        sell.SetActive(false);
+        morgage.SetActive(false);
+    }
+
+    public void keepPanicking()
+    {
+        if (endTurn.activeSelf)
+        {
+            turnOnPanicButtons();
+        }
+    }
 }

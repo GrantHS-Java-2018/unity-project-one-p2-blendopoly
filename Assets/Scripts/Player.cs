@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
 
     private Transform pos;
     public Vector3 offset;
+    public String name;
     public int index = 0;
     public GameObject board;
     private BoardLayout layout;
@@ -28,14 +29,17 @@ public class Player : MonoBehaviour
     public bool moving = false;
     public bool inArc = false;
     public int currentPos = 0;
-    private int counter = 0;
+    public int counter = 0;
     private Vector3 difference;
     private bool equal = false;
+    public int unMorgagedProperties = 0;
     public int numOfHousesBuilt = 0;
     public int numOfHotelsBuilt = 0;
     public Die die1;
     public Die die2;
     public bool jailWaiting = false;
+    public bool bankrupt = false;
+    public bool goingBankrupt = false;
 
     void Start()
     {
@@ -46,23 +50,30 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if (currentPos <= 10)
+        setRotationOfPlayer();
+        if (money <= 0)
         {
-            pos.rotation = Quaternion.Euler(0, 180, 0);
+            if (unMorgagedProperties == 0 && numOfHotelsBuilt == 0 && numOfHousesBuilt == 0)
+            {
+                bankrupt = true;
+            }
+            else if(!goingBankrupt)
+            {
+                goingBankrupt = true;
+                emergencyMoney();
+            }
         }
-        else if (currentPos <= 20)
+        else if (bankrupt)
         {
-            pos.rotation = Quaternion.Euler(0,-90,0);
+            goingBankrupt = false;
+            bankrupt = false;
+            endEmergencyMode();
         }
-        else if (currentPos <= 30)
+        else if (goingBankrupt)
         {
-            pos.rotation = Quaternion.Euler(0,0,0);
+            buttonHandler.keepPanicking();
         }
-        else
-        {
-            pos.rotation = Quaternion.Euler(0,90,0);
-        }
-        if ((currentPos != index || equal) && (!die1.rolling && !die2.rolling))
+        else if ((currentPos != index || equal) && (!die1.rolling && !die2.rolling))
         {
             if (!moving)
             {
@@ -105,9 +116,8 @@ public class Player : MonoBehaviour
             moving = false;
             inArc = false;
             layout.boardTrack[index].onLand(this);
-        }
-
-        if (jailWaiting && (!die1.rolling && !die2.rolling))
+        } 
+        else if (jailWaiting && (!die1.rolling && !die2.rolling))
         {
             readyForAction();
             jailWaiting = false;
@@ -211,4 +221,36 @@ public class Player : MonoBehaviour
         pos.position = new Vector3(pos.position.x + difference.x/25,5 * (float)Math.Abs(Math.Sin(number * Math.PI/25)),pos.position.z + difference.z/25);
         pos.position += offset;
     }
+
+    public void emergencyMoney()
+    {
+        buttonHandler.turnOnPanicButtons();
+    }
+
+    public void endEmergencyMode()
+    {
+        buttonHandler.turnOffPanicButtons();
+        buttonHandler.turnOnActions();
+    }
+    
+    public void setRotationOfPlayer()
+    {
+        if (currentPos <= 10)
+        {
+            pos.rotation = Quaternion.Euler(0, 180, 0);
+        }
+        else if (currentPos <= 20)
+        {
+            pos.rotation = Quaternion.Euler(0,-90,0);
+        }
+        else if (currentPos <= 30)
+        {
+            pos.rotation = Quaternion.Euler(0,0,0);
+        }
+        else
+        {
+            pos.rotation = Quaternion.Euler(0,90,0);
+        }
+    }
+    
 }

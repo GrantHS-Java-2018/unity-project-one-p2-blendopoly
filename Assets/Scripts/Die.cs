@@ -15,7 +15,7 @@ namespace Spaces {
             rolling = true;
             if (faceShowing == value)
             {
-                transform.localEulerAngles += new Vector3(360,0,360);
+                transform.localEulerAngles = new Vector3(180,180,180) + angles[faceShowing];
             }
             faceShowing = value;
             percent = 0;

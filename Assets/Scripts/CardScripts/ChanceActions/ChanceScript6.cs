@@ -58,17 +58,23 @@ public class ChanceScript6 : Card
         }
 
         player.setPos(layout.boardTrack[railIndex]);
+        player.index = railIndex;
+        player.currentPos = railIndex;
         Railroads railroad = layout.boardTrack[player.index] as Railroads;
         
         if (railroad != null && railroad.owner == null)
         {
             railroad.onLand(player);
         }
-        else
+        else if(railroad != null)
         {
             int rent = railroad.calculateRent(railroad.owner) * 2;
             player.money -= rent;
             railroad.owner.money += rent;
+        }
+        else
+        {
+            Debug.Log("Railroad doesn't exist...");
         }
     }
 }

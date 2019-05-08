@@ -82,6 +82,7 @@ public class Player : MonoBehaviour
             moving = true;
             if (!inArc)
             {
+                counter = 0;
                 ++currentPos;
                 if (currentPos >= 40)
                 {
@@ -104,12 +105,13 @@ public class Player : MonoBehaviour
                 moveToSpace(counter);
                 if (counter == 25)
                 {
-                    counter = 0;
                     inArc = false;
-                    //pos.position = layout.boardTrack[currentPos].pos + offset;
+                }
+                else
+                {
+                    ++counter;
                 }
             }
-            ++counter;
         }
         else if (moving)
         {
@@ -119,6 +121,7 @@ public class Player : MonoBehaviour
         } 
         else if (jailWaiting && (!die1.rolling && !die2.rolling))
         {
+            Thread.Sleep(1000);
             readyForAction();
             jailWaiting = false;
         }
@@ -150,6 +153,7 @@ public class Player : MonoBehaviour
             {
                 ++doubles;
                 repeat = true;
+                move(die1.faceShowing + die2.faceShowing);
             }
             else if (die1.faceShowing == die2.faceShowing)
             {
@@ -164,8 +168,8 @@ public class Player : MonoBehaviour
             {
                 doubles = 0;
                 repeat = false;
+                move(die1.faceShowing + die2.faceShowing);
             }
-            move(die1.faceShowing + die2.faceShowing);
         }
         else
         {
@@ -235,17 +239,49 @@ public class Player : MonoBehaviour
     
     public void setRotationOfPlayer()
     {
-        if (currentPos <= 10)
+        if (currentPos == 11 && moving)
+        {
+            pos.eulerAngles = Vector3.Lerp(new Vector3(0,180,0), new Vector3(0, 270, 0), counter/25f);
+        }
+        else if (currentPos == 20 && moving)
+        {
+            pos.eulerAngles = Vector3.Lerp(new Vector3(0,-90,0), new Vector3(0, -45, 0), counter/25f);
+        }
+        else if (currentPos == 21 && moving)
+        {
+            pos.eulerAngles = Vector3.Lerp(new Vector3(0,-45,0), new Vector3(0, 0, 0), counter/25f);
+        }
+        else if (currentPos == 30 && moving)
+        {
+            pos.eulerAngles = Vector3.Lerp(new Vector3(0,0,0), new Vector3(0, 45, 0), counter/25f);
+        }
+        else if (currentPos == 31 && moving)
+        {
+            pos.eulerAngles = Vector3.Lerp(new Vector3(0,45,0), new Vector3(0, 90, 0), counter/25f);
+        }
+        else if (currentPos == 0 && moving)
+        {
+            pos.eulerAngles = Vector3.Lerp(new Vector3(0,90,0), new Vector3(0, 180, 0), counter/25f);
+        }
+        else if (currentPos <= 10)
         {
             pos.rotation = Quaternion.Euler(0, 180, 0);
         }
-        else if (currentPos <= 20)
+        else if (currentPos < 20)
         {
             pos.rotation = Quaternion.Euler(0,-90,0);
         }
-        else if (currentPos <= 30)
+        else if (currentPos == 20)
+        {
+            pos.rotation = Quaternion.Euler(0,-45,0);
+        }
+        else if (currentPos < 30)
         {
             pos.rotation = Quaternion.Euler(0,0,0);
+        }
+        else if (currentPos == 30)
+        {
+            pos.rotation = Quaternion.Euler(0,45,0);
         }
         else
         {

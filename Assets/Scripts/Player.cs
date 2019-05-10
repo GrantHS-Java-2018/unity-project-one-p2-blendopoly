@@ -51,19 +51,20 @@ public class Player : MonoBehaviour
     void Update()
     {
         setRotationOfPlayer();
-        if (money <= 0)
+        if (money <= 0 && !goingBankrupt)
         {
             if (unMorgagedProperties == 0 && numOfHotelsBuilt == 0 && numOfHousesBuilt == 0)
             {
                 bankrupt = true;
+                endEmergencyMode();
             }
-            else if(!goingBankrupt)
+            else
             {
                 goingBankrupt = true;
                 emergencyMoney();
             }
         }
-        else if (bankrupt)
+        else if (money > 0 && goingBankrupt)
         {
             goingBankrupt = false;
             bankrupt = false;
@@ -234,7 +235,7 @@ public class Player : MonoBehaviour
     public void endEmergencyMode()
     {
         buttonHandler.turnOffPanicButtons();
-        buttonHandler.turnOnActions();
+        buttonHandler.turnOnEndTurn();
     }
     
     public void setRotationOfPlayer()

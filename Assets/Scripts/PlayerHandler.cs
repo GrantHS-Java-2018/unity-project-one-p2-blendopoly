@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerHandler : MonoBehaviour
@@ -14,6 +15,7 @@ public class PlayerHandler : MonoBehaviour
     private void Update()
     {
         text.text = "Money: $" + players[index].money;
+        checkForWinner();
     }
 
     public void startTurn()
@@ -35,7 +37,6 @@ public class PlayerHandler : MonoBehaviour
             } while (players[index].bankrupt);
         }
         handler.turnOffEndTurn();
-        handler.turnOffActions();
         players[index].readyForTurn();
     }
 
@@ -79,8 +80,7 @@ public class PlayerHandler : MonoBehaviour
 
     public void winnerOfGame(Player player)
     {
-        text.rectTransform.anchoredPosition = Vector2.zero;
-        text.rectTransform.position = Vector3.zero;
-        text.text = player.name + " wins!";
+        InfoHolder.player = player;
+        SceneManager.LoadScene("WinningScene");
     }
 }

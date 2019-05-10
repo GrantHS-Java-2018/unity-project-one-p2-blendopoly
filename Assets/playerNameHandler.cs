@@ -14,4 +14,14 @@ public class PlayerNameHandler : MonoBehaviour
     {
         
     }
+
+    public void turnOff()
+    {
+        gameObject.SetActive(false);
+    }
+
+    public void turnOn()
+    {
+        gameObject.SetActive(true);
+    }
 }

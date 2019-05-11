@@ -10,6 +10,7 @@ public class CCScript1 : Card
         player.index = BoardLayout.JAIL_INDEX;
         player.currentPos = BoardLayout.JAIL_INDEX;
         player.inJail = true;
+        player.repeat = false;
         player.setPos(layout.jail);
     }
 }

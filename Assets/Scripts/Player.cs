@@ -73,6 +73,11 @@ public class Player : MonoBehaviour
         else if (goingBankrupt)
         {
             buttonHandler.keepPanicking();
+            if (unMorgagedProperties == 0 && numOfHotelsBuilt == 0 && numOfHousesBuilt == 0)
+            {
+                bankrupt = true;
+                endEmergencyMode();
+            }
         }
         else if ((currentPos != index || equal) && (!die1.rolling && !die2.rolling))
         {
@@ -178,8 +183,10 @@ public class Player : MonoBehaviour
             die2.roll(roll());
             if (die1 == die2)
             {
-                move(die1.faceShowing + die2.faceShowing);
                 inJail = false;
+                ++doubles;
+                repeat = true;
+                move(die1.faceShowing + die2.faceShowing);
             }
             else if (turnsInJail == 2)
             {

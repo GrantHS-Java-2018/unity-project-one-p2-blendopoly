@@ -89,10 +89,14 @@ public class CameraHandler : MonoBehaviour
     private void focusOnPlayer(Player player)
     {
         Vector3 offset;
-        if ((player.currentPos == 11 || player.currentPos == 21 || player.currentPos == 31 || player.currentPos == 39) &&
+        if ((player.currentPos == 11 || player.currentPos == 21 || player.currentPos == 31) &&
             player.moving)
         {
             offset = circleFunction(player);
+        }
+        else if (player.currentPos == 0 && player.moving)
+        {
+            offset = circleToGo(player);
         }
         else
         {
@@ -156,6 +160,12 @@ public class CameraHandler : MonoBehaviour
     public Vector3 circleFunction(Player player)
     {
         Vector3 offset = Vector3.Lerp(getOffset(player.currentPos - 1), getOffset(player), player.counter/25f);
+        return offset;
+    }
+
+    public Vector3 circleToGo(Player player)
+    {
+        Vector3 offset = Vector3.Lerp(getOffset(39), getOffset(0), player.counter/25f);
         return offset;
     }
     

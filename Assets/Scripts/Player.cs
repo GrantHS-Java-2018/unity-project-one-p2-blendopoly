@@ -102,6 +102,7 @@ public class Player : MonoBehaviour
                 {
                     currentPos = index;
                     equal = false;
+                    return;
                 }
                 difference = layout.boardTrack[currentPos].pos + offset - pos.position;
                 inArc = true;
@@ -169,6 +170,7 @@ public class Player : MonoBehaviour
                 inJail = true;
                 repeat = false;
                 setPos(layout.jail);
+                readyForAction();
             }
             else
             {
@@ -181,11 +183,12 @@ public class Player : MonoBehaviour
         {
             die1.roll(roll());
             die2.roll(roll());
-            if (die1 == die2)
+            if (die1.faceShowing == die2.faceShowing)
             {
                 inJail = false;
                 ++doubles;
                 repeat = true;
+                Debug.Log("ran");
                 move(die1.faceShowing + die2.faceShowing);
             }
             else if (turnsInJail == 2)
@@ -247,27 +250,27 @@ public class Player : MonoBehaviour
     
     public void setRotationOfPlayer()
     {
-        if (currentPos == 11 && moving)
+        if (currentPos == 11 && inArc)
         {
             pos.eulerAngles = Vector3.Lerp(new Vector3(0,180,0), new Vector3(0, 270, 0), counter/25f);
         }
-        else if (currentPos == 20 && moving)
+        else if (currentPos == 20 && inArc)
         {
             pos.eulerAngles = Vector3.Lerp(new Vector3(0,-90,0), new Vector3(0, -45, 0), counter/25f);
         }
-        else if (currentPos == 21 && moving)
+        else if (currentPos == 21 && inArc)
         {
             pos.eulerAngles = Vector3.Lerp(new Vector3(0,-45,0), new Vector3(0, 0, 0), counter/25f);
         }
-        else if (currentPos == 30 && moving)
+        else if (currentPos == 30 && inArc)
         {
             pos.eulerAngles = Vector3.Lerp(new Vector3(0,0,0), new Vector3(0, 45, 0), counter/25f);
         }
-        else if (currentPos == 31 && moving)
+        else if (currentPos == 31 && inArc)
         {
             pos.eulerAngles = Vector3.Lerp(new Vector3(0,45,0), new Vector3(0, 90, 0), counter/25f);
         }
-        else if (currentPos == 0 && moving)
+        else if (currentPos == 0 && inArc)
         {
             pos.eulerAngles = Vector3.Lerp(new Vector3(0,90,0), new Vector3(0, 180, 0), counter/25f);
         }

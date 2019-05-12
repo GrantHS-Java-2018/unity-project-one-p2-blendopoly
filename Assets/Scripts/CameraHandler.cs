@@ -90,11 +90,11 @@ public class CameraHandler : MonoBehaviour
     {
         Vector3 offset;
         if ((player.currentPos == 11 || player.currentPos == 21 || player.currentPos == 31) &&
-            player.moving)
+            player.inArc)
         {
             offset = circleFunction(player);
         }
-        else if (player.currentPos == 0 && player.moving)
+        else if (player.currentPos == 0 && player.inArc)
         {
             offset = circleToGo(player);
         }

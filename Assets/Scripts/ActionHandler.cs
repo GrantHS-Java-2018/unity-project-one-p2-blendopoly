@@ -24,7 +24,7 @@ public class ActionHandler : MonoBehaviour
             GameObject button = new GameObject();
             button.name = "Button";
             GameObject text = new GameObject();
-            text.name = "Text";
+            text.name = property.name;
             RectTransform buttonTransform = button.AddComponent<RectTransform>();
             buttonTransform.SetParent(canvas.transform);
             text.transform.SetParent(buttonTransform);
@@ -34,21 +34,26 @@ public class ActionHandler : MonoBehaviour
             buttonTransform.sizeDelta = new Vector2(160, 30);
             button.AddComponent<Image>().type = Image.Type.Sliced;
             button.GetComponent<Image>().sprite = _buttonSprite;
+            Text textComponent = text.AddComponent<Text>();
             switch (purpose)
             {
                 case 0:
                     button.AddComponent<Button>().onClick.AddListener(delegate { morgageSelection(property.name); });
+                    textComponent.text = property.name + ": $" + property.morgagePrice;
                     break;
                 case 1:
                     button.AddComponent<Button>().onClick.AddListener(delegate { unMorgageSelection(property.name); });
+                    textComponent.text = property.name + ": $" + property.morgagePrice;
                     break;
                 case 2:
                     Property p = property as Property;
                     button.AddComponent<Button>().onClick.AddListener(delegate { p.buildHouse(player); });
+                    textComponent.text = property.name + ": " + p.numOfHouses;
                     break;
                 case 3:
                     Property propertyVersion = property as Property;
                     button.AddComponent<Button>().onClick.AddListener(delegate { propertyVersion.sellHouse(player); });
+                    textComponent.text = property.name + ": " + propertyVersion.numOfHouses;
                     break;
                 default:
                     //build a house
@@ -56,8 +61,6 @@ public class ActionHandler : MonoBehaviour
                     break;
             }
             button.GetComponent<Button>().targetGraphic = button.GetComponent<Image>();
-            Text textComponent = text.AddComponent<Text>();
-            textComponent.text = property.name;
             textComponent.alignment = TextAnchor.MiddleCenter;
             textComponent.color = Color.black;
             textComponent.font = arial;
@@ -112,7 +115,11 @@ public class ActionHandler : MonoBehaviour
             {
                 if (p.owner == player && p.morgaged == morgaged)
                 {
-                    properties.Add(property);
+                    var houses = p as Property;
+                    if (houses == null || houses.numOfHouses == 0)
+                    {
+                        properties.Add(property);
+                    }
                 }
             }
         }

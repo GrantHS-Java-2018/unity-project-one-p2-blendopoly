@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Spaces.Purchasable.Purchasable;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -117,9 +118,24 @@ public class ButtonHandler : MonoBehaviour
         {
             if (button != null)
             {
-                if (button.GetComponentInChildren<Text>().text == name)
+                if (button.GetComponentInChildren<Text>().name == name)
                 {
                     Destroy(button);
+                }
+            }
+        }
+    }
+
+    public void updateButton(Property property)
+    {
+        foreach (GameObject button in buttons)
+        {
+            if (button != null)
+            {
+                Text text = button.GetComponentInChildren<Text>();
+                if (text.name == property.name)
+                {
+                    text.text = text.name + ": " + property.numOfHouses;
                 }
             }
         }

@@ -65,6 +65,10 @@ public class PropertyHandler : MonoBehaviour
         {
             handler.disableButtonWithName(property.name);
         }
+        else
+        {
+            handler.updateButton(property);
+        }
     }
     
 }

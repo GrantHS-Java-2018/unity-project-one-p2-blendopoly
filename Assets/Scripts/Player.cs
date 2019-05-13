@@ -40,6 +40,7 @@ public class Player : MonoBehaviour
     public bool jailWaiting = false;
     public bool bankrupt = false;
     public bool goingBankrupt = false;
+    public ActionHandler actionHandler;
 
     void Start()
     {
@@ -188,7 +189,6 @@ public class Player : MonoBehaviour
                 inJail = false;
                 ++doubles;
                 repeat = true;
-                Debug.Log("ran");
                 move(die1.faceShowing + die2.faceShowing);
             }
             else if (turnsInJail == 2)
@@ -244,6 +244,7 @@ public class Player : MonoBehaviour
 
     public void endEmergencyMode()
     {
+        actionHandler.cancel();
         buttonHandler.turnOffPanicButtons();
         buttonHandler.turnOnEndTurn();
     }

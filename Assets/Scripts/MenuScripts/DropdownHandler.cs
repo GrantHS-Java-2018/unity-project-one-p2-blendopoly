@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class DropdownHandler : MonoBehaviour
 {
+    
     public PlayerNameHandler[] textFields = new PlayerNameHandler[4];
     void Start()
     {
@@ -26,6 +27,7 @@ public class DropdownHandler : MonoBehaviour
         {
             //Debug.Log("x1: " + x1 + " dropdownValue: " + dropdown.value);
             textFields[x1].turnOn();
+            textFields[x1].setName();
         }
 
     }

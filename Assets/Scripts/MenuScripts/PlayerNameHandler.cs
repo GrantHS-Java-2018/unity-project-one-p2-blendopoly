@@ -1,19 +1,12 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerNameHandler : MonoBehaviour
 {
-    void Start()
-    {
-        
-    }
 
-    void Update()
-    {
-        
-    }
+    private string name;
 
     public void turnOff()
     {
@@ -23,5 +16,10 @@ public class PlayerNameHandler : MonoBehaviour
     public void turnOn()
     {
         gameObject.SetActive(true);
+    }
+
+    public setName()
+    {
+        
     }
 }

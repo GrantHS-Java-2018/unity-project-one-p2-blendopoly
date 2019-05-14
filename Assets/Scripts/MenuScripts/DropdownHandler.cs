@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Experimental.UIElements;
@@ -12,11 +12,6 @@ public class DropdownHandler : MonoBehaviour
         Dropdown dropdown = gameObject.GetComponent<Dropdown>();
         dropdown.onValueChanged.AddListener(delegate {onChange(dropdown);});
         onChange(dropdown);
-    }
-
-    void Update()
-    {
-        
     }
 
     private void onChange(Dropdown dropdown)

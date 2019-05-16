@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -11,6 +12,14 @@ public class PlayerHandler : MonoBehaviour
     public ButtonHandler handler;
     public Text text;
     public int index = 0;
+
+    private void Awake()
+    {
+        for (int i = 0; i < players.Length; ++i)
+        {
+            players[i].name = ValueHolder.playerNames[i];
+        }
+    }
 
     private void Update()
     {

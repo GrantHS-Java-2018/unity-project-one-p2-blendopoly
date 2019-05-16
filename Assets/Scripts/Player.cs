@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
 
     private Transform pos;
     public Vector3 offset;
-    public String name;
+    public string name;
     public int index = 0;
     public GameObject board;
     private BoardLayout layout;

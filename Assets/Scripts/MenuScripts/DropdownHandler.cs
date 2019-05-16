@@ -29,7 +29,13 @@ public class DropdownHandler : MonoBehaviour
             textFields[x1].turnOn();
             textFields[x1].setName();
         }
-
     }
 
+    private void Update()
+    {
+        for (int i = 0; i < textFields.Length; ++i)
+        {
+            ValueHolder.playerNames[i] = textFields[i].stringName;
+        }
+    }
 }

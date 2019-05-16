@@ -10,13 +10,11 @@ using Object = System.Object;
 
 public class PlayerNameHandler : MonoBehaviour
 {
-
-    private string name;
+    public string stringName;
     public Text textBox;
 
     private void Start()
     {
-        DontDestroyOnLoad(gameObject);
         InputField textHandler = gameObject.GetComponent<InputField>();
         textHandler.onEndEdit.AddListener(delegate {setName();});
     }
@@ -33,8 +31,7 @@ public class PlayerNameHandler : MonoBehaviour
 
     public void setName()
     {
-        name = textBox.text;
-        Debug.Log(name);
+        stringName = textBox.text;
     }
     
 }

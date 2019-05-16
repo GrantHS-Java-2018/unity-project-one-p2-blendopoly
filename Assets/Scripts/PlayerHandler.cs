@@ -57,7 +57,7 @@ public class PlayerHandler : MonoBehaviour
         handler.turnOffJail();
     }
 
-    public void checkForWinner()
+    private void checkForWinner()
     {
         int numOfPlayersWithMoney = players.Length;
         Player nonBankruptedPlayer = null;
@@ -78,9 +78,9 @@ public class PlayerHandler : MonoBehaviour
         }
     }
 
-    public void winnerOfGame(Player player)
+    private void winnerOfGame(Player player)
     {
         InfoHolder.player = player;
-        SceneManager.LoadScene("WinningScene");
+        SceneManager.LoadSceneAsync(1);
     }
 }

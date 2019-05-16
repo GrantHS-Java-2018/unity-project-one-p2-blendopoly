@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Experimental.UIElements;
@@ -6,17 +6,13 @@ using UnityEngine.UI;
 
 public class DropdownHandler : MonoBehaviour
 {
+    
     public PlayerNameHandler[] textFields = new PlayerNameHandler[4];
     void Start()
     {
         Dropdown dropdown = gameObject.GetComponent<Dropdown>();
         dropdown.onValueChanged.AddListener(delegate {onChange(dropdown);});
         onChange(dropdown);
-    }
-
-    void Update()
-    {
-        
     }
 
     private void onChange(Dropdown dropdown)
@@ -31,6 +27,7 @@ public class DropdownHandler : MonoBehaviour
         {
             //Debug.Log("x1: " + x1 + " dropdownValue: " + dropdown.value);
             textFields[x1].turnOn();
+            textFields[x1].setName();
         }
 
     }

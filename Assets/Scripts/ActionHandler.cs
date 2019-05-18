@@ -185,7 +185,7 @@ public class ActionHandler : MonoBehaviour
             if (property.name == name)
             {
                 property.morgaged = false;
-                handler.players[handler.index].changeMoney(property.morgagePrice);
+                handler.players[handler.index].changeMoney(-property.morgagePrice);
                 ++handler.players[handler.index].unMorgagedProperties;
             }
         }

@@ -235,7 +235,7 @@ public class Player : MonoBehaviour
 
     public int roll()
     {
-        return Random.Range(1, 6);
+        return Random.Range(1, 7);
     }
 
     private void moveToSpace(int number)

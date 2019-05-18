@@ -7,17 +7,31 @@ using UnityEngine.UI;
 
 public class PlayerHandler : MonoBehaviour
 {
-    
-    public Player[] players;
+    public Player[] allPlayersPossible;
+    [NonSerialized]public Player[] players = new Player[ValueHolder.numOfPlayers];
     public ButtonHandler handler;
     public Text text;
     public int index = 0;
 
     private void Awake()
     {
+        for (int j = 0; j < allPlayersPossible.Length; ++j)
+        {
+            if (j < players.Length)
+            {
+                players[j] = allPlayersPossible[j];
+            }
+            else
+            {
+                allPlayersPossible[j].gameObject.SetActive(false);
+            }
+        }
         for (int i = 0; i < players.Length; ++i)
         {
-            players[i].name = ValueHolder.playerNames[i];
+            if (ValueHolder.playerNames[i] != null && ValueHolder.playerNames[i] != "")
+            {
+                players[i].name = ValueHolder.playerNames[i];
+            }
         }
     }
 

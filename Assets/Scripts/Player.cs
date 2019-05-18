@@ -60,6 +60,7 @@ public class Player : MonoBehaviour
             {
                 bankrupt = true;
                 endEmergencyMode();
+                gameObject.SetActive(false);
             }
             else
             {
@@ -80,6 +81,7 @@ public class Player : MonoBehaviour
             {
                 bankrupt = true;
                 endEmergencyMode();
+                gameObject.SetActive(false);
             }
         }
         else if ((currentPos != index || equal) && (!die1.rolling && !die2.rolling))
@@ -112,7 +114,7 @@ public class Player : MonoBehaviour
                     equal = false;
                     return;
                 }
-                difference = layout.boardTrack[currentPos].pos + offset - pos.position;
+                difference = layout.boardTrack[currentPos].gameObject.transform.position + offset - pos.position;
                 inArc = true;
             }
             else
@@ -230,7 +232,7 @@ public class Player : MonoBehaviour
 
     public void setPos()
     {
-        pos.position = layout.boardTrack[index].pos + offset;
+        pos.position = new Vector3(64.2f, 0, -67.3f) + offset;
     }
 
     public int roll()
@@ -240,8 +242,7 @@ public class Player : MonoBehaviour
 
     private void moveToSpace(int number)
     {
-        pos.position = new Vector3(pos.position.x + difference.x/25,5 * (float)Math.Abs(Math.Sin(number * Math.PI/25)),pos.position.z + difference.z/25);
-        pos.position += offset;
+        pos.position = new Vector3(pos.position.x + difference.x/25,5 * (float)Math.Abs(Math.Sin(number * Math.PI/25)) + offset.y,pos.position.z + difference.z/25);
     }
 
     public void emergencyMoney()

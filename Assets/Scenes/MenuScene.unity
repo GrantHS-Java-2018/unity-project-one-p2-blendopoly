@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.4964127, b: 0.57481724, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -607,6 +607,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3a8d8e6a025ede4d8f2d844d9e37d38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stringName: 
   textBox: {fileID: 2003320791}
 --- !u!114 &316591537
 MonoBehaviour:
@@ -863,6 +864,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3a8d8e6a025ede4d8f2d844d9e37d38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stringName: 
   textBox: {fileID: 1872879578}
 --- !u!1 &490577387
 GameObject:
@@ -2142,6 +2144,7 @@ MonoBehaviour:
   - {fileID: 1630141031}
   - {fileID: 2142457047}
   - {fileID: 316591536}
+  dropdown: {fileID: 1417298176}
 --- !u!1 &1553407213
 GameObject:
   m_ObjectHideFlags: 0
@@ -2295,6 +2298,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3a8d8e6a025ede4d8f2d844d9e37d38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stringName: 
   textBox: {fileID: 601335542}
 --- !u!114 &1630141032
 MonoBehaviour:
@@ -3043,6 +3047,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3a8d8e6a025ede4d8f2d844d9e37d38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stringName: 
   textBox: {fileID: 1294177284}
 --- !u!114 &2142457048
 MonoBehaviour:

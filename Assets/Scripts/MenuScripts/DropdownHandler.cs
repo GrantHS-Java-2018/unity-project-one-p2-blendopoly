@@ -8,14 +8,14 @@ public class DropdownHandler : MonoBehaviour
 {
     
     public PlayerNameHandler[] textFields = new PlayerNameHandler[4];
+    public Dropdown dropdown;
     void Start()
     {
-        Dropdown dropdown = gameObject.GetComponent<Dropdown>();
-        dropdown.onValueChanged.AddListener(delegate {onChange(dropdown);});
-        onChange(dropdown);
+        dropdown.onValueChanged.AddListener(delegate {onChange();});
+        onChange();
     }
 
-    private void onChange(Dropdown dropdown)
+    private void onChange()
     {
         for (int x1 = 3; x1 > dropdown.value + 1; --x1)
         {
@@ -36,6 +36,7 @@ public class DropdownHandler : MonoBehaviour
         for (int i = 0; i < textFields.Length; ++i)
         {
             ValueHolder.playerNames[i] = textFields[i].stringName;
+            ValueHolder.numOfPlayers = dropdown.value + 2;
         }
     }
 }

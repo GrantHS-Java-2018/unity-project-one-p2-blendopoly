@@ -23,7 +23,7 @@ public class PlayerHandler : MonoBehaviour
 
     private void Update()
     {
-        text.text = "Money: $" + players[index].money;
+        text.text = players[index].name + ": $" + players[index].money;
         checkForWinner();
     }
 

@@ -11,7 +11,7 @@ public class ChanceScript9 : Card
         //reading railroad = 5
         if (player.index > 5)
         {
-            player.money += 200;
+            player.changeMoney(200);
         }
 
         player.index = 5;

@@ -36,7 +36,7 @@ public class PropertyHandler : MonoBehaviour
     public void buyProperty()
     {
         currentProperty.owner = currentPlayer;
-        currentPlayer.money -= currentProperty.price;
+        currentPlayer.changeMoney(-currentProperty.price);
         ++currentPlayer.unMorgagedProperties;
         if (currentPlayer.index == 5 || currentPlayer.index == 15 || currentPlayer.index == 25 ||
             currentPlayer.index == 35)

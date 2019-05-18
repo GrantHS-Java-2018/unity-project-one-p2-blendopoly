@@ -11,8 +11,8 @@ public class ChanceScript8 : Card
         {
             if (p != player)
             {
-                p.money += 50;
-                player.money -= 50;
+                p.changeMoney(50);
+                player.changeMoney(-50);
             }
         }   
     }

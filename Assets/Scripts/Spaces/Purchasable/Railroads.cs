@@ -25,8 +25,8 @@ namespace Spaces.Purchasable.Purchasable
             else
             {
                 int rent = calculateRent(owner);
-                player.money -= rent;
-                owner.money += rent;
+                player.changeMoney(-rent);
+                owner.changeMoney(rent);
                 player.readyForAction();
             }
         }

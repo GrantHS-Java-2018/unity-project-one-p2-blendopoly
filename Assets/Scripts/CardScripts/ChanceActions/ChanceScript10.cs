@@ -6,6 +6,6 @@ public class ChanceScript10 : Card
 {
     public override void action(Player player)
     {
-        player.money -= ((25 * player.numOfHousesBuilt) + (100 * player.numOfHotelsBuilt));
+        player.changeMoney(-((25 * player.numOfHousesBuilt) + (100 * player.numOfHotelsBuilt)));
     }
 }

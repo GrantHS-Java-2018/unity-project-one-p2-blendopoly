@@ -8,6 +8,6 @@ public class CCScript10 : Card
     {
         //go = 0
         player.index = 0;
-        player.money += 200;
+        player.changeMoney(200);
     }
 }

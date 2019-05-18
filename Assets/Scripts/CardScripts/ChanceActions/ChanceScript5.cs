@@ -72,8 +72,8 @@ public class ChanceScript5 : Card
         {
             debtToPay = false;
             int rent = (die1.faceShowing + die2.faceShowing) * 10;
-            payer.money -= rent;
-            debtor.money += rent;
+            payer.changeMoney(-rent);
+            debtor.changeMoney(rent);
         }
     }
 }

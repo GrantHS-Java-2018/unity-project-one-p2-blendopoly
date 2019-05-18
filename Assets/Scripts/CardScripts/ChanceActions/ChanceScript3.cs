@@ -69,8 +69,8 @@ public class ChanceScript3 : Card
         else
         {
             int rent = railroad.calculateRent(railroad.owner) * 2;
-            player.money -= rent;
-            railroad.owner.money += rent;
+            player.changeMoney(-rent);
+            railroad.owner.changeMoney(rent);
         }
     }
 }

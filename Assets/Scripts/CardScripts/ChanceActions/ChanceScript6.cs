@@ -69,8 +69,8 @@ public class ChanceScript6 : Card
         else if(railroad != null)
         {
             int rent = railroad.calculateRent(railroad.owner) * 2;
-            player.money -= rent;
-            railroad.owner.money += rent;
+            player.changeMoney(-rent);
+            railroad.owner.changeMoney(rent);
         }
         else
         {

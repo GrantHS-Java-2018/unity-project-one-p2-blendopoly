@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
     public GameObject board;
     private BoardLayout layout;
     public bool inJail { get; set; } = false;
-    public int money = 500;
+    public int money;
     public ButtonHandler buttonHandler;
     public int utilities = 0;
     public int railroads = 0;
@@ -41,6 +41,8 @@ public class Player : MonoBehaviour
     public bool bankrupt = false;
     public bool goingBankrupt = false;
     public ActionHandler actionHandler;
+    private bool passedGo = false;
+    public PlayerText playerText;
 
     void Start()
     {
@@ -94,6 +96,11 @@ public class Player : MonoBehaviour
                 if (currentPos >= 40)
                 {
                     currentPos = 0;
+                    if (passedGo)
+                    {
+                        changeMoney(200);
+                        passedGo = false;
+                    }
                 }
                 if (currentPos == index)
                 {
@@ -195,7 +202,7 @@ public class Player : MonoBehaviour
             {
                 move(die1.faceShowing + die2.faceShowing);
                 inJail = false;
-                money -= 50;
+                changeMoney(-50);
 
             }
             else
@@ -212,7 +219,7 @@ public class Player : MonoBehaviour
         if (index >= 40)
         {
             index -= 40;
-            money += 200;
+            passedGo = true;
         }
     }
 
@@ -299,6 +306,12 @@ public class Player : MonoBehaviour
         {
             pos.rotation = Quaternion.Euler(0,90,0);
         }
+    }
+
+    public void changeMoney(int change)
+    {
+        money += change;
+        playerText.displayChange(change);
     }
     
 }

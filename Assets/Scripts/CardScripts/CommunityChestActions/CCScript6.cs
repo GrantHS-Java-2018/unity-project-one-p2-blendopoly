@@ -6,7 +6,7 @@ public class CCScript6 : Card
 {
     public override void action(Player player)
     {
-        player.money -= ((40 * player.numOfHousesBuilt) + (115 * player.numOfHotelsBuilt));
+        player.changeMoney(-((40 * player.numOfHousesBuilt) + (115 * player.numOfHotelsBuilt)));
     }
 
 }

@@ -13,7 +13,7 @@ public class ChanceScript14 : Card
         //saint charles = 11
         if (player.index > 11)
         {
-            player.money += 200;
+            player.changeMoney(200);
         }
 
         player.index = 11;

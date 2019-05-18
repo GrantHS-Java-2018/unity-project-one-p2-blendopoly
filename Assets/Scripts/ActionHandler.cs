@@ -31,7 +31,7 @@ public class ActionHandler : MonoBehaviour
             buttonTransform.anchorMin = new Vector2(0, 0);
             buttonTransform.anchorMax = new Vector2(0, 0);
             buttonTransform.position = new Vector3((Screen.width - 184) / 4 * x + 92, (Screen.height - 52) / 5 * y + 26, 0);
-            buttonTransform.sizeDelta = new Vector2(160, 30);
+            buttonTransform.sizeDelta = new Vector2(160, 40);
             button.AddComponent<Image>().type = Image.Type.Sliced;
             button.GetComponent<Image>().sprite = _buttonSprite;
             Text textComponent = text.AddComponent<Text>();
@@ -171,7 +171,7 @@ public class ActionHandler : MonoBehaviour
             if (property.name == name)
             {
                 property.morgaged = true;
-                handler.players[handler.index].money += property.morgagePrice;
+                handler.players[handler.index].changeMoney(property.morgagePrice);
                 --handler.players[handler.index].unMorgagedProperties;
             }
         }
@@ -185,7 +185,7 @@ public class ActionHandler : MonoBehaviour
             if (property.name == name)
             {
                 property.morgaged = false;
-                handler.players[handler.index].money -= property.morgagePrice;
+                handler.players[handler.index].changeMoney(property.morgagePrice);
                 ++handler.players[handler.index].unMorgagedProperties;
             }
         }

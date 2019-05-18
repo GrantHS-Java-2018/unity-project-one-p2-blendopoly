@@ -26,8 +26,8 @@ namespace Spaces.Purchasable.Purchasable
             }
             else
             {
-                player.money -= rents[numOfHouses];
-                owner.money += rents[numOfHouses];
+                player.changeMoney(-rents[numOfHouses]);
+                owner.changeMoney(rents[numOfHouses]);
                 player.readyForAction();
             }
         }
@@ -56,7 +56,7 @@ namespace Spaces.Purchasable.Purchasable
             {
                 ++player.numOfHousesBuilt;
             }
-            player.money -= housePrice;
+            player.changeMoney(-housePrice);
             handler.checkIfValid(this);
         }
 
@@ -72,7 +72,7 @@ namespace Spaces.Purchasable.Purchasable
             {
                 --player.numOfHousesBuilt;
             }
-            player.money += housePrice;
+            player.changeMoney(housePrice);
             handler.checkIfValid(this);
         }
     

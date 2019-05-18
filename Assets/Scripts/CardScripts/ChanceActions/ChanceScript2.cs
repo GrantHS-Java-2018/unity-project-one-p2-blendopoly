@@ -8,6 +8,6 @@ public class ChanceScript2 : Card
     {
         //go = 0
         player.index = 0;
-        player.changeMoney(200);
+        player.passedGo = true;
     }
 }

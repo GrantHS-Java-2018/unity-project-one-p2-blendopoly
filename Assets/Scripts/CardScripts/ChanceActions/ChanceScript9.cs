@@ -11,9 +11,8 @@ public class ChanceScript9 : Card
         //reading railroad = 5
         if (player.index > 5)
         {
-            player.changeMoney(200);
+            player.passedGo = true;
         }
-
         player.index = 5;
         card.landedOnSpace = true;
         layout.boardTrack[player.index].onLand(player);

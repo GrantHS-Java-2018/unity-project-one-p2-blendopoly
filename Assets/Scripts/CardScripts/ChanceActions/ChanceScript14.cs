@@ -13,9 +13,8 @@ public class ChanceScript14 : Card
         //saint charles = 11
         if (player.index > 11)
         {
-            player.changeMoney(200);
+            player.passedGo = true;
         }
-
         player.index = 11;
         card.landedOnSpace = true;
         layout.boardTrack[player.index].onLand(player);

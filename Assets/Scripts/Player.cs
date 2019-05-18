@@ -41,7 +41,7 @@ public class Player : MonoBehaviour
     public bool bankrupt = false;
     public bool goingBankrupt = false;
     public ActionHandler actionHandler;
-    private bool passedGo = false;
+    public bool passedGo = false;
     public PlayerText playerText;
 
     void Start()

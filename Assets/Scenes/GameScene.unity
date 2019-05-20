@@ -4326,6 +4326,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   renderedSprite: {fileID: 21300000, guid: 5e03e629d6c94d5478d96173680c96bb, type: 3}
   layout: {fileID: 66470549}
+  card: {fileID: 2140895972}
 --- !u!1 &1082443546
 GameObject:
   m_ObjectHideFlags: 0
@@ -4496,6 +4497,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   renderedSprite: {fileID: 21300000, guid: 05864151eef5751439c2155a3b224dcc, type: 3}
   layout: {fileID: 66470549}
+  card: {fileID: 2140895972}
 --- !u!1 &1130753656
 GameObject:
   m_ObjectHideFlags: 0
@@ -7968,6 +7970,7 @@ MonoBehaviour:
   - {fileID: 378726730}
   handler: {fileID: 730793836}
   landedOnSpace: 0
+  waitingOnDice: 0
 --- !u!1 &2077997600
 GameObject:
   m_ObjectHideFlags: 0
@@ -8141,6 +8144,7 @@ MonoBehaviour:
   die1: {fileID: 1673861407}
   die2: {fileID: 305566501}
   debtToPay: 0
+  card: {fileID: 2140895972}
 --- !u!1 &2140895967
 GameObject:
   m_ObjectHideFlags: 0
@@ -8306,3 +8310,4 @@ MonoBehaviour:
   - {fileID: 1330598902}
   handler: {fileID: 730793836}
   landedOnSpace: 0
+  waitingOnDice: 0

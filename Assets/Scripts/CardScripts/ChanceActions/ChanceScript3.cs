@@ -6,6 +6,8 @@ using UnityEngine;
 public class ChanceScript3 : Card
 {
     public BoardLayout layout;
+    public CardHandler card;
+    
     public override void action(Player player)
     {
         //reading railroad = 5
@@ -15,58 +17,39 @@ public class ChanceScript3 : Card
         
         int railIndex = 0;
         
-        if (player.index < 5)
+        if (player.index <= 5)
         {
             railIndex = 5;
         }
-        else if (player.index > 35)
+        else if (player.index <= 15)
+        {
+            railIndex = 15;
+        }
+        else if (player.index <= 25)
+        {
+            railIndex = 25;
+        }
+        else if (player.index <= 35)
         {
             railIndex = 35;
         }
-        
-        else if (player.index > 5 && player.index < 10)
+        else if (player.index <= 39)
         {
             railIndex = 5;
         }
-        else if (player.index >= 10 && player.index < 15)
-        {
-            railIndex = 15;
-        }
-        
-        else if (player.index > 15 && player.index < 20)
-        {
-            railIndex = 15;
-        }
-        else if (player.index >= 20 && player.index < 25)
-        {
-            railIndex = 25;
-        }
-
-        else if (player.index > 25 && player.index < 30)
-        {
-            railIndex = 25;
-        }
-        else if (player.index >= 30 && player.index < 35)
-        {
-            railIndex = 35;
-        }
-        
         else
         {
             Debug.Log("Game Broken in ChanceScript3");
             railIndex = 0;
         }
-
-        player.setPos(layout.boardTrack[railIndex]);
         player.index = railIndex;
-        player.currentPos = railIndex;
         Railroads railroad = layout.boardTrack[player.index] as Railroads;
-        
         if (railroad != null && railroad.owner == null)
         {
+            card.landedOnSpace = true;
             railroad.onLand(player);
         }
-        else
+        else if(railroad != null && railroad.owner != player)
         {
             int rent = railroad.calculateRent(railroad.owner) * 2;
             player.changeMoney(-rent);

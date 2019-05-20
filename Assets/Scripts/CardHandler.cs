@@ -16,6 +16,8 @@ public class CardHandler : MonoBehaviour
     public PlayerHandler handler;
     
     public bool landedOnSpace = false;
+
+    public bool waitingOnDice = false;
     
     void Start()
     {

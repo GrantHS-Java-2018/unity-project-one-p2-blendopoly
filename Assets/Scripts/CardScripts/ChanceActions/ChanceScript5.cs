@@ -12,6 +12,8 @@ public class ChanceScript5 : Card
     public bool debtToPay = false;
     private Player debtor;
     private Player payer;
+    public CardHandler card;
+    
     public override void action(Player player)
     {
         //electric company = 12
@@ -19,41 +21,34 @@ public class ChanceScript5 : Card
 
         int utilityIndex = 0;
         
-        if (player.index > 28)
-        {
-            utilityIndex = 28;
-        }
-        else if (utilityIndex < 12)
+        if (player.index <= 12)
         {
             utilityIndex = 12;
         }
-
-        else if (player.index > 12 && player.index < 20)
+        else if (utilityIndex <= 28)
         {
             utilityIndex = 12;
         }
-        else if (player.index >= 20 && player.index < 28)
+        else if (player.index <= 39)
         {
-            utilityIndex = 28;
+            utilityIndex = 12;
         }
-
         else
         {
             Debug.Log("Game Broken in ChanceScript5");
             utilityIndex = 0;
         }
-
-        player.setPos(layout.boardTrack[utilityIndex]);
         player.index = utilityIndex;
-        player.currentPos = utilityIndex;
         Utilities utility = layout.boardTrack[player.index] as Utilities;
         
         if (utility != null && utility.owner == null)
         {
+            card.landedOnSpace = true;
             utility.onLand(player);
         }
         else if (utility != null)
         {
+            card.waitingOnDice = true;
             die1.roll(player.roll());
             die2.roll(player.roll());
             payer = player;

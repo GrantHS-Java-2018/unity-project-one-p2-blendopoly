@@ -38,6 +38,14 @@ public class PlayerText : MonoBehaviour
     public void displayChange(int change)
     {
         text.text = change.ToString();
+        if (change > 0)
+        {
+            text.color = Color.green;
+        }
+        else
+        {
+            text.color = Color.red;
+        }
         gameObject.SetActive(true);
         counter = 0;
     }

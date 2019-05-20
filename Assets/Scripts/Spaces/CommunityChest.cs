@@ -8,31 +8,15 @@ using Random = System.Random;
 
 public class CommunityChest : GameTile
 {
-    private CCCard card;
+    private CardHandler card;
     
     public Image CommunityCCard;
 
     private Player player;
-    
-    private bool cardShowing = false;
-
-    void Update()
-    {
-        if ((!card.getStatus()) && cardShowing && !card.landedOnSpace)
-        {
-            player.readyForAction();
-            cardShowing = false;
-        }
-        else if ((!card.getStatus()) && cardShowing && card.landedOnSpace)
-        {
-            card.landedOnSpace = false;
-            cardShowing = false;
-        }
-    }
 
     void Start()
     {
-        card = CommunityCCard.GetComponent<CCCard>();
+        card = CommunityCCard.GetComponent<CardHandler>();
         pos = GetComponent<Transform>().position;
     }
     
@@ -40,7 +24,6 @@ public class CommunityChest : GameTile
     {
         card.renderOn();
         this.player = player;
-        cardShowing = true;
     }
 
 }

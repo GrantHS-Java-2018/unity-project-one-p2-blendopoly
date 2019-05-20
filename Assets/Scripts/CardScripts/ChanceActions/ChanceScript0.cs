@@ -6,7 +6,7 @@ public class ChanceScript0 : Card
 {
     public BoardLayout layout;
 
-    public chanceCard card;
+    public CardHandler card;
 
     public override void  action(Player player)
     {

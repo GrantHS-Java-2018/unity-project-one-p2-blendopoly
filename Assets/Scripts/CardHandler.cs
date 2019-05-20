@@ -4,36 +4,25 @@ using System.Threading;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CCCard : MonoBehaviour
+public class CardHandler : MonoBehaviour
 {
     
     public Card[] cardList = new Card[16];
     
     private List<int> notChosen = new List<int>();
 
-    private bool rendered = false;
-    
     private int value;
 
     public PlayerHandler handler;
-
+    
     public bool landedOnSpace = false;
-
-    public bool getStatus()
-    {
-        return rendered;
-    }
-
+    
     void Start()
     {
+        Button button = gameObject.GetComponent<Button>();
+        button.onClick.AddListener(delegate {onClick();});
         gameObject.GetComponent<Image>().sprite = null;
         gameObject.SetActive(false);
-        /*Vector3 scale;
-        scale.x = 2;
-        scale.y = 2;
-        scale.z = 1;
-        gameObject.GetComponent<RectTransform>().localScale = scale;
-        */
         gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(Screen.width * 0.9f, Screen.height * 0.9f);
     }
 
@@ -48,19 +37,13 @@ public class CCCard : MonoBehaviour
         notChosen.RemoveAt(index);
         gameObject.GetComponent<Image>().sprite = cardList[value].renderedSprite;
         gameObject.SetActive(true);
-        rendered = true;
-        Debug.Log("CC Size: " + notChosen.Count);
+        Debug.Log("Chance Size: " + notChosen.Count);
     }
 
-    private void Update()
+    private void onClick()
     {
-        if (rendered)
-        {
-            Thread.Sleep(5000);
-            renderOff();
-            rendered = false;
-            cardList[value].action(handler.players[handler.index]);
-        }
+        cardList[value].action(handler.players[handler.index]);
+        renderOff();
     }
 
     private void renderOff()
@@ -71,7 +54,7 @@ public class CCCard : MonoBehaviour
     
     private void reset()
     {
-        Debug.Log("CC reset");
+        Debug.Log("Chance reset");
         for (int x1 = 0; x1 < 16; ++x1)
         {
             notChosen.Add(x1);

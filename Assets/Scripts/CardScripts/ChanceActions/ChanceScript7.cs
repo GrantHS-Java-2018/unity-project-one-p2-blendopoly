@@ -7,7 +7,7 @@ public class ChanceScript7 : Card
     
     public BoardLayout layout;
 
-    public chanceCard card;
+    public CardHandler card;
     public override void action(Player player)
     {
         player.index -= 3;

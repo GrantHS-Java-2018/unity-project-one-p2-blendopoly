@@ -24,6 +24,7 @@ public class CommunityChest : GameTile
     {
         card.renderOn();
         this.player = player;
+        player.readyForAction();
     }
 
 }

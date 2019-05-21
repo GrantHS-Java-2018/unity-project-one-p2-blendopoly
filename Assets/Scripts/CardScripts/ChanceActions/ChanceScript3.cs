@@ -43,11 +43,11 @@ public class ChanceScript3 : Card
             railIndex = 0;
         }
         player.index = railIndex;
+        player.chanceAction = true;
         Railroads railroad = layout.boardTrack[player.index] as Railroads;
         if (railroad != null && railroad.owner == null)
         {
             card.landedOnSpace = true;
-            railroad.onLand(player);
         }
         else if(railroad != null && railroad.owner != player)
         {

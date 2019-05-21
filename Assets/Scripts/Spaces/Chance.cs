@@ -24,7 +24,6 @@ public class Chance : GameTile
     {
         card.renderOn();
         this.player = player;
-        player.readyForAction();
     }
 
 }

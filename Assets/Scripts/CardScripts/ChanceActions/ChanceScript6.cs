@@ -6,6 +6,9 @@ using UnityEngine;
 public class ChanceScript6 : Card
 {
     public BoardLayout layout;
+    public bool debtToPay = false;
+    private Player payer;
+    private Railroads railroad;
     public CardHandler card;
     
     public override void action(Player player)
@@ -43,16 +46,26 @@ public class ChanceScript6 : Card
             railIndex = 0;
         }
         player.index = railIndex;
-        Railroads railroad = layout.boardTrack[player.index] as Railroads;
+        player.chanceAction = true;
+        railroad = layout.boardTrack[player.index] as Railroads;
         if (railroad != null && railroad.owner == null)
         {
             card.landedOnSpace = true;
-            railroad.onLand(player);
         }
         else if(railroad != null && railroad.owner != player)
         {
+            payer = player;
+            debtToPay = true;
+        }
+    }
+
+    void Update()
+    {
+        if (debtToPay && !payer.moving)
+        {
+            debtToPay = false;
             int rent = railroad.calculateRent(railroad.owner) * 2;
-            player.changeMoney(-rent);
+            payer.changeMoney(-rent);
             railroad.owner.changeMoney(rent);
         }
     }

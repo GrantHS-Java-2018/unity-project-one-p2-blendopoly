@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.4964127, b: 0.57481724, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1784,6 +1784,7 @@ MonoBehaviour:
   goingBankrupt: 0
   actionHandler: {fileID: 573892971}
   passedGo: 0
+  chanceAction: 0
   playerText: {fileID: 113203120}
 --- !u!4 &356695677
 Transform:
@@ -3812,6 +3813,7 @@ MonoBehaviour:
   goingBankrupt: 0
   actionHandler: {fileID: 573892971}
   passedGo: 0
+  chanceAction: 0
   playerText: {fileID: 311998913}
 --- !u!1 &959321697
 GameObject:
@@ -4087,6 +4089,7 @@ MonoBehaviour:
   goingBankrupt: 0
   actionHandler: {fileID: 573892971}
   passedGo: 0
+  chanceAction: 0
   playerText: {fileID: 1988594275}
 --- !u!4 &1054445172
 Transform:
@@ -4326,6 +4329,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   renderedSprite: {fileID: 21300000, guid: 5e03e629d6c94d5478d96173680c96bb, type: 3}
   layout: {fileID: 66470549}
+  debtToPay: 0
   card: {fileID: 2140895972}
 --- !u!1 &1082443546
 GameObject:
@@ -4889,6 +4893,7 @@ MonoBehaviour:
   goingBankrupt: 0
   actionHandler: {fileID: 573892971}
   passedGo: 0
+  chanceAction: 0
   playerText: {fileID: 170336052}
 --- !u!1 &1319166912
 GameObject:
@@ -7969,8 +7974,11 @@ MonoBehaviour:
   - {fileID: 1723590776}
   - {fileID: 378726730}
   handler: {fileID: 730793836}
+  cardShown: 0
+  doneShowing: 0
   landedOnSpace: 0
   waitingOnDice: 0
+  layout: {fileID: 66470549}
 --- !u!1 &2077997600
 GameObject:
   m_ObjectHideFlags: 0
@@ -8309,5 +8317,8 @@ MonoBehaviour:
   - {fileID: 987725912}
   - {fileID: 1330598902}
   handler: {fileID: 730793836}
+  cardShown: 0
+  doneShowing: 0
   landedOnSpace: 0
   waitingOnDice: 0
+  layout: {fileID: 66470549}

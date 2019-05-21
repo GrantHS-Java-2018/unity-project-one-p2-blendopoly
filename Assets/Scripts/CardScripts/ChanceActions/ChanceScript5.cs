@@ -39,12 +39,12 @@ public class ChanceScript5 : Card
             utilityIndex = 0;
         }
         player.index = utilityIndex;
+        player.chanceAction = true;
         Utilities utility = layout.boardTrack[player.index] as Utilities;
         
         if (utility != null && utility.owner == null)
         {
             card.landedOnSpace = true;
-            utility.onLand(player);
         }
         else if (utility != null)
         {
@@ -63,7 +63,7 @@ public class ChanceScript5 : Card
 
     void Update()
     {
-        if (debtToPay && !(die1.rolling || die2.rolling))
+        if (debtToPay && !(die1.rolling || die2.rolling) && !payer.moving)
         {
             debtToPay = false;
             int rent = (die1.faceShowing + die2.faceShowing) * 10;

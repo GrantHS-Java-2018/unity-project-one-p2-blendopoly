@@ -11,7 +11,7 @@ public class ChanceScript1 : Card
     {
         //boardwalk = 39
         player.index = 39;
+        player.chanceAction = true;
         card.landedOnSpace = true;
-        layout.boardTrack[player.index].onLand(player);
     }
 }

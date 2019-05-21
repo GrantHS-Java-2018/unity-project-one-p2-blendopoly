@@ -42,6 +42,7 @@ public class Player : MonoBehaviour
     public bool goingBankrupt = false;
     public ActionHandler actionHandler;
     public bool passedGo = false;
+    public bool chanceAction = false;
     public PlayerText playerText;
 
     void Start()
@@ -134,7 +135,14 @@ public class Player : MonoBehaviour
         {
             moving = false;
             inArc = false;
-            layout.boardTrack[index].onLand(this);
+            if (!chanceAction)
+            {
+                layout.boardTrack[index].onLand(this);
+            }
+            else
+            {
+                chanceAction = false;
+            }
         } 
         else if (jailWaiting && (!die1.rolling && !die2.rolling))
         {

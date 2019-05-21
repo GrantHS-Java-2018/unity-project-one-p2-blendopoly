@@ -14,22 +14,39 @@ public class CardHandler : MonoBehaviour
     private int value;
 
     public PlayerHandler handler;
+
+    public bool cardShown = false;
+
+    public bool doneShowing = false;
     
     public bool landedOnSpace = false;
 
     public bool waitingOnDice = false;
+
+    public BoardLayout layout;
     
     void Start()
     {
         Button button = gameObject.GetComponent<Button>();
         button.onClick.AddListener(delegate {onClick();});
         gameObject.GetComponent<Image>().sprite = null;
-        gameObject.SetActive(false);
+        gameObject.GetComponent<Image>().enabled = false;
         gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(Screen.width * 0.9f, Screen.height * 0.9f);
+    }
+
+    void Update()
+    {
+        if (cardShown && doneShowing && !handler.players[handler.index].moving && !waitingOnDice)
+        {
+            doneShowing = false;
+            cardShown = false;
+            finished();
+        }
     }
 
     public void renderOn()
     {
+        cardShown = true;
         if (notChosen.Count <= 0)
         {
             reset();
@@ -38,7 +55,7 @@ public class CardHandler : MonoBehaviour
         value = notChosen[index];
         notChosen.RemoveAt(index);
         gameObject.GetComponent<Image>().sprite = cardList[value].renderedSprite;
-        gameObject.SetActive(true);
+        gameObject.GetComponent<Image>().enabled = true;
         Debug.Log("Chance Size: " + notChosen.Count);
     }
 
@@ -50,8 +67,10 @@ public class CardHandler : MonoBehaviour
 
     private void renderOff()
     {
+        doneShowing = true;
         gameObject.GetComponent<Image>().sprite = null;
-        gameObject.SetActive(false);
+        gameObject.GetComponent<Image>().enabled = false;
+        //gameObject.SetActive(false);
     }
     
     private void reset()
@@ -60,6 +79,19 @@ public class CardHandler : MonoBehaviour
         for (int x1 = 0; x1 < 16; ++x1)
         {
             notChosen.Add(x1);
+        }
+    }
+
+    private void finished()
+    {
+        if (landedOnSpace)
+        {
+            landedOnSpace = false;
+            layout.boardTrack[handler.players[handler.index].index].onLand(handler.players[handler.index]);
+        }
+        else
+        {
+            handler.players[handler.index].readyForAction();
         }
     }
 }

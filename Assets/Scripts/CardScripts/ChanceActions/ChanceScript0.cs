@@ -16,7 +16,7 @@ public class ChanceScript0 : Card
             player.passedGo = true;
         }
         player.index = 24;
+        player.chanceAction = true;
         card.landedOnSpace = true;
-        layout.boardTrack[player.index].onLand(player);
     }
 }

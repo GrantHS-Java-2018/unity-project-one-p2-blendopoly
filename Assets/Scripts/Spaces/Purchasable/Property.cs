@@ -8,6 +8,7 @@ namespace Spaces.Purchasable.Purchasable
         public int housePrice;
         public int numOfHouses = 0;
         public Property[] group;
+        public Color color;
 
         void Start()
         {

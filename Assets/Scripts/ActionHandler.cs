@@ -14,6 +14,7 @@ public class ActionHandler : MonoBehaviour
     public ButtonHandler buttonHandler;
     public Sprite _buttonSprite;
     public Font arial;
+    private Purchasable propertyToTrade;
 
     public void displayProperties(Player player, int purpose)
     {
@@ -35,6 +36,7 @@ public class ActionHandler : MonoBehaviour
             button.AddComponent<Image>().type = Image.Type.Sliced;
             button.GetComponent<Image>().sprite = _buttonSprite;
             Text textComponent = text.AddComponent<Text>();
+            Property p = property as Property;
             switch (purpose)
             {
                 case 0:
@@ -46,19 +48,35 @@ public class ActionHandler : MonoBehaviour
                     textComponent.text = property.name + ": $" + property.morgagePrice;
                     break;
                 case 2:
-                    Property p = property as Property;
                     button.AddComponent<Button>().onClick.AddListener(delegate { p.buildHouse(player); });
                     textComponent.text = property.name + ": " + p.numOfHouses;
                     break;
                 case 3:
-                    Property propertyVersion = property as Property;
-                    button.AddComponent<Button>().onClick.AddListener(delegate { propertyVersion.sellHouse(player); });
-                    textComponent.text = property.name + ": " + propertyVersion.numOfHouses;
+                    button.AddComponent<Button>().onClick.AddListener(delegate { p.sellHouse(player); });
+                    textComponent.text = property.name + ": " + p.numOfHouses;
+                    break;
+                case 4:
+                    if (property.owner == handler.players[handler.index])
+                    {
+                        button.AddComponent<Button>().onClick.AddListener(delegate { cancel(); });
+                    }
+                    else
+                    {
+                        button.AddComponent<Button>().onClick.AddListener(delegate { showAllPropertiesOwnedBy(handler.index + 1, property); });
+                    }
+                    textComponent.text = property.name;
+                    break;
+                case 5:
+                    button.AddComponent<Button>().onClick.AddListener(delegate { trade(property); });
+                    textComponent.text = property.name;
                     break;
                 default:
-                    //build a house
-                    //also sell a house
+                    Debug.Log("Broken in ActionHandler!");
                     break;
+            }
+            if (p != null)
+            {
+                button.GetComponent<Image>().color = p.color;
             }
             button.GetComponent<Button>().targetGraphic = button.GetComponent<Image>();
             textComponent.alignment = TextAnchor.MiddleCenter;
@@ -120,6 +138,33 @@ public class ActionHandler : MonoBehaviour
                     {
                         properties.Add(property);
                     }
+                }
+            }
+        }
+    }
+
+    private void getPlayersProperties(int player)
+    {
+        properties.Clear();
+        foreach (var property in layout.boardTrack)
+        {
+            var p = property as Purchasable;
+            if (p != null)
+            {
+                switch (player)
+                {
+                    case 0:
+                        if (p.owner == null)
+                        {
+                            properties.Add(p);
+                        }
+                        break;
+                    default:
+                        if (p.owner == handler.players[player - 1])
+                        {
+                            properties.Add(p);
+                        }
+                        break;
                 }
             }
         }
@@ -191,4 +236,69 @@ public class ActionHandler : MonoBehaviour
         }
         cancel();
     }
+
+    public void showAllPropertiesOwnedBy(int player)
+    {
+        buttonHandler.turnOffAll();
+        buttonHandler.turnOnCancel();
+        getPlayersProperties(player);
+        displayProperties(null, 4);
+    }
+
+    public void showAllPropertiesOwnedBy(int player, Purchasable property)
+    {
+        if (checkIfValidTrade(property))
+        {
+            buttonHandler.clearProperties();
+            propertyToTrade = property;
+            buttonHandler.turnOffAll();
+            buttonHandler.turnOnCancel();
+            getPlayersProperties(player);
+            displayProperties(null, 5);
+        }
+        else
+        {
+            cancel();
+        }
+    }
+
+    private void trade(Purchasable property)
+    {
+        if (checkIfValidTrade(property))
+        {
+            Player p = property.owner;
+            property.owner = propertyToTrade.owner;
+            propertyToTrade.owner = p;
+            checkForChanges(property, p);
+            checkForChanges(propertyToTrade, property.owner);
+        }
+        cancel();
+    }
+
+    private bool checkIfValidTrade(Purchasable a)
+    {
+        Property aProperty = a as Property;
+        if (aProperty != null)
+        {
+            return (!a.morgaged && aProperty.numOfHouses == 0 && a.owner != null);
+        }
+        return (!a.morgaged && a.owner != null);
+    }
+
+    private void checkForChanges(Purchasable p, Player oldOwner)
+    {
+        Railroads railroad = p as Railroads;
+        Utilities utilitiy = p as Utilities;
+        if (railroad != null)
+        {
+            --oldOwner.railroads;
+            ++p.owner.railroads;
+        }
+        else if (utilitiy != null)
+        {
+            --oldOwner.utilities;
+            ++p.owner.utilities;
+        }
+    }
+    
 }

@@ -18,6 +18,7 @@ public class ButtonHandler : MonoBehaviour
     public GameObject cancel;
     public GameObject die1;
     public GameObject die2;
+    public GameObject[] propertyDisplayers;
     public ArrayList buttons = new ArrayList();
 
     private void Start()
@@ -25,6 +26,10 @@ public class ButtonHandler : MonoBehaviour
         turnOffEndTurn();
         turnOffJail();
         turnOffCancel();
+        foreach (var gameObject in propertyDisplayers)
+        {
+            gameObject.SetActive(false);
+        }
     }
 
     public void turnOffButtons()
@@ -49,6 +54,7 @@ public class ButtonHandler : MonoBehaviour
         morgage.SetActive(true);
         unMorgage.SetActive(true);
         endTurn.SetActive(true);
+        turnOnPropertyDisplayers();
         turnOffDice();
     }
     
@@ -59,6 +65,7 @@ public class ButtonHandler : MonoBehaviour
         morgage.SetActive(false);
         unMorgage.SetActive(false);
         endTurn.SetActive(false);
+        turnOffPropertyDisplayers();
     }
 
     public void turnOnJail()
@@ -78,6 +85,7 @@ public class ButtonHandler : MonoBehaviour
         sell.SetActive(true);
         morgage.SetActive(true);
         unMorgage.SetActive(true);
+        turnOnPropertyDisplayers();
         turnOffDice();
     }
 
@@ -87,6 +95,7 @@ public class ButtonHandler : MonoBehaviour
         sell.SetActive(false);
         morgage.SetActive(false);
         unMorgage.SetActive(false);
+        turnOffPropertyDisplayers();
     }
 
     public void turnOnCancel()
@@ -169,5 +178,31 @@ public class ButtonHandler : MonoBehaviour
         {
             turnOnPanicButtons();
         }
+    }
+
+    public void turnOnPropertyDisplayers()
+    {
+        for (int i = 0; i <= ValueHolder.numOfPlayers; i++)
+        {
+            propertyDisplayers[i].SetActive(true);
+        }
+    }
+
+    public void turnOffPropertyDisplayers()
+    {
+        for (int i = 0; i <= ValueHolder.numOfPlayers; i++)
+        {
+            propertyDisplayers[i].SetActive(false);
+        }
+    }
+
+    public void turnOffAll()
+    {
+        turnOffDice();
+        turnOffJail();
+        turnOffActions();
+        turnOffButtons();
+        turnOffEndTurn();
+        turnOffCancel();
     }
 }

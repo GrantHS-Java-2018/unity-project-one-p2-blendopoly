@@ -31,8 +31,9 @@ public class ActionHandler : MonoBehaviour
             text.transform.SetParent(buttonTransform);
             buttonTransform.anchorMin = new Vector2(0, 0);
             buttonTransform.anchorMax = new Vector2(0, 0);
-            buttonTransform.position = new Vector3((Screen.width - 184) / 4 * x + 92, (Screen.height - 52) / 5 * y + 26, 0);
+            buttonTransform.position = new Vector3((918 - 184) / 4 * x + 92, (374 - 52) / 5 * y + 26, 0);
             buttonTransform.sizeDelta = new Vector2(160, 40);
+            button.AddComponent<Scaler>();
             button.AddComponent<Image>().type = Image.Type.Sliced;
             button.GetComponent<Image>().sprite = _buttonSprite;
             Text textComponent = text.AddComponent<Text>();

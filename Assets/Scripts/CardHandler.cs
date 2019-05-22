@@ -24,6 +24,8 @@ public class CardHandler : MonoBehaviour
     public bool waitingOnDice = false;
 
     public BoardLayout layout;
+
+    private RectTransform transform;
     
     void Start()
     {
@@ -31,7 +33,8 @@ public class CardHandler : MonoBehaviour
         button.onClick.AddListener(delegate {onClick();});
         gameObject.GetComponent<Image>().sprite = null;
         gameObject.GetComponent<Image>().enabled = false;
-        gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(Screen.width * 0.9f, Screen.height * 0.9f);
+        transform = gameObject.GetComponent<RectTransform>();
+        transform.sizeDelta = new Vector2(Screen.width * 0.9f, Screen.height * 0.9f);
     }
 
     void Update()
@@ -42,11 +45,16 @@ public class CardHandler : MonoBehaviour
             cardShown = false;
             finished();
         }
+        else if (cardShown)
+        {
+            transform.sizeDelta = new Vector2(Screen.width * 0.9f, Screen.height * 0.9f);
+        }
     }
 
     public void renderOn()
     {
         cardShown = true;
+        transform.sizeDelta = new Vector2(Screen.width * 0.9f, Screen.height * 0.9f);
         if (notChosen.Count <= 0)
         {
             reset();

@@ -18,7 +18,6 @@ namespace Spaces {
         void Start()
         {
             position = transform.localPosition;
-            Debug.Log(position.x);
         }
 
         public void roll(int value)

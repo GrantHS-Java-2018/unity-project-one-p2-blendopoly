@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: a29ea4deef6a4e74cab9c1f1a78cb4f7, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.017822094, g: 0.017914739, b: 0.023514876, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -554,7 +554,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Unowed Properties
+  m_Text: Unowned Properties
 --- !u!222 &86802977
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6443,6 +6443,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roll: {fileID: 1479358546}
   changeCamera: {fileID: 1945403310}
+  money: {fileID: 892604857}
+  buyProperty: {fileID: 417583334}
+  dontBuyProperty: {fileID: 1161155488}
   endTurn: {fileID: 1475087469}
   getOutOfJail: {fileID: 239937957}
   buy: {fileID: 1563601116}

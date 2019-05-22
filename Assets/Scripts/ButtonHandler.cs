@@ -9,6 +9,9 @@ public class ButtonHandler : MonoBehaviour
 {
     public GameObject roll;
     public GameObject changeCamera;
+    public GameObject money;
+    public GameObject buyProperty;
+    public GameObject dontBuyProperty;
     public GameObject endTurn;
     public GameObject getOutOfJail;
     public GameObject buy;
@@ -20,6 +23,8 @@ public class ButtonHandler : MonoBehaviour
     public GameObject die2;
     public GameObject[] propertyDisplayers;
     public ArrayList buttons = new ArrayList();
+    private float resolutionX = 914;
+    private float resolutionY = 374;
 
     private void Start()
     {
@@ -30,6 +35,39 @@ public class ButtonHandler : MonoBehaviour
         {
             gameObject.SetActive(false);
         }
+    }
+
+    private void Update()
+    {
+        if (resolutionX == Screen.width && resolutionY == Screen.height) return;
+        roll.GetComponent<Scaler>().updateForScreen();
+        changeCamera.GetComponent<Scaler>().updateForScreen();
+        money.GetComponent<Scaler>().updateForScreen();
+        buyProperty.GetComponent<Scaler>().updateForScreen();
+        dontBuyProperty.GetComponent<Scaler>().updateForScreen();
+        endTurn.GetComponent<Scaler>().updateForScreen();
+        getOutOfJail.GetComponent<Scaler>().updateForScreen();
+        buy.GetComponent<Scaler>().updateForScreen();
+        sell.GetComponent<Scaler>().updateForScreen();
+        morgage.GetComponent<Scaler>().updateForScreen();
+        unMorgage.GetComponent<Scaler>().updateForScreen();
+        cancel.GetComponent<Scaler>().updateForScreen();
+        foreach (var gameObject in propertyDisplayers)
+        {
+            if (gameObject.activeSelf)
+            {
+                gameObject.GetComponent<Scaler>().updateForScreen();
+            }
+        }
+        if (buttons.Count > 0)
+        {
+            foreach (GameObject button in buttons)
+            {
+                button.GetComponent<Scaler>().updateForScreen();
+            }
+        }
+        resolutionX = Screen.width;
+        resolutionY = Screen.height;
     }
 
     public void turnOffButtons()

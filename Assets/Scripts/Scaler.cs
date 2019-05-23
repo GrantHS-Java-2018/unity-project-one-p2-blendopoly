@@ -10,11 +10,14 @@ public class Scaler : MonoBehaviour
     
     void Start()
     {
-        transform = GetComponent<RectTransform>();
-        sizeDelta = transform.sizeDelta;
-        position = transform.position;
-        transform.sizeDelta = new Vector2(Screen.width * sizeDelta.x / 918f, Screen.height * sizeDelta.y / 374f);
-        transform.position = new Vector3(Screen.width * position.x / 918f, Screen.height * position.y / 374f, position.z);
+        if (transform == null)
+        {
+            transform = GetComponent<RectTransform>();
+            sizeDelta = transform.sizeDelta;
+            position = transform.position;
+            transform.sizeDelta = new Vector2(Screen.width * sizeDelta.x / 918f, Screen.height * sizeDelta.y / 374f);
+            transform.position = new Vector3(Screen.width * position.x / 918f, Screen.height * position.y / 374f,position.z);
+        }
     }
 
     public void updateForScreen()
@@ -22,6 +25,8 @@ public class Scaler : MonoBehaviour
         if (transform == null)
         {
             transform = GetComponent<RectTransform>();
+            sizeDelta = transform.sizeDelta;
+            position = transform.position;
         }
         transform.sizeDelta = new Vector2(Screen.width * sizeDelta.x / 918f, Screen.height * sizeDelta.y / 374f);
         transform.position = new Vector3(Screen.width * position.x / 918f, Screen.height * position.y / 374f,position.z);

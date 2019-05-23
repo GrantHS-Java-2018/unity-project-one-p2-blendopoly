@@ -63,7 +63,10 @@ public class ButtonHandler : MonoBehaviour
         {
             foreach (GameObject button in buttons)
             {
-                button.GetComponent<Scaler>().updateForScreen();
+                if (button != null)
+                {
+                    button.GetComponent<Scaler>().updateForScreen();
+                }
             }
         }
         resolutionX = Screen.width;

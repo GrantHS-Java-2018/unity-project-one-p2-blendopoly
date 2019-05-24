@@ -44,6 +44,8 @@ public class Player : MonoBehaviour
     public bool passedGo = false;
     public bool chanceAction = false;
     public PlayerText playerText;
+    public int otherPlayerOffset;
+    public PlayerHandler handler;
 
     void Start()
     {
@@ -115,6 +117,7 @@ public class Player : MonoBehaviour
                     equal = false;
                     return;
                 }
+                offsetBasedOnPosition();
                 difference = layout.boardTrack[currentPos].gameObject.transform.position + offset - pos.position;
                 inArc = true;
             }
@@ -240,6 +243,7 @@ public class Player : MonoBehaviour
 
     public void setPos()
     {
+        offsetBasedOnPosition();
         pos.position = new Vector3(64.2f, 0, -67.3f) + offset;
     }
 
@@ -267,7 +271,12 @@ public class Player : MonoBehaviour
     
     public void setRotationOfPlayer()
     {
-        if (currentPos == 11 && inArc)
+        if (currentPos == 10 && inArc && checkIfSpaceOccupied() > 1)
+        {
+            Debug.Log(counter);
+            pos.eulerAngles = Vector3.Lerp(new Vector3(0, 180, 0), new Vector3(0, 270, 0), counter / 25f);
+        }
+        if (currentPos == 11 && inArc && pos.eulerAngles != new Vector3(0,270,0))
         {
             pos.eulerAngles = Vector3.Lerp(new Vector3(0,180,0), new Vector3(0, 270, 0), counter/25f);
         }
@@ -290,6 +299,11 @@ public class Player : MonoBehaviour
         else if (currentPos == 0 && inArc)
         {
             pos.eulerAngles = Vector3.Lerp(new Vector3(0,90,0), new Vector3(0, 180, 0), counter/25f);
+        }
+        else if (currentPos == 10 && checkIfSpaceOccupied() > 1)
+        {
+            Debug.Log("Broken");
+            pos.eulerAngles = new Vector3(0,270,0);
         }
         else if (currentPos <= 10)
         {
@@ -321,6 +335,81 @@ public class Player : MonoBehaviour
     {
         money += change;
         playerText.displayChange(change);
+    }
+
+    public void offsetBasedOnPosition()
+    {
+        int playersOnSpace = checkIfSpaceOccupied();
+        if (playersOnSpace == 0)
+        {
+            offset = new Vector3(0,offset.y,0);
+        }
+        else
+        {
+            if (currentPos < 10)
+            {
+                offset = new Vector3(0, offset.y, getOffset(playersOnSpace));
+            }
+            else if (currentPos == 10)
+            {
+                switch (playersOnSpace)
+                {
+                    case 1:
+                        offset = new Vector3(6,offset.y,0);
+                        break;
+                    case 2:
+                        offset = new Vector3(-7, offset.y, 6);
+                        break;
+                    case 3:
+                        offset = new Vector3(-7, offset.y, 12);
+                        break;
+                    default:
+                        Debug.Log("Broken in player class");
+                        break;
+                }
+            }
+            else if (currentPos < 20)
+            {
+                offset = new Vector3(getOffset(playersOnSpace), offset.y, 0);
+            }
+            else if (currentPos < 30)
+            {
+                offset = new Vector3(0, offset.y, -getOffset(playersOnSpace));
+            }
+            else
+            {
+                offset = new Vector3(-getOffset(playersOnSpace), offset.y, 0);
+            }
+        }
+    }
+    
+    private int checkIfSpaceOccupied()
+    {
+        int count = 0;
+        foreach(Player player in handler.players)
+        {
+            if (player != handler.players[handler.index] && player.index == currentPos)
+            {
+                ++count;
+            }
+        }
+        return count;
+    }
+
+    private int getOffset(int playersOnSpace)
+    {
+        switch (playersOnSpace)
+        {
+            case 1:
+                return 3;
+            case 2:
+                return -3;
+            case 3:
+                return 6;
+            default:
+                Debug.Log("Broken in player class");
+                return 0;
+        }
     }
     
 }

@@ -12,7 +12,7 @@ public class LuxuryTax : GameTile
     
     public override void onLand(Player player)
     {
-        player.changeMoney(-200);
+        player.changeMoney(-100);
         player.readyForAction();
     }
 }

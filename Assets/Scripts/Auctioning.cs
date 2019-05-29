@@ -6,7 +6,8 @@ using UnityEngine.UI;
 
 public class Auctioning : MonoBehaviour
 {
-    public BidButtonHandler buttonhandler;
+    public BidButtonHandler buttonHandlerButton;
+    public BidButtonHandler buttonHandlerSlider;
     public Slider bidSlider;
     private int playerIndex = 0;
     private int[] bids;
@@ -17,24 +18,34 @@ public class Auctioning : MonoBehaviour
     {
         bids = new int[playerHandler.players.Length];
         bidSlider.maxValue = playerHandler.players[playerIndex].money;
+        buttonHandlerButton.turnOff();
+        buttonHandlerSlider.turnOff();
     }
 
     public void bidStart()
     {
-        
+        buttonHandlerButton.turnOn();
+        buttonHandlerSlider.turnOn();
+    }
+    
+    public void bidEnd()
+    {
+        buttonHandlerButton.turnOff();
+        buttonHandlerSlider.turnOff();
     }
 
     public void raiseBid()
     {
-        bidSlider.maxValue = playerHandler.players[playerIndex].money;
         if (playerIndex < playerHandler.players.Length)
         {
+            bidSlider.maxValue = playerHandler.players[playerIndex].money;
             bids[playerIndex] = (int) bidSlider.value;
             Debug.Log("playerIndex: " + playerIndex + " biddingValue: " + bids[playerIndex]);
             ++playerIndex;
         }
         else
         {
+            Debug.Log("Choose The Player Now");
             winner();
         }
     }
@@ -46,6 +57,10 @@ public class Auctioning : MonoBehaviour
 
     private void winner()
     {
+        playerIndex = 0;
+        //code
         
+        bidEnd();
+        returnBack();
     }
 }

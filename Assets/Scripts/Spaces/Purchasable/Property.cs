@@ -8,6 +8,7 @@ namespace Spaces.Purchasable.Purchasable
         public int housePrice;
         public int numOfHouses = 0;
         public Property[] group;
+        
 
         void Start()
         {
@@ -44,7 +45,7 @@ namespace Spaces.Purchasable.Purchasable
             return true;
         }
 
-        public void buildHouse(Player player)
+        public void buildHouse(Player player, BuildableManager manager)
         {
             ++numOfHouses;
             if (numOfHouses == 5)
@@ -56,8 +57,12 @@ namespace Spaces.Purchasable.Purchasable
             {
                 ++player.numOfHousesBuilt;
             }
+
             player.changeMoney(-housePrice);
             handler.checkIfValid(this);
+            bool type = numOfHouses == 5;
+            manager.InstantiateBuilding(type, pos);
+
         }
 
         public void sellHouse(Player player)

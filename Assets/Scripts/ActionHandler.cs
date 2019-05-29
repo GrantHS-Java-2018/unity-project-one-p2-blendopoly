@@ -12,6 +12,7 @@ public class ActionHandler : MonoBehaviour
     public Canvas canvas;
     public PlayerHandler handler;
     public ButtonHandler buttonHandler;
+    public BuildableManager manager;
     public Sprite _buttonSprite;
     public Font arial;
 
@@ -47,7 +48,7 @@ public class ActionHandler : MonoBehaviour
                     break;
                 case 2:
                     Property p = property as Property;
-                    button.AddComponent<Button>().onClick.AddListener(delegate { p.buildHouse(player); });
+                    button.AddComponent<Button>().onClick.AddListener(delegate { p.buildHouse(player, manager); });
                     textComponent.text = property.name + ": " + p.numOfHouses;
                     break;
                 case 3:

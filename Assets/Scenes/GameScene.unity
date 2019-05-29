@@ -5536,7 +5536,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1837499240}
-        m_MethodName: continueGame
+        m_MethodName: triggerBid
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

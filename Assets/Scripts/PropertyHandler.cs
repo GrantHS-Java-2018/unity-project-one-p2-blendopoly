@@ -7,7 +7,7 @@ using Button = UnityEngine.UI.Button;
 
 public class PropertyHandler : MonoBehaviour
 {
-
+    public Auctioning bidding;
     public GameObject buy;
     public GameObject notBuy;
     public ButtonHandler handler;

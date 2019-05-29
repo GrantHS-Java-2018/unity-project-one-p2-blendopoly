@@ -44,8 +44,7 @@ public class Player : MonoBehaviour
     public bool passedGo = false;
     public bool chanceAction = false;
     public PlayerText playerText;
-    public int otherPlayerOffset;
-    public PlayerHandler handler;
+    public int offsetIndex;
 
     void Start()
     {
@@ -98,6 +97,12 @@ public class Player : MonoBehaviour
             {
                 counter = 0;
                 ++currentPos;
+                if (!equal)
+                {
+                    Debug.Log("ran");
+                    layout.boardTrack[currentPos - 1].occupied[offsetIndex] = false;
+                }
+                offsetIndex = 0;
                 if (currentPos >= 40)
                 {
                     currentPos = 0;
@@ -383,7 +388,7 @@ public class Player : MonoBehaviour
         }
     }
     
-    private int checkIfSpaceOccupied()
+    /*private int checkIfSpaceOccupied()
     {
         int count = 0;
         foreach(Player player in handler.players)
@@ -394,6 +399,21 @@ public class Player : MonoBehaviour
             }
         }
         return count;
+    }*/
+    
+    private int checkIfSpaceOccupied()
+    {
+        for(int i = 0; i < layout.boardTrack[currentPos].occupied.Length; ++i)
+        {
+            if (!layout.boardTrack[currentPos].occupied[i])
+            {
+                offsetIndex = i;
+                Debug.Log(i);
+                layout.boardTrack[currentPos].occupied[i] = true;
+                return i;
+            }
+        }
+        return -1;
     }
 
     private int getOffset(int playersOnSpace)

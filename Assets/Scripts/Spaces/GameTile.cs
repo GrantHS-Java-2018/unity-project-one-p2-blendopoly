@@ -7,6 +7,7 @@ public abstract class GameTile : MonoBehaviour
 {
 
     public Vector3 pos { get; set; }
+    public bool[] occupied = {false, false, false, false};
     
     public abstract void onLand(Player player);
 }

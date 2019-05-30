@@ -12,6 +12,7 @@ public class PlayerHandler : MonoBehaviour
     public ButtonHandler handler;
     public Text text;
     public int index = 0;
+    public BoardLayout layout;
 
     private void Awake()
     {
@@ -77,6 +78,8 @@ public class PlayerHandler : MonoBehaviour
         }
         players[index].money -= price;
         players[index].inJail = false;
+        layout.jail.occupied[players[index].offsetIndex] = false;
+        players[index].offsetIndex = -1;
         handler.turnOffJail();
     }
 

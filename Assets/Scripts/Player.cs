@@ -97,9 +97,8 @@ public class Player : MonoBehaviour
             {
                 counter = 0;
                 ++currentPos;
-                if (!equal)
+                if (!equal && offsetIndex != -1)
                 {
-                    Debug.Log("ran");
                     layout.boardTrack[currentPos - 1].occupied[offsetIndex] = false;
                 }
                 offsetIndex = 0;
@@ -212,6 +211,8 @@ public class Player : MonoBehaviour
             if (die1.faceShowing == die2.faceShowing)
             {
                 inJail = false;
+                layout.jail.occupied[offsetIndex] = false;
+                offsetIndex = -1;
                 ++doubles;
                 repeat = true;
                 move(die1.faceShowing + die2.faceShowing);
@@ -220,6 +221,8 @@ public class Player : MonoBehaviour
             {
                 move(die1.faceShowing + die2.faceShowing);
                 inJail = false;
+                layout.jail.occupied[offsetIndex] = false;
+                offsetIndex = -1;
                 changeMoney(-50);
 
             }
@@ -243,6 +246,7 @@ public class Player : MonoBehaviour
 
     public void setPos(GameTile space)
     {
+        offsetBasedOnPosition();
         pos.position = space.pos + offset;
     }
 
@@ -276,9 +280,8 @@ public class Player : MonoBehaviour
     
     public void setRotationOfPlayer()
     {
-        if (currentPos == 10 && inArc && checkIfSpaceOccupied() > 1)
+        if (currentPos == 10 && inArc && offsetIndex > 1)
         {
-            Debug.Log(counter);
             pos.eulerAngles = Vector3.Lerp(new Vector3(0, 180, 0), new Vector3(0, 270, 0), counter / 25f);
         }
         if (currentPos == 11 && inArc && pos.eulerAngles != new Vector3(0,270,0))
@@ -305,9 +308,8 @@ public class Player : MonoBehaviour
         {
             pos.eulerAngles = Vector3.Lerp(new Vector3(0,90,0), new Vector3(0, 180, 0), counter/25f);
         }
-        else if (currentPos == 10 && checkIfSpaceOccupied() > 1)
+        else if (currentPos == 10 && offsetIndex > 1)
         {
-            Debug.Log("Broken");
             pos.eulerAngles = new Vector3(0,270,0);
         }
         else if (currentPos <= 10)
@@ -348,6 +350,24 @@ public class Player : MonoBehaviour
         if (playersOnSpace == 0)
         {
             offset = new Vector3(0,offset.y,0);
+        }
+        else if (inJail)
+        {
+            switch (playersOnSpace)
+            {
+                case 1:
+                    offset = new Vector3(-5,offset.y,0);
+                    break;
+                case 2:
+                    offset = new Vector3(0,offset.y, -5);
+                    break;
+                case 3:
+                    offset = new Vector3(-5,offset.y, -5);
+                    break;
+                default:
+                    Debug.Log("Broken in player class");
+                    break;
+            }
         }
         else
         {
@@ -403,12 +423,27 @@ public class Player : MonoBehaviour
     
     private int checkIfSpaceOccupied()
     {
+        if (inJail)
+        {
+            for (int i = 0; i < layout.jail.occupied.Length; ++i)
+            {
+                if (!layout.jail.occupied[i])
+                {
+                    offsetIndex = i;
+                    layout.jail.occupied[i] = true;
+                    return i;
+                }
+            }
+        }
         for(int i = 0; i < layout.boardTrack[currentPos].occupied.Length; ++i)
         {
+            if (currentPos == 30)
+            {
+                return 0;
+            }
             if (!layout.boardTrack[currentPos].occupied[i])
             {
                 offsetIndex = i;
-                Debug.Log(i);
                 layout.boardTrack[currentPos].occupied[i] = true;
                 return i;
             }
@@ -430,6 +465,11 @@ public class Player : MonoBehaviour
                 Debug.Log("Broken in player class");
                 return 0;
         }
+    }
+
+    public void movingOffSpace()
+    {
+        layout.boardTrack[currentPos].occupied[offsetIndex] = false;
     }
     
 }

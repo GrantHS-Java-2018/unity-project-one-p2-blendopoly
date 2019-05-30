@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.017822094, g: 0.017914739, b: 0.023514876, a: 1}
+  m_IndirectSpecularColor: {r: 0.017579064, g: 0.017893, b: 0.023260612, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -199,6 +199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8eb3221ea6413a4183a1559db0fb9b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  occupied: 00000000
   chanceTile: {fileID: 2140895970}
 --- !u!1 &39374203
 GameObject:
@@ -243,6 +244,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a44024f0e36b1a4b828a868c2a97b54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  occupied: 00000000
   morgagePrice: 175
   morgaged: 0
   price: 350
@@ -297,6 +299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a44024f0e36b1a4b828a868c2a97b54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  occupied: 00000000
   morgagePrice: 140
   morgaged: 0
   price: 280
@@ -882,6 +885,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a44024f0e36b1a4b828a868c2a97b54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  occupied: 00000000
   morgagePrice: 70
   morgaged: 0
   price: 140
@@ -1158,6 +1162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a44024f0e36b1a4b828a868c2a97b54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  occupied: 00000000
   morgagePrice: 150
   morgaged: 0
   price: 300
@@ -1497,6 +1502,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a44024f0e36b1a4b828a868c2a97b54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  occupied: 00000000
   morgagePrice: 110
   morgaged: 0
   price: 220
@@ -1773,6 +1779,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 737f68e2ac9243f43bd2916500a36b16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  occupied: 00000000
   CommunityCCard: {fileID: 2069792281}
 --- !u!1 &305566498
 GameObject:
@@ -2169,8 +2176,7 @@ MonoBehaviour:
   passedGo: 0
   chanceAction: 0
   playerText: {fileID: 113203120}
-  otherPlayerOffset: -3
-  handler: {fileID: 730793836}
+  offsetIndex: 0
 --- !u!4 &356695677
 Transform:
   m_ObjectHideFlags: 0
@@ -2657,6 +2663,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b037dfaec5c90e4880368aac308a509, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  occupied: 00000000
 --- !u!4 &511511056
 Transform:
   m_ObjectHideFlags: 0
@@ -2714,6 +2721,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73e4f1361c9ddf042a0fc00adf5a96c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  occupied: 00000000
 --- !u!1 &518748607
 GameObject:
   m_ObjectHideFlags: 0
@@ -2743,6 +2751,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 737f68e2ac9243f43bd2916500a36b16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  occupied: 00000000
   CommunityCCard: {fileID: 2069792281}
 --- !u!4 &518748609
 Transform:
@@ -2993,6 +3002,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca956548e17f6da4aa4962a11df024e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  occupied: 00000000
 --- !u!1 &618863082
 GameObject:
   m_ObjectHideFlags: 0
@@ -3082,6 +3092,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a44024f0e36b1a4b828a868c2a97b54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  occupied: 00000000
   morgagePrice: 100
   morgaged: 0
   price: 200
@@ -3137,6 +3148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09c1c16f1abf5404e8eeb29d099d7e87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  occupied: 00000000
   morgagePrice: 75
   morgaged: 0
   price: 150
@@ -3266,6 +3278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a44024f0e36b1a4b828a868c2a97b54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  occupied: 00000000
   morgagePrice: 150
   morgaged: 0
   price: 300
@@ -3436,6 +3449,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a44024f0e36b1a4b828a868c2a97b54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  occupied: 00000000
   morgagePrice: 30
   morgaged: 0
   price: 60
@@ -3484,6 +3498,7 @@ MonoBehaviour:
   handler: {fileID: 1469389622}
   text: {fileID: 892604859}
   index: 0
+  layout: {fileID: 66470549}
 --- !u!4 &730793837
 Transform:
   m_ObjectHideFlags: 0
@@ -3541,6 +3556,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 737f68e2ac9243f43bd2916500a36b16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  occupied: 00000000
   CommunityCCard: {fileID: 2069792281}
 --- !u!1 &751641438
 GameObject:
@@ -3629,6 +3645,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8eb3221ea6413a4183a1559db0fb9b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  occupied: 00000000
   chanceTile: {fileID: 2140895970}
 --- !u!1 &786659859
 GameObject:
@@ -4117,6 +4134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0101bbfb4ff933443af5060639946939, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  occupied: 00000000
   morgagePrice: 100
   morgaged: 0
   price: 200
@@ -4210,6 +4228,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a44024f0e36b1a4b828a868c2a97b54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  occupied: 00000000
   morgagePrice: 80
   morgaged: 0
   price: 160
@@ -4265,6 +4284,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a44024f0e36b1a4b828a868c2a97b54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  occupied: 00000000
   morgagePrice: 130
   morgaged: 0
   price: 260
@@ -4407,8 +4427,7 @@ MonoBehaviour:
   passedGo: 0
   chanceAction: 0
   playerText: {fileID: 311998913}
-  otherPlayerOffset: 3
-  handler: {fileID: 730793836}
+  offsetIndex: 0
 --- !u!1 &959321697
 GameObject:
   m_ObjectHideFlags: 0
@@ -4777,8 +4796,7 @@ MonoBehaviour:
   passedGo: 0
   chanceAction: 0
   playerText: {fileID: 1988594275}
-  otherPlayerOffset: 0
-  handler: {fileID: 730793836}
+  offsetIndex: 0
 --- !u!4 &1054445172
 Transform:
   m_ObjectHideFlags: 0
@@ -4882,6 +4900,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a44024f0e36b1a4b828a868c2a97b54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  occupied: 00000000
   morgagePrice: 120
   morgaged: 0
   price: 240
@@ -5455,6 +5474,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7204a30899330744480b6cb3768b4004, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  occupied: 00000000
 --- !u!1 &1161155488
 GameObject:
   m_ObjectHideFlags: 0
@@ -5640,6 +5660,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a44024f0e36b1a4b828a868c2a97b54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  occupied: 00000000
   morgagePrice: 50
   morgaged: 0
   price: 100
@@ -5832,8 +5853,7 @@ MonoBehaviour:
   passedGo: 0
   chanceAction: 0
   playerText: {fileID: 170336052}
-  otherPlayerOffset: 6
-  handler: {fileID: 730793836}
+  offsetIndex: 0
 --- !u!1 &1319166912
 GameObject:
   m_ObjectHideFlags: 0
@@ -5877,6 +5897,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a44024f0e36b1a4b828a868c2a97b54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  occupied: 00000000
   morgagePrice: 130
   morgaged: 0
   price: 260
@@ -6791,6 +6812,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f61a937624d35c40bd92b0f815f706a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  occupied: 00000000
 --- !u!1 &1479358546
 GameObject:
   m_ObjectHideFlags: 0
@@ -7055,6 +7077,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8eb3221ea6413a4183a1559db0fb9b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  occupied: 00000000
   chanceTile: {fileID: 2140895970}
 --- !u!1 &1525242210
 GameObject:
@@ -7099,6 +7122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0101bbfb4ff933443af5060639946939, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  occupied: 00000000
   morgagePrice: 100
   morgaged: 0
   price: 200
@@ -7134,6 +7158,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a44024f0e36b1a4b828a868c2a97b54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  occupied: 00000000
   morgagePrice: 30
   morgaged: 0
   price: 60
@@ -7202,6 +7227,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a44024f0e36b1a4b828a868c2a97b54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  occupied: 00000000
   morgagePrice: 60
   morgaged: 0
   price: 120
@@ -7444,6 +7470,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a44024f0e36b1a4b828a868c2a97b54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  occupied: 00000000
   morgagePrice: 110
   morgaged: 0
   price: 220
@@ -7499,6 +7526,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a44024f0e36b1a4b828a868c2a97b54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  occupied: 00000000
   morgagePrice: 90
   morgaged: 0
   price: 180
@@ -7554,6 +7582,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0101bbfb4ff933443af5060639946939, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  occupied: 00000000
   morgagePrice: 100
   morgaged: 0
   price: 200
@@ -7603,6 +7632,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a44024f0e36b1a4b828a868c2a97b54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  occupied: 00000000
   morgagePrice: 200
   morgaged: 0
   price: 400
@@ -7854,6 +7884,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7063b2007a8b352448dca3617ddce600, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  occupied: 00000000
   layout: {fileID: 66470549}
 --- !u!1 &1718993672
 GameObject:
@@ -7898,6 +7929,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a44024f0e36b1a4b828a868c2a97b54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  occupied: 00000000
   morgagePrice: 90
   morgaged: 0
   price: 180
@@ -8120,6 +8152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a44024f0e36b1a4b828a868c2a97b54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  occupied: 00000000
   morgagePrice: 70
   morgaged: 0
   price: 140
@@ -8221,6 +8254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a44024f0e36b1a4b828a868c2a97b54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  occupied: 00000000
   morgagePrice: 50
   morgaged: 0
   price: 100
@@ -8276,6 +8310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09c1c16f1abf5404e8eeb29d099d7e87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  occupied: 00000000
   morgagePrice: 75
   morgaged: 0
   price: 150
@@ -8326,6 +8361,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a44024f0e36b1a4b828a868c2a97b54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  occupied: 00000000
   morgagePrice: 160
   morgaged: 0
   price: 320
@@ -8381,6 +8417,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73e4f1361c9ddf042a0fc00adf5a96c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  occupied: 00000000
 --- !u!1 &1899322183
 GameObject:
   m_ObjectHideFlags: 0
@@ -9113,6 +9150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0101bbfb4ff933443af5060639946939, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  occupied: 00000000
   morgagePrice: 100
   morgaged: 0
   price: 200

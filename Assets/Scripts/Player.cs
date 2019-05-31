@@ -11,6 +11,7 @@ using Random = UnityEngine.Random;
 public class Player : MonoBehaviour
 {
 
+    public int bid = 0;
     private Transform pos;
     public Vector3 offset;
     public string name;

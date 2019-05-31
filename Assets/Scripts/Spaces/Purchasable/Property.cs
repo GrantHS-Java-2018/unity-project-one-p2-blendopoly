@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Numerics;
+using UnityEngine;
+using Vector3 = UnityEngine.Vector3;
 
 namespace Spaces.Purchasable.Purchasable
 {
@@ -8,12 +10,13 @@ namespace Spaces.Purchasable.Purchasable
         public int housePrice;
         public int numOfHouses = 0;
         public Property[] group;
-        
-
+        public Object[] buildableList = new Object[5];
         void Start()
         {
             pos = GetComponent<Transform>().position;
         }
+        
+        
     
         public override void onLand(Player player)
         {
@@ -45,6 +48,11 @@ namespace Spaces.Purchasable.Purchasable
             return true;
         }
 
+        public void removeHouse()
+        {
+            Destroy(buildableList[numOfHouses], 0.0f);
+        }
+
         public void buildHouse(Player player, BuildableManager manager)
         {
             ++numOfHouses;
@@ -52,6 +60,10 @@ namespace Spaces.Purchasable.Purchasable
             {
                 ++player.numOfHotelsBuilt;
                 player.numOfHousesBuilt -= 4;
+                for (int i = 0; i < 3; i++)
+                {
+                    Destroy(buildableList[i]);
+            }
             }
             else
             {
@@ -61,9 +73,33 @@ namespace Spaces.Purchasable.Purchasable
             player.changeMoney(-housePrice);
             handler.checkIfValid(this);
             bool type = numOfHouses == 5;
-            manager.InstantiateBuilding(type, pos);
+            buildableList[numOfHouses-1] = manager.InstantiateBuilding(type, new Vector3(pos.x, pos.y, pos.z + numOfHouses * 2.5f));
 
         }
+
+        // return the offset so that the buildings are rotated correctly
+        public Vector3 returnOffset(BuildableManager manager)
+        {
+           
+            if (manager.getIndexOf(this) < 11)
+            {
+                return 
+            }
+            else if (manager.getIndexOf(this) < 20 & manager.getIndexOf(this) > 10)
+            {
+                
+            }
+            else if(manager.getIndexOf(this) < 30 & manager.getIndexOf(this) > 20)
+            {
+    
+            }
+            else
+            {
+               
+            }
+        }
+
+       
 
         public void sellHouse(Player player)
         {
@@ -79,6 +115,7 @@ namespace Spaces.Purchasable.Purchasable
             }
             player.changeMoney(housePrice);
             handler.checkIfValid(this);
+            removeHouse();
         }
     
     }

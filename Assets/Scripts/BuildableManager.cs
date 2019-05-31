@@ -12,7 +12,6 @@ public class BuildableManager : MonoBehaviour
     [SerializeField] public GameObject house;
     [SerializeField] public GameObject hotel;
     // make list better; add ways to keep track of houses/hotels
-    [NonSerialized] public List<Object> BuildingList = new List<Object>();
     public float lerpValue;
     public BoardLayout layout;
     
@@ -28,11 +27,18 @@ public class BuildableManager : MonoBehaviour
     {
         
     }
+    
+    public Object InstantiateBuilding(Boolean type, Vector3 pos)
+    {
+        return Instantiate((type ? (Object) hotel : house), pos, new Quaternion(0,0,0,0));
+    }
+    
         
-    public void InstantiateBuilding(Boolean type, Vector3 pos)
+   /* public void InstantiateBuilding(Boolean type, Vector3 pos)
     {
         BuildingList.Add(Instantiate((type ? (Object) house : hotel), pos, new Quaternion(0,0,0,0)));
     }
+    /*
     
     // for later
   /*  public void UpdateZAxis()
@@ -50,6 +56,19 @@ public class BuildableManager : MonoBehaviour
     {
         house.transform.position = new Vector3(0,-10, 0);
         hotel.transform.position = new Vector3(0, -10, 0);
+    }
+
+    public int getIndexOf(GameTile tile)
+    {
+        for(int i = 0; i < 40; ++i)
+        {
+            if (layout.boardTrack[i] == tile)
+            {
+                return i;
+            }    
+        }
+        Debug.Log("IS BROKEY!");
+        return -1;
     }
     
 }

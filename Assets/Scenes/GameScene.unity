@@ -253,6 +253,12 @@ MonoBehaviour:
   numOfHouses: 0
   group:
   - {fileID: 1665127133}
+  buildableList:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &56945020
 GameObject:
   m_ObjectHideFlags: 0
@@ -307,6 +313,12 @@ MonoBehaviour:
   group:
   - {fileID: 1319166914}
   - {fileID: 888234666}
+  buildableList:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &59110088
 GameObject:
   m_ObjectHideFlags: 0
@@ -812,6 +824,12 @@ MonoBehaviour:
   group:
   - {fileID: 1825949269}
   - {fileID: 886243201}
+  buildableList:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &170076733
 GameObject:
   m_ObjectHideFlags: 0
@@ -1042,6 +1060,12 @@ MonoBehaviour:
   group:
   - {fileID: 684866510}
   - {fileID: 1865440059}
+  buildableList:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &226297627
 GameObject:
   m_ObjectHideFlags: 0
@@ -1269,6 +1293,12 @@ MonoBehaviour:
   group:
   - {fileID: 1585776051}
   - {fileID: 1057478269}
+  buildableList:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &287174291
 GameObject:
   m_ObjectHideFlags: 0
@@ -2622,6 +2652,12 @@ MonoBehaviour:
   group:
   - {fileID: 1718993674}
   - {fileID: 1609473449}
+  buildableList:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &623857229
 GameObject:
   m_ObjectHideFlags: 0
@@ -2937,6 +2973,12 @@ MonoBehaviour:
   group:
   - {fileID: 211631632}
   - {fileID: 1865440059}
+  buildableList:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &699662016
 GameObject:
   m_ObjectHideFlags: 0
@@ -3100,6 +3142,12 @@ MonoBehaviour:
   numOfHouses: 0
   group:
   - {fileID: 1528726296}
+  buildableList:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &730793835
 GameObject:
   m_ObjectHideFlags: 0
@@ -3784,6 +3832,12 @@ MonoBehaviour:
   group:
   - {fileID: 1825949269}
   - {fileID: 141541279}
+  buildableList:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &888234664
 GameObject:
   m_ObjectHideFlags: 0
@@ -3838,6 +3892,12 @@ MonoBehaviour:
   group:
   - {fileID: 1319166914}
   - {fileID: 56945022}
+  buildableList:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &892604857
 GameObject:
   m_ObjectHideFlags: 0
@@ -4553,6 +4613,12 @@ MonoBehaviour:
   group:
   - {fileID: 253607343}
   - {fileID: 1585776051}
+  buildableList:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &1060327840
 GameObject:
   m_ObjectHideFlags: 0
@@ -5025,6 +5091,12 @@ MonoBehaviour:
   group:
   - {fileID: 1840977919}
   - {fileID: 1560827004}
+  buildableList:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &1215602654
 GameObject:
   m_ObjectHideFlags: 0
@@ -5350,7 +5422,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1306782974}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -21.371151, y: -9.434242, z: -12.285406}
+  m_LocalPosition: {x: -57.96, y: 1.26, z: -8.53}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -5410,6 +5482,12 @@ MonoBehaviour:
   group:
   - {fileID: 888234666}
   - {fileID: 56945022}
+  buildableList:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &1320700230
 GameObject:
   m_ObjectHideFlags: 0
@@ -6342,6 +6420,12 @@ MonoBehaviour:
   numOfHouses: 0
   group:
   - {fileID: 716777568}
+  buildableList:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!4 &1528726297
 Transform:
   m_ObjectHideFlags: 0
@@ -6410,6 +6494,12 @@ MonoBehaviour:
   group:
   - {fileID: 1194070257}
   - {fileID: 1840977919}
+  buildableList:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &1563601116
 GameObject:
   m_ObjectHideFlags: 0
@@ -6593,6 +6683,12 @@ MonoBehaviour:
   group:
   - {fileID: 253607343}
   - {fileID: 1057478269}
+  buildableList:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &1609473447
 GameObject:
   m_ObjectHideFlags: 0
@@ -6647,6 +6743,12 @@ MonoBehaviour:
   group:
   - {fileID: 1718993674}
   - {fileID: 619859637}
+  buildableList:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &1649067412
 GameObject:
   m_ObjectHideFlags: 0
@@ -6793,6 +6895,12 @@ MonoBehaviour:
   numOfHouses: 0
   group:
   - {fileID: 39374205}
+  buildableList:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &1673861405
 GameObject:
   m_ObjectHideFlags: 0
@@ -6997,6 +7105,12 @@ MonoBehaviour:
   group:
   - {fileID: 1609473449}
   - {fileID: 619859637}
+  buildableList:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &1784083157
 GameObject:
   m_ObjectHideFlags: 0
@@ -7147,7 +7261,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1823092716}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -49.2, y: 17.5, z: 24.504593}
+  m_LocalPosition: {x: -56.8, y: -4.37, z: -6.05}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -7207,6 +7321,12 @@ MonoBehaviour:
   group:
   - {fileID: 141541279}
   - {fileID: 886243201}
+  buildableList:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &1837499239
 GameObject:
   m_ObjectHideFlags: 0
@@ -7307,6 +7427,12 @@ MonoBehaviour:
   group:
   - {fileID: 1194070257}
   - {fileID: 1560827004}
+  buildableList:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &1843219024
 GameObject:
   m_ObjectHideFlags: 0
@@ -7455,6 +7581,12 @@ MonoBehaviour:
   group:
   - {fileID: 684866510}
   - {fileID: 211631632}
+  buildableList:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &1874940885
 GameObject:
   m_ObjectHideFlags: 0

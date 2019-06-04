@@ -24,27 +24,24 @@ public class Auctioning : MonoBehaviour
     public Text maxValue;
     public Text minValue;
     public Text name;
-    public Text propertyName;
     public Text bidValue;
     
     public BidButtonHandler minValueScript;
     public BidButtonHandler maxValueScript;
     public BidButtonHandler nameScript;
-    public BidButtonHandler propertyNameScript;
     public BidButtonHandler bidValueScript;
     
     public BidButtonHandler minValuePanel;
     public BidButtonHandler maxValuePanel;
     public BidButtonHandler namePanel;
-    public BidButtonHandler propertyNamePanel;
     public BidButtonHandler bidValuePanel;
 
     private void setText()
     {
-        maxValue.text = "max: " + (bids[playerIndex].money - bids[playerIndex].bid).ToString();
+        maxValue.text = "max: $" + bids[playerIndex].money.ToString();
+        minValue.text = "current bid: $" + maxBid();
         name.text = bids[playerIndex].name;
-        propertyName.text = layout.boardTrack[playerHandler.players[playerHandler.index].index].name;
-        bidValue.text = ((int) bidSlider.value).ToString();
+        bidValue.text = "$" + ((int) bidSlider.value).ToString();
     }
 
     void Update()
@@ -61,7 +58,6 @@ public class Auctioning : MonoBehaviour
         maxValue.alignment = TextAnchor.MiddleCenter;
         minValue.alignment = TextAnchor.MiddleCenter;
         name.alignment = TextAnchor.MiddleCenter;
-        propertyName.alignment = TextAnchor.MiddleCenter;
         bidValue.alignment = TextAnchor.MiddleCenter;
         
         buttonHandlerButton.turnOff();
@@ -70,14 +66,12 @@ public class Auctioning : MonoBehaviour
         
         maxValueScript.turnOff();
         nameScript.turnOff();
-        propertyNameScript.turnOff();
         bidValueScript.turnOff();
         minValueScript.turnOff();
         
         minValuePanel.turnOff();
         maxValuePanel.turnOff();
         namePanel.turnOff();
-        propertyNamePanel.turnOff();
         bidValuePanel.turnOff();
     }
 
@@ -96,14 +90,12 @@ public class Auctioning : MonoBehaviour
         
         maxValueScript.turnOn();
         nameScript.turnOn();
-        propertyNameScript.turnOn();
         bidValueScript.turnOn();
         minValueScript.turnOn();
 
         minValuePanel.turnOn();
         maxValuePanel.turnOn();
         namePanel.turnOn();
-        propertyNamePanel.turnOn();
         bidValuePanel.turnOn();
         
         playerIndex = 0;
@@ -119,14 +111,12 @@ public class Auctioning : MonoBehaviour
         
         maxValueScript.turnOff();
         nameScript.turnOff();
-        propertyNameScript.turnOff();
         bidValueScript.turnOff();
         minValueScript.turnOff();
 
         minValuePanel.turnOff();
         maxValuePanel.turnOff();
         namePanel.turnOff();
-        propertyNamePanel.turnOff();
         bidValuePanel.turnOff();
         
         playerIndex = 0;
@@ -148,6 +138,7 @@ public class Auctioning : MonoBehaviour
 
     public void raiseBid()
     {
+        bidSlider.minValue = maxBid() + 1;
         if (bids.Count == 1)
         {
             Debug.Log("1");
@@ -172,8 +163,8 @@ public class Auctioning : MonoBehaviour
         else
         {
             Debug.Log("4");
-            bidSlider.maxValue = playerHandler.players[playerIndex].money - bids[playerIndex].bid;
-            bids[playerIndex].bid += (int) bidSlider.value;
+            bidSlider.maxValue = playerHandler.players[playerIndex].money;
+            bids[playerIndex].bid = (int) bidSlider.value;
             setText();
             ++playerIndex;
             if (playerIndex >= bids.Count)
@@ -183,6 +174,7 @@ public class Auctioning : MonoBehaviour
                 setText();
             }
         }
+        bidSlider.minValue = maxBid() + 1;
     }
 
     private void removeBid()

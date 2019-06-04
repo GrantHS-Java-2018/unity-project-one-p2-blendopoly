@@ -146,44 +146,63 @@ public class Auctioning : MonoBehaviour
 
     public void raiseBid()
     {
-        setText();
         if (bids.Count == 1)
         {
+            Debug.Log("1");
             Debug.Log("Choose The Player Now");
+            playerIndex = 0;
+            //setText();
             winner();
+        }
+        else if (playerIndex >= playerHandler.players.Length)
+        {
+            Debug.Log("2");
+            playerIndex = 0;
+            //setText();
         }
         else if (bids[playerIndex].bid == bids[playerIndex].money && bids[playerIndex].bid < maxBid())
         {
-            removeBid();
-        }
-        else if (playerIndex < playerHandler.players.Length)
-        {
-            bidSlider.maxValue = playerHandler.players[playerIndex].money - bids[playerIndex].bid;
-            bids[playerIndex].bid += (int) bidSlider.value;
-            Debug.Log("playerIndex: " + playerIndex + " biddingValue: " + bids[playerIndex]);
-            ++playerIndex;
+            Debug.Log("3");
+            //setText();
+            playerIndex = 0;
+            winner();
         }
         else
         {
-            playerIndex = 0;
+            Debug.Log("4");
+            bidSlider.maxValue = playerHandler.players[playerIndex].money - bids[playerIndex].bid;
+            bids[playerIndex].bid += (int) bidSlider.value;
+            //setText();
+            //Debug.Log("playerIndex: " + playerIndex.ToString() + " biddingValue: " + bids[playerIndex].bid.ToString() + " length: " + bids.Count.ToString());
+            ++playerIndex;
+            if (playerIndex >= playerHandler.players.Length)
+            {
+                Debug.Log("3");
+                playerIndex = 0;
+                //setText();
+            }
         }
     }
 
     private void removeBid()
     {
-        setText();
+        Debug.Log("0");
+        //setText();
         if (bids.Count > 1)
         {
-            Debug.Log("Removed playerIndex: " + playerIndex + " biddingValue: " + bids[playerIndex]);
-            bids[playerIndex].bid = 0;
-            bids.Remove(bids[playerIndex]);
+            Debug.Log("Help");
             if (playerIndex >= bids.Count)
             {
                 playerIndex = 0;
             }
+            bids[playerIndex].bid = 0;
+            bids.Remove(bids[playerIndex]);
+            //Debug.Log("playerIndex: " + playerIndex.ToString() + " biddingValue: " + bids[playerIndex].bid.ToString() + " length: " + bids.Count.ToString());
         }
         else
         {
+            Debug.Log("Good");
+            playerIndex = 0;
             winner();
         }
     }
@@ -195,7 +214,7 @@ public class Auctioning : MonoBehaviour
 
     private void winner()
     {
-        Debug.Log("List Length: " + bids.Count + " Winner: " + bids[0]);
+        Debug.Log("List Length: " + bids.Count.ToString() + " Winner: " + bids[0]);
         bids[0].changeMoney(-bids[0].bid);
         Purchasable property = layout.boardTrack[playerHandler.players[playerHandler.index].index] as Purchasable;
         property.owner = bids[0];

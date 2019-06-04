@@ -156,7 +156,7 @@ public class Auctioning : MonoBehaviour
             //setText();
             winner();
         }
-        else if (playerIndex >= playerHandler.players.Length)
+        else if (playerIndex >= bids.Count)
         {
             Debug.Log("2");
             playerIndex = 0;
@@ -176,7 +176,7 @@ public class Auctioning : MonoBehaviour
             bids[playerIndex].bid += (int) bidSlider.value;
             //setText();
             ++playerIndex;
-            if (playerIndex >= playerHandler.players.Length)
+            if (playerIndex >= bids.Count)
             {
                 Debug.Log("3");
                 playerIndex = 0;

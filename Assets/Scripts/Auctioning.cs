@@ -38,7 +38,7 @@ public class Auctioning : MonoBehaviour
 
     private void setText()
     {
-        maxValue.text = "max: $" + bids[playerIndex].money.ToString();
+        maxValue.text = "max: $" + (bids[playerIndex].money-1).ToString();
         minValue.text = "current bid: $" + maxBid();
         name.text = bids[playerIndex].name;
         bidValue.text = "$" + ((int) bidSlider.value).ToString();
@@ -62,7 +62,7 @@ public class Auctioning : MonoBehaviour
     private void Start()
     {
         bids = new List<Player>(playerHandler.players.Length);
-        bidSlider.maxValue = playerHandler.players[playerIndex].money;
+        bidSlider.maxValue = playerHandler.players[playerIndex].money - 1;
         bidSlider.minValue = 1;
 
         textAlign();
@@ -153,15 +153,13 @@ public class Auctioning : MonoBehaviour
             playerIndex = 0;
             setText();
         }
-        else if (bids[playerIndex].bid == bids[playerIndex].money && bids[playerIndex].bid < maxBid())
+        else if((bids[playerIndex].money - 2) <= (maxBid()))
         {
-            setText();
-            playerIndex = 0;
             removeBid();
         }
         else
         {
-            bidSlider.maxValue = bids[playerIndex].money;
+            bidSlider.maxValue = bids[playerIndex].money - 1;
             bids[playerIndex].bid = (int) bidSlider.value;
             setText();
             ++playerIndex;

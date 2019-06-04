@@ -64,7 +64,6 @@ public class CardHandler : MonoBehaviour
         notChosen.RemoveAt(index);
         gameObject.GetComponent<Image>().sprite = cardList[value].renderedSprite;
         gameObject.GetComponent<Image>().enabled = true;
-        Debug.Log("Chance Size: " + notChosen.Count);
     }
 
     private void onClick()
@@ -83,7 +82,6 @@ public class CardHandler : MonoBehaviour
     
     private void reset()
     {
-        Debug.Log("Chance reset");
         for (int x1 = 0; x1 < 16; ++x1)
         {
             notChosen.Add(x1);

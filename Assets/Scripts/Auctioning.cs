@@ -134,34 +134,29 @@ public class Auctioning : MonoBehaviour
         bidSlider.minValue = maxBid() + 1;
         if (bids.Count == 1)
         {
-            Debug.Log("1");
             playerIndex = 0;
             setText();
             winner();
         }
         else if (playerIndex >= bids.Count)
         {
-            Debug.Log("2");
             playerIndex = 0;
             setText();
         }
         else if (bids[playerIndex].bid == bids[playerIndex].money && bids[playerIndex].bid < maxBid())
         {
-            Debug.Log("3");
             setText();
             playerIndex = 0;
             removeBid();
         }
         else
         {
-            Debug.Log("4");
             bidSlider.maxValue = bids[playerIndex].money;
             bids[playerIndex].bid = (int) bidSlider.value;
             setText();
             ++playerIndex;
             if (playerIndex >= bids.Count)
             {
-                Debug.Log("3");
                 playerIndex = 0;
             }
             setText();
@@ -171,10 +166,8 @@ public class Auctioning : MonoBehaviour
     
     private void removeBid()
     {
-        Debug.Log("0 " + bids.Count);
         if (bids.Count > 1)
         {
-            Debug.Log("Help");
             if (playerIndex >= bids.Count)
             {
                 playerIndex = 0;
@@ -189,12 +182,10 @@ public class Auctioning : MonoBehaviour
         }
         if(bids.Count == 1)
         {
-            Debug.Log("Good");
             playerIndex = 0;
             setText();
             winner();
         }
-        Debug.Log("0 " + bids.Count);
     }
 
     private void returnBack()

@@ -61,28 +61,21 @@ public class Auctioning : MonoBehaviour
 
     private void Start()
     {
-        bids = new List<Player>();
+        bids = new List<Player>(playerHandler.players.Length);
         bidSlider.maxValue = playerHandler.players[playerIndex].money;
         bidSlider.minValue = 1;
 
+        textAlign();
+        
+        bidEnd();
+    }
+
+    private void textAlign()
+    {
         maxValue.alignment = TextAnchor.MiddleCenter;
         minValue.alignment = TextAnchor.MiddleCenter;
         name.alignment = TextAnchor.MiddleCenter;
         bidValue.alignment = TextAnchor.MiddleCenter;
-        
-        buttonHandlerButton.turnOff();
-        buttonHandlerSlider.turnOff();
-        stopButtonHandlerButton.turnOff();
-        
-        maxValueScript.turnOff();
-        nameScript.turnOff();
-        bidValueScript.turnOff();
-        minValueScript.turnOff();
-        
-        minValuePanel.turnOff();
-        maxValuePanel.turnOff();
-        namePanel.turnOff();
-        bidValuePanel.turnOff();
     }
 
     private void bidsInitialize()
@@ -151,59 +144,54 @@ public class Auctioning : MonoBehaviour
         bidSlider.minValue = maxBid() + 1;
         if (bids.Count == 1)
         {
-            Debug.Log("1");
-            Debug.Log("Choose The Player Now");
             playerIndex = 0;
             setText();
             winner();
         }
         else if (playerIndex >= bids.Count)
         {
-            Debug.Log("2");
             playerIndex = 0;
             setText();
         }
         else if (bids[playerIndex].bid == bids[playerIndex].money && bids[playerIndex].bid < maxBid())
         {
-            Debug.Log("3");
             setText();
             playerIndex = 0;
             removeBid();
         }
         else
         {
-            Debug.Log("4");
-            bidSlider.maxValue = playerHandler.players[playerIndex].money;
+            bidSlider.maxValue = bids[playerIndex].money;
             bids[playerIndex].bid = (int) bidSlider.value;
             setText();
             ++playerIndex;
             if (playerIndex >= bids.Count)
             {
-                Debug.Log("3");
                 playerIndex = 0;
-                setText();
             }
+            setText();
         }
         bidSlider.minValue = maxBid() + 1;
     }
-
+    
     private void removeBid()
     {
-        Debug.Log("0");
         if (bids.Count > 1)
         {
-            Debug.Log("Help");
+            if (playerIndex >= bids.Count)
+            {
+                playerIndex = 0;
+            }
+            bids[playerIndex].bid = 0;
+            bids.Remove(bids[playerIndex]);
             if (playerIndex >= bids.Count)
             {
                 playerIndex = 0;
             }
             setText();
-            bids[playerIndex].bid = 0;
-            bids.Remove(bids[playerIndex]);
         }
-        else
+        if(bids.Count == 1)
         {
-            Debug.Log("Good");
             playerIndex = 0;
             setText();
             winner();

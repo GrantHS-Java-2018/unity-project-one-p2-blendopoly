@@ -14,7 +14,9 @@ public class Auctioning : MonoBehaviour
     public BidButtonHandler buttonHandlerSlider;
     public Slider bidSlider;
     private int playerIndex = 0;
+    
     private List<Player> bids;
+    
     public PropertyHandler handler;
     public PlayerHandler playerHandler;
     public BoardLayout layout;
@@ -165,7 +167,7 @@ public class Auctioning : MonoBehaviour
             Debug.Log("3");
             //setText();
             playerIndex = 0;
-            winner();
+            removeBid();
         }
         else
         {
@@ -173,7 +175,6 @@ public class Auctioning : MonoBehaviour
             bidSlider.maxValue = playerHandler.players[playerIndex].money - bids[playerIndex].bid;
             bids[playerIndex].bid += (int) bidSlider.value;
             //setText();
-            //Debug.Log("playerIndex: " + playerIndex.ToString() + " biddingValue: " + bids[playerIndex].bid.ToString() + " length: " + bids.Count.ToString());
             ++playerIndex;
             if (playerIndex >= playerHandler.players.Length)
             {
@@ -197,7 +198,6 @@ public class Auctioning : MonoBehaviour
             }
             bids[playerIndex].bid = 0;
             bids.Remove(bids[playerIndex]);
-            //Debug.Log("playerIndex: " + playerIndex.ToString() + " biddingValue: " + bids[playerIndex].bid.ToString() + " length: " + bids.Count.ToString());
         }
         else
         {

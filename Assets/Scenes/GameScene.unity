@@ -1663,6 +1663,7 @@ GameObject:
   - component: {fileID: 273008110}
   - component: {fileID: 273008109}
   - component: {fileID: 273008111}
+  - component: {fileID: 273008112}
   m_Layer: 5
   m_Name: MaxBidPanel
   m_TagString: Untagged
@@ -1685,10 +1686,10 @@ RectTransform:
   m_Father: {fileID: 699662020}
   m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -150, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 609, y: 262}
+  m_SizeDelta: {x: 100, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &273008109
 MonoBehaviour:
@@ -1737,6 +1738,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 54fff77024eb4732a13e72a190aff8e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &273008112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 273008107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 836bd3d3648bf7649bb797c355d90076, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &294375671
@@ -2089,6 +2102,7 @@ GameObject:
   - component: {fileID: 331513279}
   - component: {fileID: 331513278}
   - component: {fileID: 331513280}
+  - component: {fileID: 331513281}
   m_Layer: 5
   m_Name: PlayerPanel
   m_TagString: Untagged
@@ -2111,9 +2125,9 @@ RectTransform:
   m_Father: {fileID: 699662020}
   m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 150, y: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 457, y: 60}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &331513278
@@ -2163,6 +2177,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 54fff77024eb4732a13e72a190aff8e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &331513281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 331513276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 836bd3d3648bf7649bb797c355d90076, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &331545565
@@ -3106,6 +3132,7 @@ GameObject:
   - component: {fileID: 532320039}
   - component: {fileID: 532320038}
   - component: {fileID: 532320040}
+  - component: {fileID: 532320041}
   m_Layer: 5
   m_Name: MinBidPanel
   m_TagString: Untagged
@@ -3128,10 +3155,10 @@ RectTransform:
   m_Father: {fileID: 699662020}
   m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -350, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 309, y: 262}
+  m_SizeDelta: {x: 120, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &532320038
 MonoBehaviour:
@@ -3180,6 +3207,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 54fff77024eb4732a13e72a190aff8e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &532320041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 532320036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 836bd3d3648bf7649bb797c355d90076, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &534669902
@@ -4178,6 +4217,7 @@ GameObject:
   - component: {fileID: 776529427}
   - component: {fileID: 776529426}
   - component: {fileID: 776529429}
+  - component: {fileID: 776529430}
   m_Layer: 5
   m_Name: BidButton
   m_TagString: Untagged
@@ -4200,9 +4240,9 @@ RectTransform:
   m_Father: {fileID: 699662020}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 542, y: 25}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &776529426
@@ -4305,6 +4345,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 54fff77024eb4732a13e72a190aff8e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &776529430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 776529424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 836bd3d3648bf7649bb797c355d90076, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &786659859
@@ -6797,6 +6849,7 @@ GameObject:
   - component: {fileID: 1331376971}
   - component: {fileID: 1331376970}
   - component: {fileID: 1331376972}
+  - component: {fileID: 1331376973}
   m_Layer: 5
   m_Name: CurrentBidPanel
   m_TagString: Untagged
@@ -6819,9 +6872,9 @@ RectTransform:
   m_Father: {fileID: 699662020}
   m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -200}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 459, y: 187}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1331376970
@@ -6871,6 +6924,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 54fff77024eb4732a13e72a190aff8e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1331376973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1331376968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 836bd3d3648bf7649bb797c355d90076, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1339412136
@@ -8536,6 +8601,7 @@ GameObject:
   - component: {fileID: 1646941147}
   - component: {fileID: 1646941148}
   - component: {fileID: 1646941149}
+  - component: {fileID: 1646941150}
   m_Layer: 5
   m_Name: BidSlider
   m_TagString: Untagged
@@ -8560,9 +8626,9 @@ RectTransform:
   m_Father: {fileID: 699662020}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 459, y: 262}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1646941148
@@ -8624,6 +8690,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 54fff77024eb4732a13e72a190aff8e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1646941150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1646941146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 836bd3d3648bf7649bb797c355d90076, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1649067412
@@ -9333,6 +9411,7 @@ GameObject:
   - component: {fileID: 1787538532}
   - component: {fileID: 1787538531}
   - component: {fileID: 1787538534}
+  - component: {fileID: 1787538535}
   m_Layer: 5
   m_Name: StopBidButton
   m_TagString: Untagged
@@ -9355,9 +9434,9 @@ RectTransform:
   m_Father: {fileID: 699662020}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 372, y: 25}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1787538531
@@ -9462,6 +9541,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54fff77024eb4732a13e72a190aff8e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1787538535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1787538529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 836bd3d3648bf7649bb797c355d90076, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1813671082
 GameObject:
   m_ObjectHideFlags: 0
@@ -9527,7 +9618,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -9638,7 +9729,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5827c842ef8d196489b6947053f77c94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bidding: {fileID: 0}
   buy: {fileID: 417583334}
   notBuy: {fileID: 1161155488}
   handler: {fileID: 1469389622}

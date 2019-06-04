@@ -46,6 +46,16 @@ public class Auctioning : MonoBehaviour
 
     void Update()
     {
+        if (ButtonHandler.resolutionChanged)
+        {
+            minValuePanel.GetComponent<Scaler>().updateForScreen();
+            maxValuePanel.GetComponent<Scaler>().updateForScreen();
+            namePanel.GetComponent<Scaler>().updateForScreen();
+            bidValuePanel.GetComponent<Scaler>().updateForScreen();
+            buttonHandlerButton.GetComponent<Scaler>().updateForScreen();
+            stopButtonHandlerButton.GetComponent<Scaler>().updateForScreen();
+            buttonHandlerSlider.GetComponent<Scaler>().updateForScreen();
+        }
         bidValue.text = ((int) bidSlider.value).ToString();
     }
 

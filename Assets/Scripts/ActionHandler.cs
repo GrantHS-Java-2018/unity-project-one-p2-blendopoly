@@ -12,6 +12,7 @@ public class ActionHandler : MonoBehaviour
     public Canvas canvas;
     public PlayerHandler handler;
     public ButtonHandler buttonHandler;
+    public BuildableManager manager;
     public Sprite _buttonSprite;
     public Font arial;
     private Purchasable propertyToTrade;

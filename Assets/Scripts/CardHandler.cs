@@ -7,15 +7,15 @@ using UnityEngine.UI;
 public class CardHandler : MonoBehaviour
 {
     
-    public Card[] cardList = new Card[16];
+    [SerializeField] private Card[] cardList = new Card[16];
     
     private List<int> notChosen = new List<int>();
 
     private int value;
 
-    public PlayerHandler handler;
+    [SerializeField] private PlayerHandler handler;
 
-    public bool cardShown = false;
+    private bool cardShown = false;
 
     public bool doneShowing = false;
     
@@ -23,7 +23,7 @@ public class CardHandler : MonoBehaviour
 
     public bool waitingOnDice = false;
 
-    public BoardLayout layout;
+    [SerializeField] private BoardLayout layout;
 
     private RectTransform transform;
     

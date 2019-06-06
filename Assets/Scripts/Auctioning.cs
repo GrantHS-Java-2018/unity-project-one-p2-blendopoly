@@ -9,10 +9,10 @@ using UnityEngine.UI;
 
 public class Auctioning : MonoBehaviour
 {
-    public BidButtonHandler buttonHandlerButton;
-    public BidButtonHandler stopButtonHandlerButton;
-    public BidButtonHandler buttonHandlerSlider;
-    public Slider bidSlider;
+    [SerializeField] private BidButtonHandler buttonHandlerButton;
+    [SerializeField] private BidButtonHandler stopButtonHandlerButton;
+    [SerializeField] private BidButtonHandler buttonHandlerSlider;
+    [SerializeField] private Slider bidSlider;
     private int playerIndex = 0;
 
     private readonly int[] utilities = new int[2];
@@ -20,24 +20,24 @@ public class Auctioning : MonoBehaviour
 
     private List<Player> bids;
 
-    public PropertyHandler handler;
-    public PlayerHandler playerHandler;
-    public BoardLayout layout;
+    [SerializeField] private PropertyHandler handler;
+    [SerializeField] private PlayerHandler playerHandler;
+    [SerializeField] private BoardLayout layout;
 
-    public Text maxValue;
-    public Text minValue;
-    public Text name;
-    public Text bidValue;
+    [SerializeField] private Text maxValue;
+    [SerializeField] private Text minValue;
+    [SerializeField] private Text name;
+    [SerializeField] private Text bidValue;
 
-    public BidButtonHandler minValueScript;
-    public BidButtonHandler maxValueScript;
-    public BidButtonHandler nameScript;
-    public BidButtonHandler bidValueScript;
+    [SerializeField] private BidButtonHandler minValueScript;
+    [SerializeField] private BidButtonHandler maxValueScript;
+    [SerializeField] private BidButtonHandler nameScript;
+    [SerializeField] private BidButtonHandler bidValueScript;
 
-    public BidButtonHandler minValuePanel;
-    public BidButtonHandler maxValuePanel;
-    public BidButtonHandler namePanel;
-    public BidButtonHandler bidValuePanel;
+    [SerializeField] private BidButtonHandler minValuePanel;
+    [SerializeField] private BidButtonHandler maxValuePanel;
+    [SerializeField] private BidButtonHandler namePanel;
+    [SerializeField] private BidButtonHandler bidValuePanel;
 
     private void setText()
     {

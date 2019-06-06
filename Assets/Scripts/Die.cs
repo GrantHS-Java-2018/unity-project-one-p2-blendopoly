@@ -5,12 +5,12 @@ namespace Spaces {
     public class Die : MonoBehaviour
     {
         public int faceShowing = 1;
-        public Vector3[] angles = new Vector3[6];
-        public int[] yAngles;
-        public float percent;
-        public PlayerHandler handler;
+        [SerializeField] private Vector3[] angles = new Vector3[6];
+        [SerializeField] private int[] yAngles;
+        private float percent;
+        [SerializeField] private PlayerHandler handler;
         public bool rolling = false;
-        public int turnFactor;
+        [SerializeField] private int turnFactor;
         private float resolutionX = 914;
         private float resolutionY = 374;
         private Vector3 position;

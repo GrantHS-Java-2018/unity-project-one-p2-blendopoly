@@ -13,14 +13,14 @@ public class Player : MonoBehaviour
 
     public int bid = 0;
     private Transform pos;
-    public Vector3 offset;
-    public string name;
+    [SerializeField] private Vector3 offset;
+    [SerializeField] private string name;
     public int index = 0;
-    public GameObject board;
+    [SerializeField] private GameObject board;
     private BoardLayout layout;
     public bool inJail { get; set; } = false;
     public int money;
-    public ButtonHandler buttonHandler;
+    [SerializeField] private ButtonHandler buttonHandler;
     public int utilities = 0;
     public int railroads = 0;
     private int doubles = 0;
@@ -36,15 +36,15 @@ public class Player : MonoBehaviour
     public int unMorgagedProperties = 0;
     public int numOfHousesBuilt = 0;
     public int numOfHotelsBuilt = 0;
-    public Die die1;
-    public Die die2;
+    [SerializeField] private Die die1;
+    [SerializeField] private Die die2;
     public bool jailWaiting = false;
     public bool bankrupt = false;
     public bool goingBankrupt = false;
-    public ActionHandler actionHandler;
+    [SerializeField] private ActionHandler actionHandler;
     public bool passedGo = false;
     public bool chanceAction = false;
-    public PlayerText playerText;
+    [SerializeField] private PlayerText playerText;
     public int offsetIndex;
 
     void Start()

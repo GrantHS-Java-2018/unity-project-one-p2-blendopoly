@@ -7,14 +7,14 @@ using UnityEngine.UI;
 
 public class ActionHandler : MonoBehaviour
 {
-    public BoardLayout layout;
+    [SerializeField] private BoardLayout layout;
     private ArrayList properties = new ArrayList();
-    public Canvas canvas;
-    public PlayerHandler handler;
-    public ButtonHandler buttonHandler;
-    public BuildableManager manager;
-    public Sprite _buttonSprite;
-    public Font arial;
+    [SerializeField] private Canvas canvas;
+    [SerializeField] private PlayerHandler handler;
+    [SerializeField] private ButtonHandler buttonHandler;
+    [SerializeField] private BuildableManager manager;
+    [SerializeField] private Sprite _buttonSprite;
+    [SerializeField] private Font arial;
     private Purchasable propertyToTrade;
 
     public void displayProperties(Player player, int purpose)

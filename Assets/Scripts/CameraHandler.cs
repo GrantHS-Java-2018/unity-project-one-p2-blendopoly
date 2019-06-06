@@ -9,15 +9,15 @@ using Vector3 = UnityEngine.Vector3;
 public class CameraHandler : MonoBehaviour
 {
 
-    public Transform board;
+    [SerializeField] private Transform board;
     private Transform pos;
     private bool xIncreasing = true;
     private bool zIncreasing = true;
     private int counter = 0;
     private bool isOnPlayer = false;
-    public PlayerHandler handler;
-    public Text buttonText;
-    public Light light;
+    [SerializeField] private PlayerHandler handler;
+    [SerializeField] private Text buttonText;
+    [SerializeField] private Light light;
     
     // Start is called before the first frame update
     void Start()

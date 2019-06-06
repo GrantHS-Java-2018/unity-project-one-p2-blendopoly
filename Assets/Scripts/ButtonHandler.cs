@@ -7,22 +7,22 @@ using UnityEngine.UI;
 
 public class ButtonHandler : MonoBehaviour
 {
-    public GameObject roll;
-    public GameObject changeCamera;
-    public GameObject money;
-    public GameObject buyProperty;
-    public GameObject dontBuyProperty;
-    public GameObject endTurn;
-    public GameObject getOutOfJail;
-    public GameObject buy;
-    public GameObject sell;
-    public GameObject morgage;
-    public GameObject unMorgage;
-    public GameObject cancel;
-    public GameObject die1;
-    public GameObject die2;
-    public GameObject[] propertyDisplayers;
-    public ArrayList buttons = new ArrayList();
+    [SerializeField] private GameObject roll;
+    [SerializeField] private GameObject changeCamera;
+    [SerializeField] private GameObject money;
+    [SerializeField] private GameObject buyProperty;
+    [SerializeField] private GameObject dontBuyProperty;
+    [SerializeField] private GameObject endTurn;
+    [SerializeField] private GameObject getOutOfJail;
+    [SerializeField] private GameObject buy;
+    [SerializeField] private GameObject sell;
+    [SerializeField] private GameObject morgage;
+    [SerializeField] private GameObject unMorgage;
+    [SerializeField] private GameObject cancel;
+    [SerializeField] private GameObject die1;
+    [SerializeField] private GameObject die2;
+    [SerializeField] private GameObject[] propertyDisplayers;
+    private ArrayList buttons = new ArrayList();
     public static bool resolutionChanged = false;
     private float resolutionX = 914;
     private float resolutionY = 374;

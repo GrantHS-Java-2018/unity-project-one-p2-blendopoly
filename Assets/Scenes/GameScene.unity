@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.4964127, b: 0.57481724, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2495,8 +2495,8 @@ MonoBehaviour:
   handler: {fileID: 730793836}
   buttonHandler: {fileID: 1469389622}
   manager: {fileID: 287174292}
-  _buttonSprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 3}
-  arial: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 3}
+  _buttonSprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  arial: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!4 &573892972
 Transform:
   m_ObjectHideFlags: 0
@@ -5368,7 +5368,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100006, guid: af3b3fa4e4881ce4a8fe335a3be132dd, type: 3}
+  - {fileID: 2100000, guid: a70d45a5fe9c19641ad8324675f6fa7c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7207,7 +7207,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100002, guid: 62dd8f779fc628943bd30f23a32032a2, type: 3}
+  - {fileID: 2100000, guid: 333abfec9ee83e54d83a07934a46a673, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

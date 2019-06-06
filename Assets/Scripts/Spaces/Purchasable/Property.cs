@@ -83,7 +83,8 @@ namespace Spaces.Purchasable.Purchasable
 
         public Object InstantiateBuildingOffset(BuildableManager manager, bool type, float centerOffset, float horizontalOffset, float spacing, int numOfHouses)
         {
-            return manager.InstantiateBuilding((type), ((pos + centerOffset * returnOffset(manager)) - horizontalOffset * switchVectorXZ(returnOffset(manager))) + (switchVectorXZ(returnOffset(manager)) * spacing * (numOfHouses == 5 ? 0 : numOfHouses)));
+            
+            return manager.InstantiateBuilding((type), ((pos +(type ? new Vector3(0, 2, 0): new Vector3(0, 0, 0)) + centerOffset * returnOffset(manager)) - (horizontalOffset* (type? -.5f: 1f) * switchVectorXZ(returnOffset(manager))) + (switchVectorXZ(returnOffset(manager)) * spacing * (numOfHouses == 5 ? 0 : numOfHouses))));
 
         }
 

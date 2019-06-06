@@ -12,7 +12,7 @@ namespace Spaces.Purchasable.Purchasable
         public int housePrice;
         public int numOfHouses = 0;
         public Property[] group;
-        public Object[] buildableList = new Object[5];
+        [NonSerialized] public Object[] buildableList = new Object[5];
         void Start()
         {
             pos = GetComponent<Transform>().position;

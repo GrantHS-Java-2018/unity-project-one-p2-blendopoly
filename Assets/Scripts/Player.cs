@@ -54,6 +54,16 @@ public class Player : MonoBehaviour
         setPos();
     }
 
+    public void raiseRailroad()
+    {
+        ++railroads;
+    }
+
+    public void raiseUtility()
+    {
+        ++utilities;
+    }
+
     void Update()
     {
         setRotationOfPlayer();

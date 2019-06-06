@@ -14,23 +14,26 @@ public class Auctioning : MonoBehaviour
     public BidButtonHandler buttonHandlerSlider;
     public Slider bidSlider;
     private int playerIndex = 0;
-    
+
+    private readonly int[] utilities = new int[2];
+    private readonly int[] railroads = new int[4];
+
     private List<Player> bids;
-    
+
     public PropertyHandler handler;
     public PlayerHandler playerHandler;
     public BoardLayout layout;
-    
+
     public Text maxValue;
     public Text minValue;
     public Text name;
     public Text bidValue;
-    
+
     public BidButtonHandler minValueScript;
     public BidButtonHandler maxValueScript;
     public BidButtonHandler nameScript;
     public BidButtonHandler bidValueScript;
-    
+
     public BidButtonHandler minValuePanel;
     public BidButtonHandler maxValuePanel;
     public BidButtonHandler namePanel;
@@ -38,8 +41,8 @@ public class Auctioning : MonoBehaviour
 
     private void setText()
     {
-        maxValue.text = "max: $" + (bids[playerIndex].money-1).ToString();
-        minValue.text = "current bid: $" + maxBid();
+        maxValue.text = "max: $" + (bids[playerIndex].money - 1).ToString();
+        minValue.text = "current bid: $" + maxBid().ToString();
         name.text = bids[playerIndex].name;
         bidValue.text = "$" + ((int) bidSlider.value).ToString();
     }
@@ -56,6 +59,7 @@ public class Auctioning : MonoBehaviour
             stopButtonHandlerButton.GetComponent<Scaler>().updateForScreen();
             buttonHandlerSlider.GetComponent<Scaler>().updateForScreen();
         }
+
         bidValue.text = ((int) bidSlider.value).ToString();
     }
 
@@ -65,9 +69,30 @@ public class Auctioning : MonoBehaviour
         bidSlider.maxValue = playerHandler.players[playerIndex].money - 1;
         bidSlider.minValue = 1;
 
+        railroadInit();
+
+        utilityInit();
+
         textAlign();
-        
+
         bidEnd();
+    }
+
+    private void railroadInit()
+    {
+        int railIndex = 5;
+
+        for (int x1 = 0; x1 < 4; ++x1)
+        {
+            railroads[x1] = railIndex;
+            railIndex += 10;
+        }
+    }
+
+    private void utilityInit()
+    {
+        utilities[0] = 12;
+        utilities[1] = 28;
     }
 
     private void textAlign()
@@ -80,7 +105,8 @@ public class Auctioning : MonoBehaviour
 
     private void bidsInitialize()
     {
-        foreach (Player player in playerHandler.players){
+        foreach (Player player in playerHandler.players)
+        {
             bids.Add(player);
         }
     }
@@ -90,7 +116,7 @@ public class Auctioning : MonoBehaviour
         buttonHandlerButton.turnOn();
         buttonHandlerSlider.turnOn();
         stopButtonHandlerButton.turnOn();
-        
+
         maxValueScript.turnOn();
         nameScript.turnOn();
         bidValueScript.turnOn();
@@ -100,18 +126,18 @@ public class Auctioning : MonoBehaviour
         maxValuePanel.turnOn();
         namePanel.turnOn();
         bidValuePanel.turnOn();
-        
+
         playerIndex = 0;
         bidsInitialize();
         setText();
     }
-    
+
     void bidEnd()
     {
         buttonHandlerButton.turnOff();
         buttonHandlerSlider.turnOff();
         stopButtonHandlerButton.turnOff();
-        
+
         maxValueScript.turnOff();
         nameScript.turnOff();
         bidValueScript.turnOff();
@@ -121,7 +147,7 @@ public class Auctioning : MonoBehaviour
         maxValuePanel.turnOff();
         namePanel.turnOff();
         bidValuePanel.turnOff();
-        
+
         playerIndex = 0;
         bids.Clear();
     }
@@ -136,6 +162,7 @@ public class Auctioning : MonoBehaviour
                 bid = player.bid;
             }
         }
+
         return bid;
     }
 
@@ -153,7 +180,7 @@ public class Auctioning : MonoBehaviour
             playerIndex = 0;
             setText();
         }
-        else if((bids[playerIndex].money - 2) <= (maxBid()))
+        else if ((bids[playerIndex].money - 2) <= (maxBid()))
         {
             removeBid();
         }
@@ -167,11 +194,13 @@ public class Auctioning : MonoBehaviour
             {
                 playerIndex = 0;
             }
+
             setText();
         }
+
         bidSlider.minValue = maxBid() + 1;
     }
-    
+
     private void removeBid()
     {
         if (bids.Count > 1)
@@ -180,15 +209,18 @@ public class Auctioning : MonoBehaviour
             {
                 playerIndex = 0;
             }
+
             bids[playerIndex].bid = 0;
             bids.Remove(bids[playerIndex]);
             if (playerIndex >= bids.Count)
             {
                 playerIndex = 0;
             }
+
             setText();
         }
-        if(bids.Count == 1)
+
+        if (bids.Count == 1)
         {
             playerIndex = 0;
             setText();
@@ -207,10 +239,46 @@ public class Auctioning : MonoBehaviour
         bids[0].changeMoney(-bids[0].bid);
         Purchasable property = layout.boardTrack[playerHandler.players[playerHandler.index].index] as Purchasable;
         property.owner = bids[0];
+        
+        if (inRailroad(playerHandler.players[playerHandler.index].index))
+        {
+            bids[0].raiseRailroad();
+        }
+        else if (inUtility(playerHandler.players[playerHandler.index].index))
+        {
+            bids[0].raiseUtility();
+        }
+
         bids[0].bid = 0;
         resetBids();
         bidEnd();
         returnBack();
+    }
+
+    private bool inRailroad(int index)
+    {
+        foreach (int railroadNum in railroads)
+        {
+            if (railroadNum == index)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+    
+    private bool inUtility(int index)
+    {
+        foreach (int utilityNum in utilities)
+        {
+            if (utilityNum == index)
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     private void resetBids()

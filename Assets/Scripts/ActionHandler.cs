@@ -50,11 +50,11 @@ public class ActionHandler : MonoBehaviour
                     textComponent.text = property.name + ": $" + property.morgagePrice;
                     break;
                 case 2:
-                    button.AddComponent<Button>().onClick.AddListener(delegate { p.buildHouse(player); });
+                    button.AddComponent<Button>().onClick.AddListener(delegate { p.buildHouse(player, manager); });
                     textComponent.text = property.name + ": " + p.numOfHouses;
                     break;
                 case 3:
-                    button.AddComponent<Button>().onClick.AddListener(delegate { p.sellHouse(player); });
+                    button.AddComponent<Button>().onClick.AddListener(delegate { p.sellHouse(player, manager); });
                     textComponent.text = property.name + ": " + p.numOfHouses;
                     break;
                 case 4:

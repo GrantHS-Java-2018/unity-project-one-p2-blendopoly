@@ -33,12 +33,14 @@ public class BuildableManager : MonoBehaviour
         return Instantiate((type ? (Object) hotel : house), pos, new Quaternion(0,0,0,0));
     }
     
-        
-   /* public void InstantiateBuilding(Boolean type, Vector3 pos)
+  /*  public Object InstantiateBuildingOffset(bool type, float centerOffset, float horizontalOffset, int spacing)
     {
-        BuildingList.Add(Instantiate((type ? (Object) house : hotel), pos, new Quaternion(0,0,0,0)));
+        return InstantiateBuilding((spacing == 5), ((pos + 2f * returnOffset(manager)) - switchVectorXZ(returnOffset(manager))) + (switchVectorXZ(returnOffset(manager)) * .5f * (numOfHouses == 5 ? 0 : numOfHouses)));
+
     }
-    /*
+    */
+    
+      
     
     // for later
   /*  public void UpdateZAxis()

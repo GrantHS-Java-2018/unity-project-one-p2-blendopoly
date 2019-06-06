@@ -53,7 +53,7 @@ public class ActionHandler : MonoBehaviour
                     break;
                 case 3:
                     Property propertyVersion = property as Property;
-                    button.AddComponent<Button>().onClick.AddListener(delegate { propertyVersion.sellHouse(player); });
+                    button.AddComponent<Button>().onClick.AddListener(delegate { propertyVersion.sellHouse(player, manager); });
                     textComponent.text = property.name + ": " + propertyVersion.numOfHouses;
                     break;
                 default:

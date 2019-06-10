@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
     public int bid = 0;
     private Transform pos;
     [SerializeField] private Vector3 offset;
-    [SerializeField] private string name;
+    public string name;
     public int index = 0;
     [SerializeField] private GameObject board;
     private BoardLayout layout;
